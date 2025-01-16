@@ -90,9 +90,9 @@ function Main() {
                     {/* Content */}
                     <div>
                         <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
-                            <h1 className="text-[30px] md:text-[45px]">Page Tilt Menu Effect</h1>
+                            <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo Land</h1>
                             <p className="text-[18px] md:text-[25px]">
-                                Click the hamburger icon to see it in action
+                                ცენტრის შესახებ სიახლე მალე დაემატება
                             </p>
                         </section>
                         <section className="h-[600px] bg-[#243040]/[0.15]"></section>
