@@ -1,6 +1,7 @@
 import { useEffect, useRef, useContext } from 'react';
 import Home from './Home';
 import { MyContext } from './Context';
+import logo from "../../public/assets/donaldo-logo.png";
 
 function Main() {
     const context = useContext(MyContext);
@@ -95,6 +96,11 @@ function Main() {
                         className="fixed z-[4] top-[30px] left-[30px] w-[45px] h-[34px] cursor-pointer select-none"
                     >
                         <span className="relative block w-[45px] h-[6px] bg-[#F49D22] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:bg-[#F49D22] after:bg-[#F49D22] before:rounded-[2px] after:rounded-[2px] before:-bottom-[14px] after:-bottom-[28px]" />
+                    </div>
+
+                    {/* logo */}
+                    <div className='w-[90px] h-[90px] fixed z-[4] top-[15px] right-[5px]'>
+                        <img src={logo} alt="" />
                     </div>
 
                     {/* Content */}
