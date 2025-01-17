@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 body {
     margin: 0;
     overflow-x: hidden;
+    font-family: "Architects Daughter", serif;
 }

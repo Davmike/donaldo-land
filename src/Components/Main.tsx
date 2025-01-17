@@ -48,7 +48,7 @@ function Main() {
     }, []);
 
     return (
-        <div className="font-['Architects_Daughter']">
+        <div className="main-component">
             {/* Paper Back (Menu) */}
             <div className="fixed inset-0 bg-[#243040] text-[33px]">
                 <nav className="pt-[120px] px-[34px]">
@@ -58,7 +58,7 @@ function Main() {
                     >
                         <div className="before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:top-1/2 after:top-1/2 before:bg-white after:bg-white before:rounded-[2px] after:rounded-[2px] before:-translate-y-1/2 after:-translate-y-1/2 before:rotate-45 after:-rotate-45" />
                     </div>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Home</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70 home">Home</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">About Us</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">Our Work</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">Contact</a>
@@ -90,7 +90,7 @@ function Main() {
                     {/* Content */}
                     <div>
                         <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
-                            <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo Land</h1>
+                            <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
                             <p className="text-[18px] md:text-[25px]">
                                 ცენტრის შესახებ სიახლე მალე დაემატება
                             </p>
