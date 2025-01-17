@@ -1,7 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
+import Home from './Home';
+import { MyContext } from './Context';
 
 function Main() {
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const context = useContext(MyContext);
+    const {
+        isMenuOpen,
+        setIsMenuOpen
+    }: any = context;
+
     const windowRef = useRef<HTMLDivElement>(null);
     const frontRef = useRef<HTMLDivElement>(null);
     const hamburgerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +55,7 @@ function Main() {
     }, []);
 
     return (
-        <div className="main-component">
+        <div>
             {/* Paper Back (Menu) */}
             <div className="fixed inset-0 bg-[#243040] text-[33px]">
                 <nav className="pt-[120px] px-[34px]">
@@ -84,11 +91,12 @@ function Main() {
                         onClick={handleOpen}
                         className="fixed z-[4] top-[30px] left-[30px] w-[45px] h-[34px] cursor-pointer select-none"
                     >
-                        <span className="relative block w-[45px] h-[6px] bg-[#243040] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:bg-[#243040] after:bg-[#243040] before:rounded-[2px] after:rounded-[2px] before:-bottom-[14px] after:-bottom-[28px]" />
+                        <span className="relative block w-[45px] h-[6px] bg-[red] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:bg-[red] after:bg-[red] before:rounded-[2px] after:rounded-[2px] before:-bottom-[14px] after:-bottom-[28px]" />
                     </div>
 
                     {/* Content */}
-                    <div>
+                    <Home />
+                    {/* <div>
                         <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
                             <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
                             <p className="text-[18px] md:text-[25px]">
@@ -98,7 +106,7 @@ function Main() {
                         <section className="h-[600px] bg-[#243040]/[0.15]"></section>
                         <section className="h-[600px]"></section>
                         <section className="h-[600px] bg-[#243040]/[0.15]"></section>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

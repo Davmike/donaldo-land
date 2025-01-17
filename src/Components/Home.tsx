@@ -1,9 +1,32 @@
-import React from 'react'
+
 
 function Home() {
     return (
-        <div>
-
+        <div className='z-[10]'>
+            <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
+                <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
+                <p className="text-[18px] md:text-[25px]">
+                    ცენტრის შესახებ სიახლე მალე დაემატება
+                </p>
+            </section>
+            <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
+                <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
+                <p className="text-[18px] md:text-[25px]">
+                    ცენტრის შესახებ სიახლე მალე დაემატება
+                </p>
+            </section>
+            <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
+                <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
+                <p className="text-[18px] md:text-[25px]">
+                    ცენტრის შესახებ სიახლე მალე დაემატება
+                </p>
+            </section>
+            <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
+                <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
+                <p className="text-[18px] md:text-[25px]">
+                    ცენტრის შესახებ სიახლე მალე დაემატება
+                </p>
+            </section>
         </div>
     )
 }
