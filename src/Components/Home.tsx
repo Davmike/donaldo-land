@@ -2,8 +2,14 @@
 
 function Home() {
     return (
-        <div className='z-[10]'>
-            <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
+        <div className='z-[10] text-[#FBCA0D]'>
+            <section className="bg-[#22A7A1] h-[100vh] text-center pt-[10vh] md:pt-[10vh]">
+                <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
+                <p className="text-[18px] md:text-[25px]">
+                    ცენტრის შესახებ სიახლე მალე დაემატება
+                </p>
+            </section>
+            {/* <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
                 <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
                 <p className="text-[18px] md:text-[25px]">
                     ცენტრის შესახებ სიახლე მალე დაემატება
@@ -20,13 +26,7 @@ function Home() {
                 <p className="text-[18px] md:text-[25px]">
                     ცენტრის შესახებ სიახლე მალე დაემატება
                 </p>
-            </section>
-            <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
-                <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
-                <p className="text-[18px] md:text-[25px]">
-                    ცენტრის შესახებ სიახლე მალე დაემატება
-                </p>
-            </section>
+            </section> */}
         </div>
     )
 }

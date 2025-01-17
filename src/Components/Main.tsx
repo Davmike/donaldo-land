@@ -57,7 +57,7 @@ function Main() {
     return (
         <div>
             {/* Paper Back (Menu) */}
-            <div className="fixed inset-0 bg-[#243040] text-[33px]">
+            <div className="fixed inset-0 bg-[#B3DFDE] text-[33px]">
                 <nav className="pt-[120px] px-[34px]">
                     <div
                         onClick={handleClose}
@@ -65,9 +65,12 @@ function Main() {
                     >
                         <div className="before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:top-1/2 after:top-1/2 before:bg-white after:bg-white before:rounded-[2px] after:rounded-[2px] before:-translate-y-1/2 after:-translate-y-1/2 before:rotate-45 after:-rotate-45" />
                     </div>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70 home">Home</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">About Us</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Our Work</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70 home">Programs</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70">Heros</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70">Design</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70">Outdoor</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70">Drinks</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70">Shows</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">Contact</a>
                 </nav>
             </div>
@@ -91,7 +94,7 @@ function Main() {
                         onClick={handleOpen}
                         className="fixed z-[4] top-[30px] left-[30px] w-[45px] h-[34px] cursor-pointer select-none"
                     >
-                        <span className="relative block w-[45px] h-[6px] bg-[red] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:bg-[red] after:bg-[red] before:rounded-[2px] after:rounded-[2px] before:-bottom-[14px] after:-bottom-[28px]" />
+                        <span className="relative block w-[45px] h-[6px] bg-[#F49D22] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:bg-[#F49D22] after:bg-[#F49D22] before:rounded-[2px] after:rounded-[2px] before:-bottom-[14px] after:-bottom-[28px]" />
                     </div>
 
                     {/* Content */}
