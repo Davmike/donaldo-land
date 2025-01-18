@@ -9,7 +9,19 @@ function Main() {
         isMenuOpen,
         setIsMenuOpen,
         isHidePrograms,
-        setIsHideprograms
+        setIsHideprograms,
+        isHideHeros,
+        setIsHideHeros,
+        isHideDesign,
+        setIsHideDesign,
+        isHideOutdoor,
+        setIsHideOutdoor,
+        isHideEat,
+        setIsHideEat,
+        isHideContact,
+        setIsHideContact,
+        isHideShows,
+        setIsHideShows
     }: any = context;
 
     const windowRef = useRef<HTMLDivElement>(null);
@@ -61,7 +73,7 @@ function Main() {
         <div>
             {/* Paper Back (Menu) */}
             <div className="fixed inset-0 bg-[#412E77] text-[33px]">
-                <nav className="pt-[120px] px-[34px]">
+                <nav className="pt-[120px] px-[34px] w-[200px]">
                     <div
                         onClick={handleClose}
                         className="fixed top-[30px] left-[30px] w-[45px] h-[34px] cursor-pointer"
@@ -69,12 +81,12 @@ function Main() {
                         <div className="before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:top-1/2 after:top-1/2 before:bg-white after:bg-white before:rounded-[2px] after:rounded-[2px] before:-translate-y-1/2 after:-translate-y-1/2 before:rotate-45 after:-rotate-45" />
                     </div>
                     <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideprograms(!isHidePrograms)}>Programs</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Heros</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Design</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Outdoor</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Drinks</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Shows</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Contact</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideHeros(!isHideHeros)}>Heros</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideDesign(!isHideDesign)}>Design</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideOutdoor(!isHideOutdoor)}>Outdoor</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideEat(!isHideEat)}>Drinks</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideShows(!isHideShows)}>Shows</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideContact(!isHideContact)}>Contact</span>
                 </nav>
             </div>
 

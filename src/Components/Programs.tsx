@@ -10,7 +10,7 @@ function Programs() {
     }: any = context;
 
     return (
-        !isHidePrograms && (
+        isHidePrograms && (
             <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsHideprograms(!isHidePrograms)}></div>
 
@@ -21,7 +21,7 @@ function Programs() {
                     >
                         &times;
                     </button>
-                    <h2 className="mb-2 text-[18px] font-semibold" id="login-text">LOGIN TO USE THE ASSISTANT</h2>
+                    <h2 className="mb-2 text-[18px] font-semibold" id="login-text">LOGIN TO USE THE PROGRAMS</h2>
                     <p className="mb-4 text-gray-400 text-[11px]">
                         I really appreciate your interest in this project.
                     </p>

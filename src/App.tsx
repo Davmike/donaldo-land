@@ -2,6 +2,12 @@ import { useState } from "react";
 import { MyContext } from "./Components/Context";
 import Main from "./Components/Main";
 import Programs from "./Components/Programs";
+import Heros from "./Components/Heros";
+import Design from "./Components/Design";
+import Outdoor from "./Components/Outdoor";
+import Eatdrinks from "./Components/Eatdrinks";
+import Contact from "./Components/Contact";
+import Shows from "./Components/Shows";
 
 
 
@@ -48,6 +54,12 @@ function App() {
       >
         <Main />
         <Programs />
+        <Heros />
+        <Design />
+        <Outdoor />
+        <Eatdrinks />
+        <Contact />
+        <Shows />
       </MyContext.Provider>
     </>
   );
