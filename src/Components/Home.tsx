@@ -35,11 +35,14 @@ function Home() {
     ];
     return (
         <div className='z-[10] text-[white]' onMouseMove={handleMouseMove}>
-            <section className="bg-[#20095F] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative">
-                <h1 className="text-[30px] md:text-[45px]">Welcome to Donaldo</h1>
-                <p className="text-[18px] md:text-[25px]">
-                    COMING SOON...
-                </p>
+            <section className="bg-[#20095F] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px]">
+                <div>
+                    <h1 className="text-[30px] md:text-[45px]">Welcome to DonaldoLand</h1>
+                    <p className="text-[18px] md:text-[25px]">
+                        COMING SOON...
+                    </p>
+                </div>
+                <button className="bg-[#FE5C37] w-[150px] h-[50px] rounded-[50px]">ჯავშანი</button>
                 {/* Stars */}
                 {stars.map((stars => (
                     <img
