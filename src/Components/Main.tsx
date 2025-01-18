@@ -2,6 +2,8 @@ import { useEffect, useRef, useContext } from 'react';
 import Home from './Home';
 import { MyContext } from './Context';
 import logo from "../../public/assets/donaldo-logo.png";
+// import facebook from "../../public/assets/facebook.png";
+// import whatsapp from "../../public/assets/whatsapp.png"
 
 function Main() {
     const context = useContext(MyContext);
@@ -109,11 +111,23 @@ function Main() {
                         onClick={handleOpen}
                         className="fixed z-[4] top-[30px] left-[30px] w-[45px] h-[34px] cursor-pointer select-none"
                     >
-                        <span className="relative block w-[45px] h-[6px] bg-[#F49D22] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:bg-[#F49D22] after:bg-[#F49D22] before:rounded-[2px] after:rounded-[2px] before:-bottom-[14px] after:-bottom-[28px]" />
+                        <span className="relative block w-[35px] h-[4px] bg-[#F49D22] rounded-[2px] before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[35px] after:w-[35px] before:h-[4px] after:h-[4px] before:bg-[#F49D22] after:bg-[#F49D22] before:rounded-[2px] after:rounded-[2px] before:-bottom-[8px] after:-bottom-[16px]" />
                     </div>
 
+                    {/* main div for socails */}
+                    {/* <div>
+
+                        <div className='w-[90px] h-[90px] fixed z-[4] top-[15px] right-[5px]'>
+                            <img src={facebook} alt="" />
+                        </div>
+
+                        <div className='w-[90px] h-[90px] fixed z-[4] top-[15px] right-[5px]'>
+                            <img src={whatsapp} alt="" />
+                        </div>
+                    </div> */}
+
                     {/* logo */}
-                    <div className='w-[90px] h-[90px] fixed z-[4] top-[15px] right-[5px]'>
+                    <div className='w-[90px] h-[90px] fixed z-[4] top-[8px] right-[5px]'>
                         <img src={logo} alt="" />
                     </div>
 
