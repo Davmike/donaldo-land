@@ -1,6 +1,16 @@
-import star from "../../public/assets/star.png"
+import star from "../../public/assets/star.png";
+import earth from "../../public/assets/earth.png"; // დედამიწის სურათი
+import rocket from "../../public/assets/rocket.png"; // რაკეტის სურათი
+import { useState } from "react";
 
 function Home() {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
+        const { clientX, clientY } = e;
+        setMousePosition({ x: clientX, y: clientY });
+    };
+
     const stars = [
         { id: 1, top: "50%", left: "20%", size: "25px" },
         { id: 2, top: "30%", left: "50%", size: "20px" },
@@ -24,8 +34,8 @@ function Home() {
         { id: 20, top: "70%", left: "65%", size: "16px" },
     ];
     return (
-        <div className='z-[10] text-[white]'>
-            <section className="bg-[#20095F] h-[100vh] text-center pt-[10vh] md:pt-[10vh]">
+        <div className='z-[10] text-[white]' onMouseMove={handleMouseMove}>
+            <section className="bg-[#20095F] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative">
                 <h1 className="text-[30px] md:text-[45px]">Welcome to Donaldo</h1>
                 <p className="text-[18px] md:text-[25px]">
                     COMING SOON...
@@ -38,13 +48,39 @@ function Home() {
                         alt="star"
                         style={{
                             position: "fixed",
-                            top: stars.top,
-                            left: stars.left,
+                            top: `calc(${stars.top} + ${mousePosition.y * 0.02}px)`,
+                            left: `calc(${stars.left} + ${mousePosition.x * 0.02}px)`,
                             width: stars.size,
                             height: stars.size,
                         }}
                     />
                 )))}
+
+                {/* Earth */}
+                <img
+                    src={earth}
+                    alt="Earth"
+                    style={{
+                        position: "fixed",
+                        top: `calc(70% + ${mousePosition.y * 0.05}px)`,
+                        right: `calc(20% + ${mousePosition.x * -0.05}px)`,
+                        width: "80px",
+                        height: "80px",
+                    }}
+                />
+
+                {/* Rocket */}
+                <img
+                    src={rocket}
+                    alt="Rocket"
+                    style={{
+                        position: "fixed",
+                        bottom: `calc(10% + ${mousePosition.y * -0.03}px)`,
+                        left: `calc(15% + ${mousePosition.x * 0.03}px)`,
+                        width: "60px",
+                        height: "60px",
+                    }}
+                />
             </section>
         </div>
     );
