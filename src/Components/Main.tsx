@@ -7,7 +7,9 @@ function Main() {
     const context = useContext(MyContext);
     const {
         isMenuOpen,
-        setIsMenuOpen
+        setIsMenuOpen,
+        isHidePrograms,
+        setIsHideprograms
     }: any = context;
 
     const windowRef = useRef<HTMLDivElement>(null);
@@ -66,13 +68,13 @@ function Main() {
                     >
                         <div className="before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:top-1/2 after:top-1/2 before:bg-white after:bg-white before:rounded-[2px] after:rounded-[2px] before:-translate-y-1/2 after:-translate-y-1/2 before:rotate-45 after:-rotate-45" />
                     </div>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Programs</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Heros</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Design</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Outdoor</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Drinks</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Shows</a>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70">Contact</a>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideprograms(!isHidePrograms)}>Programs</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Heros</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Design</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Outdoor</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Drinks</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Shows</span>
+                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer">Contact</span>
                 </nav>
             </div>
 
