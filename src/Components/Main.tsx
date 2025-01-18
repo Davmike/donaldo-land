@@ -58,7 +58,7 @@ function Main() {
     return (
         <div>
             {/* Paper Back (Menu) */}
-            <div className="fixed inset-0 bg-[#B3DFDE] text-[33px]">
+            <div className="fixed inset-0 bg-[#412E77] text-[33px]">
                 <nav className="pt-[120px] px-[34px]">
                     <div
                         onClick={handleClose}
@@ -66,7 +66,7 @@ function Main() {
                     >
                         <div className="before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:top-1/2 after:top-1/2 before:bg-white after:bg-white before:rounded-[2px] after:rounded-[2px] before:-translate-y-1/2 after:-translate-y-1/2 before:rotate-45 after:-rotate-45" />
                     </div>
-                    <a href="#" className="block mb-[25px] no-underline text-white/70 home">Programs</a>
+                    <a href="#" className="block mb-[25px] no-underline text-white/70">Programs</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">Heros</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">Design</a>
                     <a href="#" className="block mb-[25px] no-underline text-white/70">Outdoor</a>
