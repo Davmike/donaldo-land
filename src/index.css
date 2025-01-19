@@ -10,3 +10,9 @@ body {
     overflow-x: hidden;
     font-family: "Architects Daughter", serif;
 }
+
+.slick-slide img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

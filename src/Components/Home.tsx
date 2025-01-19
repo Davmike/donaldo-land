@@ -2,8 +2,28 @@ import star from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png"; // დედამიწის სურათი
 import rocket from "../../public/assets/rocket.png"; // რაკეტის სურათი
 import { useState } from "react";
+// import Slider from "react-slick";
+// import imageFirst from "../../public/assets/1.jpg";
+// import imageSecond from "../../public/assets/2.jpg";
+// import imageThird from "../../public/assets/3.jpg";
+// import imageFourth from "../../public/assets/4.jpg";
+// import imageFiveth from "../../public/assets/5.jpg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import arrow from "../../public/assets/arrow.png"
+
 
 function Home() {
+    // const settings = {
+    //     className: "center",
+    //     centerMode: true,
+    //     infinite: true,
+    //     centerPadding: "60px",
+    //     slidesToShow: 3,
+    //     speed: 500,
+    //     dots: true,
+    // };
+
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
@@ -36,13 +56,42 @@ function Home() {
     return (
         <div className='z-[10] text-[white]' onMouseMove={handleMouseMove}>
             <section className="bg-[#20095F] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px]">
+                {/* arrow img */}
+                <div className="w-[100px] fixed top-[0%] left-[8%]">
+                    <img src={arrow} alt="" />
+                </div>
+                {/* main text section */}
                 <div>
                     <h1 className="text-[30px] md:text-[45px]">Welcome to DonaldoLand</h1>
                     <p className="text-[18px] md:text-[25px]">
                         COMING SOON...
                     </p>
                 </div>
+
+                {/* photo slider */}
+                {/* <div className="slider-container">
+                    <Slider {...settings}>
+                        <div>
+                            <img src={imageFirst} alt="" />
+                        </div>
+                        <div>
+                            <img src={imageSecond} alt="" />
+                        </div>
+                        <div>
+                            <img src={imageThird} alt="" />
+                        </div>
+                        <div>
+                            <img src={imageFourth} alt="" />
+                        </div>
+                        <div>
+                            <img src={imageFiveth} alt="" />
+                        </div>
+                    </Slider>
+                </div> */}
+
+                {/* order button */}
                 <button className="bg-[#FE5C37] w-[150px] h-[50px] rounded-[50px]">ჯავშანი</button>
+
                 {/* Stars */}
                 {stars.map((stars => (
                     <img
