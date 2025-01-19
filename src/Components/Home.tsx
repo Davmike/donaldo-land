@@ -57,8 +57,9 @@ function Home() {
         <div className='z-[10] text-[white]' onMouseMove={handleMouseMove}>
             <section className="bg-[#20095F] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px]">
                 {/* arrow img */}
-                <div className="w-[100px] fixed top-[0%] left-[8%]">
+                <div className="w-[100px] fixed top-[0%] left-[20%] sm:left-[14%] md:left-[10%]">
                     <img src={arrow} alt="" />
+                    <p className="fixed left-[12%] text-[20px] transform" style={{ transform: "rotate(-12deg)" }}>Click here for more</p>
                 </div>
                 {/* main text section */}
                 <div>
