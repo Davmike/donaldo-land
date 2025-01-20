@@ -11,8 +11,43 @@ body {
     font-family: "Architects Daughter", serif;
 }
 
+.slider-container {
+    z-index: 10;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .slick-slide img {
     display: block;
+    margin: 0 auto;
     max-width: 100%;
+    /* სურათები პატარა ეკრანებზე ავტომატურად შემცირდება */
     height: auto;
+    padding: 20px;
+    /* მობილურზე პადინგი შევამციროთ */
+}
+
+/* მედიაქვერი ტაბლეტისთვის */
+@media (max-width: 768px) {
+    .slick-slide img {
+        max-width: 90%;
+        /* ტაბლეტისთვის სურათები მცირდება */
+        padding: 15px;
+        /* პადინგიც მცირდება */
+    }
+}
+
+/* მედიაქვერი მობილურებისთვის */
+@media (max-width: 480px) {
+    .slick-slide img {
+        max-width: 80%;
+        /* მობილურზე სურათები უფრო მცირე იქნება */
+        padding: 10px;
+    }
+
+    .slider-container {
+        width: 90%;
+        /* სლაიდერის კონტეინერი მცირდება */
+    }
 }

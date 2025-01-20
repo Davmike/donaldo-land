@@ -102,7 +102,7 @@ function Main() {
                 <div
                     ref={frontRef}
                     onClick={isMenuOpen ? handleClose : undefined}
-                    className={`relative z-[3] bg-white shadow-[0_0_20px_rgba(0,0,0,0.7)] transition-transform duration-300 ease-in-out ${isMenuOpen ? 'rotate-[2deg]' : 'rotate-0'
+                    className={`relative z-[3] bg-white shadow-[0_0_20px_rgba(0,0,0,0.7)] transition-transform duration-300 ease-in-out ${isMenuOpen ? 'rotate-[10deg]' : 'rotate-0'
                         }`}
                 >
                     {/* Hamburger */}
