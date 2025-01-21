@@ -2,51 +2,51 @@ import star from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png"; // დედამიწის სურათი
 import rocket from "../../public/assets/rocket.png"; // რაკეტის სურათი
 import { useState } from "react";
-import imageFirst from "/assets/1.jpg";
-import imageSecond from "/assets/2.jpg";
-import imageThird from "/assets/3.jpg";
-import imageFourth from "/assets/4.jpg";
-import imageFiveth from "/assets/5.jpg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import imageFirst from "/assets/1.jpg";
+// import imageSecond from "/assets/2.jpg";
+// import imageThird from "/assets/3.jpg";
+// import imageFourth from "/assets/4.jpg";
+// import imageFiveth from "/assets/5.jpg";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import arrow from "../../public/assets/arrow.png"
 
 
 function Home() {
-    var settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
+    // var settings = {
+    //     dots: true,
+    //     infinite: false,
+    //     speed: 500,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 4,
+    //     initialSlide: 0,
+    //     responsive: [
+    //         {
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 3,
+    //                 slidesToScroll: 3,
+    //                 infinite: true,
+    //                 dots: true
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 768,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //                 slidesToScroll: 2
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1
+    //             }
+    //         }
+    //     ]
+    // };
 
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -86,7 +86,7 @@ function Home() {
                     <p className="fixed left-[12%] text-[20px] xl:left-[8%] transform" style={{ transform: "rotate(-12deg)" }}>Click here for more</p>
                 </div>
                 {/* main text section */}
-                <div>
+                <div className="z-[10]">
                     <h1 className="text-[30px] md:text-[45px]">Welcome to DonaldoLand</h1>
                     <p className="text-[18px] md:text-[25px]">
                         COMING SOON...
@@ -94,7 +94,7 @@ function Home() {
                 </div>
 
                 {/* photo slider */}
-                <div className="slider-container">
+                {/* <div className="slider-container">
                     <Slider {...settings}>
                         <div>
                             <img src={imageFirst} alt="" />
@@ -112,7 +112,7 @@ function Home() {
                             <img src={imageFiveth} alt="" />
                         </div>
                     </Slider>
-                </div>
+                </div> */}
 
                 {/* order button */}
                 <button className="bg-[#FE5C37] w-[150px] h-[50px] rounded-[50px]">ჯავშანი</button>
