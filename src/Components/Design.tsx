@@ -60,13 +60,13 @@ function Design() {
                         className="absolute inset-0 bg-[#1E222C]/90 backdrop-blur-sm"
                         onClick={() => setIsHideDesign(!isHideDesign)}
                     />
-                    <div className="mx-auto w-[100%] h-[auto] max-w-7xl">
-                        <div className="text-center">
+                    <div className="relative mx-auto h-[auto] z-10 w-[90%] max-w-[1200px] max-h-[90vh] bg-[#1E222C] text-white rounded-2xl shadow-xl overflow-hidden">
+                        {/* <div className="text-center">
                             <h1 className="text-4xl font-bold text-transparent md:text-5xl bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 animate-pulse">
                                 Magical Birthday Experiences
                             </h1>
                             <p className="text-lg text-gray-300">Choose the perfect theme for your child's special day</p>
-                        </div>
+                        </div> */}
 
                         <div className="relative overflow-hidden rounded-2xl bg-[#252a37] shadow-2xl">
                             <div className="absolute z-10 -translate-y-1/2 top-1/2 left-4">
@@ -101,9 +101,9 @@ function Design() {
                                             </div>
 
                                             <div className="flex flex-col justify-center">
-                                                <h2 className="mb-4 text-3xl font-bold">{theme.title}</h2>
-                                                <p className="mb-6 text-gray-300">{theme.description}</p>
-                                                <div className="mb-8 space-y-4">
+                                                <h2 className="mb-3 text-[25px] md:text-3xl font-bold">{theme.title}</h2>
+                                                <p className="mb-5 text-gray-300">{theme.description}</p>
+                                                <div className="space-y-4 mb-7">
                                                     {theme.features.map((feature, index) => (
                                                         <div key={index} className="flex items-center gap-3">
                                                             <Star className="w-5 h-5 text-yellow-400" />
@@ -126,8 +126,9 @@ function Design() {
                             </div>
                         </div>
                     </div>
-                </div>
-            )}
+                </div >
+            )
+            }
         </>
     );
 }
