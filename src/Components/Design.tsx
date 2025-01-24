@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { ChevronLeft, ChevronRight, X, Star, Calendar, Gift, PartyPopper, Cake } from 'lucide-react';
+import { useContext, useState } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { MyContext } from './Context';
 
 interface PartyTheme {
@@ -43,7 +43,6 @@ function Design() {
     const { isHideDesign, setIsHideDesign }: any = context;
 
     const [currentTheme, setCurrentTheme] = useState(0);
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const nextTheme = () => {
         setCurrentTheme((prev) => (prev + 1) % partyThemes.length);
@@ -115,7 +114,6 @@ function Design() {
                                                 <div className="flex items-center justify-between">
                                                     <span className="text-3xl font-bold text-pink-500">${theme.price}</span>
                                                     <button
-                                                        onClick={() => setIsModalOpen(true)}
                                                         className="px-6 py-3 font-semibold transition-opacity rounded-full bg-gradient-to-r from-pink-500 to-violet-500 hover:opacity-90"
                                                     >
                                                         Book Now

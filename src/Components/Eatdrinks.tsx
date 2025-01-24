@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { MyContext } from './Context';
-import { Rocket, Pizza, Merge as Hamburger, Coffee, Sparkles, Star, UtensilsCrossed, IceCream, Cookie, Sandwich } from 'lucide-react';
+import { Rocket, Merge as Coffee, Sparkles, Star, UtensilsCrossed, IceCream } from 'lucide-react';
 
 function Eatdrinks() {
     const context = useContext(MyContext);
