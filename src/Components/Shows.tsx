@@ -1,48 +1,141 @@
 import { useContext } from "react";
 import { MyContext } from "./Context";
+import { Sparkles, Droplets, SettingsIcon as Confetti, Wand2, IceCream, Star, X } from "lucide-react";
 
+const shows = [
+    {
+        id: 1,
+        name: "Magic Galaxy Show",
+        icon: <Wand2 className="w-8 h-8 text-purple-400" />,
+        price: "$299",
+        duration: "1 hour",
+        description: "Amazing magic tricks with space theme",
+        image: "https://images.unsplash.com/photo-1492176273113-2d51f47b23b0?auto=format&fit=crop&q=80&w=800",
+        features: ["Professional magician", "Space costume", "Interactive tricks", "Magic props for kids"]
+    },
+    {
+        id: 2,
+        name: "Cosmic Bubble Show",
+        icon: <Droplets className="w-8 h-8 text-blue-400" />,
+        price: "$249",
+        duration: "45 minutes",
+        description: "Giant bubble performance with LED effects",
+        image: "https://images.unsplash.com/photo-1531845116688-48819b3b68d9?auto=format&fit=crop&q=80&w=800",
+        features: ["Giant bubbles", "LED lights", "Smoke effects", "Interactive games"]
+    },
+    {
+        id: 3,
+        name: "Star Balloon Show",
+        icon: <Sparkles className="w-8 h-8 text-yellow-400" />,
+        price: "$199",
+        duration: "30 minutes",
+        description: "Amazing balloon art and decorations",
+        image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80&w=800",
+        features: ["Balloon sculptures", "Party decorations", "Take-home balloons", "Interactive creation"]
+    },
+    {
+        id: 4,
+        name: "Cosmic Ice Cream Party",
+        icon: <IceCream className="w-8 h-8 text-pink-400" />,
+        price: "$349",
+        duration: "1 hour",
+        description: "Liquid nitrogen ice cream experience",
+        image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800",
+        features: ["Live ice cream making", "Multiple flavors", "Smoke effects", "Unlimited servings"]
+    },
+    {
+        id: 5,
+        name: "Space Confetti Show",
+        icon: <Confetti className="w-8 h-8 text-green-400" />,
+        price: "$199",
+        duration: "30 minutes",
+        description: "Spectacular paper and confetti show",
+        image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
+        features: ["Confetti cannons", "Paper sculptures", "Interactive games", "Clean-up included"]
+    }
+];
 
 function Shows() {
     const context = useContext(MyContext);
-    const {
-        isHideShows,
-        setIsHideShows
-    }: any = context;
+    const { isHideShows, setIsHideShows }: any = context;
 
     return (
         isHideShows && (
-            <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
-                <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsHideShows(!isHideShows)}></div>
+            <div className="fixed inset-0 z-50 flex items-center justify-center">
+                <div
+                    className="absolute inset-0 bg-gradient-to-br from-indigo-900/95 to-purple-900/95 backdrop-blur-sm"
+                    onClick={() => setIsHideShows(!isHideShows)}
+                />
 
-                <div className="bg-[#1E222C] text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 relative z-10">
-                    <button
-                        className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
-                        onClick={() => setIsHideShows(!isHideShows)}
-                    >
-                        &times;
-                    </button>
-                    <h2 className="mb-2 text-[18px] font-semibold" id="login-text">LOGIN TO USE THE SHOWS</h2>
-                    <p className="mb-4 text-gray-400 text-[11px]">
-                        I really appreciate your interest in this project.
-                    </p>
-                    <p className="pl-3 mb-6 text-gray-400 border-l-2 border-blue-500 text-[12px]">
-                        To interact with the assistant, please sign-in using your Google or GitHub credentials.
-                    </p>
-                    <div className="flex justify-center gap-4 mt-6">
-                        <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center cursor-none">
-                            <span className="font-semibold" id="acc">GITHUB</span>
-                        </button>
-                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px] cursor-none">
-                            <span className="font-semibold" id="acc">GOOGLE</span>
-                        </button>
+                <div className="relative z-10 w-full max-w-6xl mx-4 max-h-[90vh] bg-gradient-to-br from-indigo-800 to-purple-800 rounded-2xl shadow-2xl overflow-hidden">
+                    <div className="sticky top-0 z-20 p-6 border-b bg-gradient-to-br from-indigo-800 to-purple-800 border-white/10">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <Star className="w-8 h-8 text-yellow-300 animate-pulse" />
+                                <h2 className="text-2xl font-bold text-transparent md:text-3xl bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text">
+                                    Magical Party Shows
+                                </h2>
+                            </div>
+                            <button
+                                onClick={() => setIsHideShows(!isHideShows)}
+                                className="p-2 transition-colors rounded-full hover:bg-white/10"
+                            >
+                                <X className="w-6 h-6 text-gray-300" />
+                            </button>
+                        </div>
                     </div>
-                    <p className="mt-4 text-[10px] text-center text-gray-500">
-                        Choose a sign-in method
-                    </p>
+
+                    <div className="overflow-y-auto max-h-[calc(90vh-5rem)]">
+                        <div className="p-6">
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                                {shows.map((show) => (
+                                    <div
+                                        key={show.id}
+                                        className="group bg-white/10 rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-[1.02]"
+                                    >
+                                        <div className="relative h-48 overflow-hidden">
+                                            <img
+                                                src={show.image}
+                                                alt={show.name}
+                                                className="object-cover w-full h-full transition-transform duration-500 transform group-hover:scale-110"
+                                            />
+                                            <div className="absolute px-3 py-1 rounded-full top-4 right-4 bg-black/50">
+                                                <span className="font-semibold text-white">{show.price}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="p-5">
+                                            <div className="flex items-center gap-3 mb-3">
+                                                {show.icon}
+                                                <h3 className="text-xl font-bold text-white">{show.name}</h3>
+                                            </div>
+
+                                            <p className="mb-4 text-gray-300">{show.description}</p>
+
+                                            <div className="space-y-2">
+                                                {show.features.map((feature, index) => (
+                                                    <div key={index} className="flex items-center gap-2">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                                                        <span className="text-sm text-gray-300">{feature}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            <div className="pt-4 mt-4 border-t border-white/10">
+                                                <button className="w-full py-2 font-semibold text-white transition-colors rounded-lg bg-white/20 hover:bg-white/30">
+                                                    Book Now
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
     );
 }
 
-export default Shows
+export default Shows;
