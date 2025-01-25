@@ -11,21 +11,22 @@ function Eatdrinks() {
             <div className="fixed inset-0 z-10 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm" onClick={() => setIsHideEat(!isHideEat)}></div>
 
-                <div className="bg-[#2a2f6e] text-white rounded-2xl shadow-[0_0_20px_rgba(123,97,255,0.3)] w-[800px] max-w-[95%] p-8 relative z-10 max-h-[90vh] overflow-y-auto">
-                    <button
-                        className="absolute text-[#b4a5ff] top-4 right-4 hover:text-white transition-colors"
-                        onClick={() => setIsHideEat(!isHideEat)}
-                    >
-                        <Star className="w-6 h-6" />
-                    </button>
+                <div className="bg-[#2a2f6e] text-white rounded-2xl shadow-[0_0_20px_rgba(123,97,255,0.3)] w-[800px] max-w-[95%] px-8 pb-8 relative z-10 max-h-[90vh] overflow-y-auto">
 
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <Rocket className="w-6 h-6 text-[#b4a5ff]" />
-                        <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-[#b4a5ff] to-[#7b61ff] text-transparent bg-clip-text">
-                            Space Party Menu
-                        </h2>
+                    <div className='sticky top-0 z-20 bg-[#2a2f6e] border-b border-gray-700 h-[50px] flex justify-center items-center flex-row'>
+                        <div className="flex items-center justify-start gap-2 md:justify-center">
+                            <Rocket className="w-6 h-6 text-[#b4a5ff]" />
+                            <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-[#b4a5ff] to-[#7b61ff] text-transparent bg-clip-text">
+                                Space Party Menu
+                            </h2>
+                        </div>
+                        <button
+                            className="absolute text-[#b4a5ff] top-4 right-4 hover:text-white transition-colors"
+                            onClick={() => setIsHideEat(!isHideEat)}
+                        >
+                            <Star className="w-6 h-6" />
+                        </button>
                     </div>
-
                     {/* Food Section */}
                     <div className="mb-8">
                         <div className="flex items-center gap-2 mb-4">
