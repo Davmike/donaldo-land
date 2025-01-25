@@ -54,13 +54,13 @@ export default function Outdoor() {
         isHideOutdoor && (
             <div className="fixed inset-0 z-10 flex items-center justify-center overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-[#1E222C]/90 backdrop-blur-sm"
+                    className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
                     onClick={() => setIsHideOutdoor(!isHideOutdoor)}
                 />
 
-                <div className="relative z-10 w-[90%] max-w-[1200px] max-h-[90vh] bg-[#1E222C] text-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="relative z-10 w-[90%] max-w-[1200px] max-h-[90vh] bg-[#2A2F6E] text-white rounded-2xl shadow-xl overflow-hidden">
                     {/* Header */}
-                    <div className="sticky top-0 z-20 bg-[#1E222C] border-b border-gray-700 p-6 flex justify-between items-center">
+                    <div className="sticky top-0 z-20 bg-[#2A2F6E] border-b border-gray-700 p-6 flex justify-between items-center">
                         <div className="flex items-center gap-3">
                             <Rocket className="w-8 h-8 text-purple-400" />
                             <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
@@ -81,7 +81,7 @@ export default function Outdoor() {
                             {partyPrograms.map((program) => (
                                 <div
                                     key={program.id}
-                                    className="bg-gray-800/50 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
+                                    className="bg-[#353B8C] rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
                                 >
                                     <div className="relative h-48 overflow-hidden">
                                         <img
