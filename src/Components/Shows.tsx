@@ -63,12 +63,12 @@ function Shows() {
         isHideShows && (
             <div className="fixed inset-0 z-50 flex items-center justify-center">
                 <div
-                    className="absolute inset-0 bg-gradient-to-br from-indigo-900/95 to-purple-900/95 backdrop-blur-sm"
+                    className="absolute inset-0 bg-gradient-to-br bg-[#1a1f47]/90  backdrop-blur-sm"
                     onClick={() => setIsHideShows(!isHideShows)}
                 />
 
-                <div className="relative z-10 w-full max-w-6xl mx-4 max-h-[90vh] bg-gradient-to-br from-indigo-800 to-purple-800 rounded-2xl shadow-2xl overflow-hidden">
-                    <div className="sticky top-0 z-20 p-6 border-b bg-gradient-to-br from-indigo-800 to-purple-800 border-white/10">
+                <div className="relative z-10 w-full max-w-6xl mx-4 max-h-[90vh] bg-gradient-to-br bg-[#2a2f6e] rounded-2xl shadow-2xl overflow-hidden">
+                    <div className="sticky top-0 z-20 p-6 border-b bg-gradient-to-br bg-[#2a2f6e] border-white/10">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <Star className="w-8 h-8 text-yellow-300 animate-pulse" />
@@ -91,7 +91,7 @@ function Shows() {
                                 {shows.map((show) => (
                                     <div
                                         key={show.id}
-                                        className="group bg-white/10 rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-[1.02]"
+                                        className="group bg-[#353B8C] rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-[1.02]"
                                     >
                                         <div className="relative h-48 overflow-hidden">
                                             <img
