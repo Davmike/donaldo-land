@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star, Rocket, Sparkles, Gift, Calendar, Users, Music } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Rocket, Sparkles, Calendar, Users } from 'lucide-react';
 import { MyContext } from './Context';
 
 interface PartyTheme {
