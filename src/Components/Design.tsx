@@ -110,7 +110,7 @@ function Design() {
                         </div>
 
                         <div className="relative overflow-hidden bg-[#2a2f6e]">
-                            <div className="absolute z-10 -translate-y-1/2 top-1/2 left-2 sm:left-3 md:left-4">
+                            <div className="absolute z-10 top-[18%] lg:top-[42%] left-[0.9rem] sm:left-[1.2rem] md:left-4">
                                 <button
                                     onClick={prevTheme}
                                     className="p-1.5 sm:p-2 md:p-3 transition-all rounded-full bg-purple-500/20 hover:bg-purple-500/40 hover:scale-110"
@@ -119,7 +119,7 @@ function Design() {
                                     <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                                 </button>
                             </div>
-                            <div className="absolute z-10 -translate-y-1/2 top-1/2 right-2 sm:right-3 md:right-4">
+                            <div className="absolute z-10 top-[18%] lg:top-[42%] right-[0.9rem] sm:right-[1.2rem] md:right-4">
                                 <button
                                     onClick={nextTheme}
                                     className="p-1.5 sm:p-2 md:p-3 transition-all rounded-full bg-purple-500/20 hover:bg-purple-500/40 hover:scale-110"
@@ -161,7 +161,7 @@ function Design() {
                                                     <p className="text-xs text-gray-300 sm:text-sm md:text-base">{theme.description}</p>
                                                 </div>
 
-                                                <div className="space-y-1.5 sm:space-y-2 md:space-y-3 max-h-[120px] sm:max-h-[140px] md:max-h-[160px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500/20 scrollbar-track-transparent">
+                                                <div className="space-y-1.5 sm:space-y-2 md:space-y-3 max-h-[120px] sm:max-h-[140px] md:max-h-[160px]">
                                                     {theme.features.map((feature, index) => (
                                                         <div key={index} className="flex items-center gap-1.5 sm:gap-2 md:gap-3 bg-purple-500/10 p-1.5 sm:p-2 md:p-3 rounded-lg transition-transform hover:translate-x-2">
                                                             <Sparkles className="flex-shrink-0 w-3 h-3 text-purple-400 sm:w-4 sm:h-4 md:w-5 md:h-5" />
@@ -170,7 +170,7 @@ function Design() {
                                                     ))}
                                                 </div>
 
-                                                <div className="flex items-center justify-between gap-2 pt-1 sm:gap-3 md:gap-4 sm:pt-2 md:pt-3">
+                                                <div className="flex items-center justify-between gap-2 pt-6 sm:gap-3 md:gap-4 sm:pt-9 md:pt-16">
                                                     <div className="text-left">
                                                         <span className="block text-[10px] sm:text-xs md:text-sm text-gray-400">Starting from</span>
                                                         <span className="text-lg font-bold text-transparent sm:text-xl md:text-2xl lg:text-3xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
