@@ -94,38 +94,38 @@ function Design() {
     return (
         <>
             {isHideDesign && (
-                <div className="fixed inset-0 z-10 flex items-center justify-center overflow-auto bg-gradient-to-b from-[#1a103d] to-[#2d1b69] text-white p-2 sm:p-4 md:p-8">
+                <div className="fixed inset-0 z-10 flex items-start justify-center overflow-auto text-white bg-gradient-to-b">
                     <div
-                        className="absolute inset-0 bg-[#150b2e]/90 backdrop-blur-sm"
+                        className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
                         onClick={() => setIsHideDesign(!isHideDesign)}
                     />
-                    <div className="relative z-10 w-full sm:w-[95%] max-w-[1400px] bg-[#1E222C]/90 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl">
-                        <div className="p-4 text-center sm:p-6 md:p-8">
-                            <h1 className="mb-2 text-2xl font-bold text-transparent sm:text-3xl md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse sm:mb-4">
+                    <div className="relative z-10 w-full max-w-[1400px] rounded-2xl m-auto bg-[#2a2f6e] shadow-2xl overflow-hidden backdrop-blur-xl lg:min-h-0 lg:w-[95%] lg:rounded-2xl">
+                        <div className="p-3 text-center sm:p-4 md:p-6 lg:p-8">
+                            <h1 className="mb-1 text-xl font-bold text-transparent sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse sm:mb-2 md:mb-3">
                                 Magical Birthday Adventures
                             </h1>
-                            <p className="max-w-2xl mx-auto text-sm text-gray-300 sm:text-base md:text-lg">
+                            <p className="max-w-2xl mx-auto text-xs text-gray-300 sm:text-sm md:text-base lg:text-lg">
                                 Create unforgettable memories with our specially curated party themes
                             </p>
                         </div>
 
-                        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#252a37]/80">
-                            <div className="absolute z-10 -translate-y-1/2 top-1/2 left-2 sm:left-4">
+                        <div className="relative overflow-hidden bg-[#2a2f6e]">
+                            <div className="absolute z-10 -translate-y-1/2 top-1/2 left-2 sm:left-3 md:left-4">
                                 <button
                                     onClick={prevTheme}
-                                    className="p-2 transition-all rounded-full sm:p-3 bg-purple-500/20 hover:bg-purple-500/40 hover:scale-110"
+                                    className="p-1.5 sm:p-2 md:p-3 transition-all rounded-full bg-purple-500/20 hover:bg-purple-500/40 hover:scale-110"
                                     disabled={isAnimating}
                                 >
-                                    <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
+                                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                                 </button>
                             </div>
-                            <div className="absolute z-10 -translate-y-1/2 top-1/2 right-2 sm:right-4">
+                            <div className="absolute z-10 -translate-y-1/2 top-1/2 right-2 sm:right-3 md:right-4">
                                 <button
                                     onClick={nextTheme}
-                                    className="p-2 transition-all rounded-full sm:p-3 bg-purple-500/20 hover:bg-purple-500/40 hover:scale-110"
+                                    className="p-1.5 sm:p-2 md:p-3 transition-all rounded-full bg-purple-500/20 hover:bg-purple-500/40 hover:scale-110"
                                     disabled={isAnimating}
                                 >
-                                    <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
+                                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                                 </button>
                             </div>
 
@@ -135,50 +135,50 @@ function Design() {
                             >
                                 {partyThemes.map((theme) => (
                                     <div key={theme.id} className="min-w-full">
-                                        <div className="grid gap-4 p-3 sm:gap-6 md:gap-8 sm:p-6 md:p-8 md:grid-cols-2">
+                                        <div className="grid gap-3 p-3 sm:gap-4 md:gap-6 lg:gap-8 sm:p-4 md:p-6 lg:p-8 lg:grid-cols-2">
                                             <div className="relative group">
                                                 <img
                                                     src={theme.image}
                                                     alt={theme.title}
-                                                    className="w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover rounded-lg sm:rounded-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl shadow-purple-500/20"
+                                                    className="w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-[400px] object-cover rounded-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl shadow-purple-500/20"
                                                 />
-                                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:rounded-xl" />
-                                                <div className="absolute p-2 text-xs rounded-lg bottom-2 sm:bottom-4 left-2 right-2 sm:left-4 sm:right-4 sm:p-4 bg-black/50 backdrop-blur-sm sm:text-sm">
-                                                    <div className="flex items-center gap-1 sm:gap-2">
-                                                        <Calendar className="w-3 h-3 text-purple-400 sm:w-4 sm:h-4" />
+                                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                                                <div className="absolute bottom-2 left-2 right-2 p-1.5 sm:p-2 md:p-3 bg-black/50 backdrop-blur-sm rounded-lg text-[10px] sm:text-xs md:text-sm">
+                                                    <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                                                        <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-purple-400" />
                                                         <span>{theme.duration}</span>
-                                                        <Users className="w-3 h-3 ml-1 text-purple-400 sm:w-4 sm:h-4 sm:ml-2" />
+                                                        <Users className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 ml-1 sm:ml-1.5 md:ml-2 text-purple-400" />
                                                         <span>Up to {theme.maxGuests} guests</span>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div className="flex flex-col justify-center space-y-3 sm:space-y-4 md:space-y-6">
+                                            <div className="flex flex-col justify-start space-y-2 lg:justify-center sm:space-y-3 md:space-y-4">
                                                 <div>
-                                                    <h2 className="mb-1 text-xl font-bold text-transparent sm:text-2xl md:text-3xl sm:mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                                                    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-1.5 md:mb-2 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">
                                                         {theme.title}
                                                     </h2>
-                                                    <p className="text-sm text-gray-300 sm:text-base">{theme.description}</p>
+                                                    <p className="text-xs text-gray-300 sm:text-sm md:text-base">{theme.description}</p>
                                                 </div>
 
-                                                <div className="space-y-2 sm:space-y-3">
+                                                <div className="space-y-1.5 sm:space-y-2 md:space-y-3 max-h-[120px] sm:max-h-[140px] md:max-h-[160px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500/20 scrollbar-track-transparent">
                                                     {theme.features.map((feature, index) => (
-                                                        <div key={index} className="flex items-center gap-2 p-2 transition-transform rounded-lg sm:gap-3 bg-purple-500/10 sm:p-3 hover:translate-x-2">
-                                                            <Sparkles className="w-4 h-4 text-purple-400 sm:w-5 sm:h-5" />
-                                                            <span className="text-sm sm:text-base">{feature}</span>
+                                                        <div key={index} className="flex items-center gap-1.5 sm:gap-2 md:gap-3 bg-purple-500/10 p-1.5 sm:p-2 md:p-3 rounded-lg transition-transform hover:translate-x-2">
+                                                            <Sparkles className="flex-shrink-0 w-3 h-3 text-purple-400 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                                                            <span className="text-xs sm:text-sm md:text-base">{feature}</span>
                                                         </div>
                                                     ))}
                                                 </div>
 
-                                                <div className="flex flex-col items-center gap-3 pt-2 sm:flex-row sm:gap-4 sm:pt-4">
-                                                    <div className="w-full text-center sm:text-left sm:w-auto">
-                                                        <span className="block text-xs text-gray-400 sm:text-sm">Starting from</span>
-                                                        <span className="text-2xl font-bold text-transparent sm:text-3xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                                                <div className="flex items-center justify-between gap-2 pt-1 sm:gap-3 md:gap-4 sm:pt-2 md:pt-3">
+                                                    <div className="text-left">
+                                                        <span className="block text-[10px] sm:text-xs md:text-sm text-gray-400">Starting from</span>
+                                                        <span className="text-lg font-bold text-transparent sm:text-xl md:text-2xl lg:text-3xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                                                             ${theme.price}
                                                         </span>
                                                     </div>
-                                                    <button className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-semibold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all hover:scale-105 flex items-center justify-center gap-2">
-                                                        <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
+                                                    <button className="flex-shrink-0 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm md:text-base font-semibold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all hover:scale-105 flex items-center justify-center gap-1.5 sm:gap-2">
+                                                        <Rocket className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                                                         Book This Theme
                                                     </button>
                                                 </div>
@@ -188,7 +188,7 @@ function Design() {
                                 ))}
                             </div>
 
-                            <div className="flex justify-center gap-1.5 sm:gap-2 p-3 sm:p-4 bg-[#1E222C]/50">
+                            <div className="flex justify-center gap-1 sm:gap-1.5 md:gap-2 p-2 sm:p-3 md:p-4 bg-[#2a2f6e]">
                                 {partyThemes.map((_, index) => (
                                     <button
                                         key={index}
@@ -199,8 +199,8 @@ function Design() {
                                                 setTimeout(() => setIsAnimating(false), 500);
                                             }
                                         }}
-                                        className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all ${currentTheme === index
-                                            ? 'bg-purple-500 w-4 sm:w-6'
+                                        className={`w-1.5 sm:w-2 md:w-3 h-1.5 sm:h-2 md:h-3 rounded-full transition-all ${currentTheme === index
+                                            ? 'bg-purple-500 w-3 sm:w-4 md:w-6'
                                             : 'bg-gray-600 hover:bg-gray-500'
                                             }`}
                                     />
