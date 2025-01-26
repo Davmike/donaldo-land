@@ -86,7 +86,7 @@ function Contact() {
         `;
 
         // WhatsApp link to send message
-        const whatsappLink = `https://wa.me/${+995555925444}?text=${encodeURIComponent(formattedMessage)}`;
+        const whatsappLink = `https://wa.me/${+995579124074}?text=${encodeURIComponent(formattedMessage)}`;
 
         // Open WhatsApp in a new window or tab
         window.open(whatsappLink, '_blank');
