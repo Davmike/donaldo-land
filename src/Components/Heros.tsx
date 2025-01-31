@@ -90,10 +90,14 @@ function Heros() {
     return (
         isHideHeros && (
             <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-8">
+                <div
+                    className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
+                    onClick={() => setIsHideHeros(!isHideHeros)}
+                />
                 <div className="w-full max-w-7xl bg-[#1a1f47]/95 rounded-2xl backdrop-blur-sm shadow-2xl">
-                    <div className="sticky top-0 z-10 bg-[#1a1f47]/95 backdrop-blur-sm rounded-t-2xl border-b border-white/10">
+                    <div className="sticky top-0 z-10 bg-[#1a1f47]/95 backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
+                        onClick={() => setIsHideHeros(!isHideHeros)}>
                         <button
-                            onClick={() => setIsHideHeros(false)}
                             className="absolute p-2 transition-colors duration-300 rounded-full top-4 right-4 bg-white/10 hover:bg-white/20"
                         >
                             <X className="w-6 h-6 text-white" />
