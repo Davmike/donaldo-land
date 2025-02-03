@@ -79,18 +79,18 @@ function Programs() {
                     className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
                     onClick={() => setIsHideprograms(!isHidePrograms)}
                 />
-                <div className="w-full max-w-7xl bg-[#1a1f47]/95 rounded-2xl backdrop-blur-sm shadow-2xl">
+                <div className="w-full max-w-7xl bg-[#2A2F6E] rounded-2xl backdrop-blur-sm shadow-2xl">
                     <div
-                        className="sticky top-0 z-10 bg-[#1a1f47]/95 backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
+                        className="sticky top-0 z-10 bg-[#2A2F6E] backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
                         onClick={() => setIsHideprograms(!isHidePrograms)}
                     >
                         <button
-                            className="absolute p-2 transition-colors duration-300 rounded-full top-4 right-4 bg-white/10 hover:bg-white/20"
+                            className="absolute p-2 transition-colors duration-300 rounded-full top-2 right-2"
                         >
                             <X className="w-6 h-6 text-white" />
                         </button>
 
-                        <div className="pt-8 pb-8 space-y-4 text-center">
+                        <div className="pt-8 pb-8 space-y-1 text-center">
                             <h1 className="text-4xl font-bold text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse font-display">
                                 Birthday Adventures
                             </h1>
@@ -99,13 +99,12 @@ function Programs() {
                             </p>
                         </div>
                     </div>
-                    {/* პაკეტების ჩამონათვალის კონტეინერი, რომელსაც მინიშნებულია მაქსიმალური სიმაღლე და ვერტიკალური სქროლი */}
                     <div className="mx-auto max-w-7xl p-[20px] overflow-y-auto max-h-[70vh] custom-scrollbar">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {partyPackages.map((pkg, index) => (
                                 <div
                                     key={index}
-                                    className="bg-[#2A2F3F]/50 backdrop-blur-sm rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40"
+                                    className="bg-[#353B8C] backdrop-blur-sm rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40"
                                 >
                                     <div className="relative h-48 overflow-hidden">
                                         <img
@@ -144,7 +143,7 @@ function Programs() {
 
                                             <div className="flex items-center justify-between mt-6">
                                                 <span className="text-2xl font-bold text-purple-400">${pkg.price}</span>
-                                                <button className="flex items-center gap-2 px-4 py-2 text-sm font-semibold transition-colors duration-200 bg-purple-500 rounded-lg hover:bg-purple-600">
+                                                <button className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 bg-purple-500 rounded-lg hover:bg-purple-600">
                                                     <Gift className="w-4 h-4" />
                                                     Book Now
                                                 </button>

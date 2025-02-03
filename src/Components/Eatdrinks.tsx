@@ -17,7 +17,7 @@ function Eatdrinks() {
                         <div className="flex items-center justify-start gap-2 md:justify-center">
                             <Rocket className="w-6 h-6 text-[#b4a5ff]" />
                             <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-[#b4a5ff] to-[#7b61ff] text-transparent bg-clip-text">
-                                Space Party Menu
+                                Menu
                             </h2>
                         </div>
                         <button

@@ -73,7 +73,7 @@ function Shows() {
                             <div className="flex items-center gap-3">
                                 <Star className="w-8 h-8 text-yellow-300 animate-pulse" />
                                 <h2 className="text-2xl font-bold text-transparent md:text-3xl bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text">
-                                    Magical Party Shows
+                                    Party Shows
                                 </h2>
                             </div>
                             <button

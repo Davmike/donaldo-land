@@ -94,16 +94,16 @@ function Heros() {
                     className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
                     onClick={() => setIsHideHeros(!isHideHeros)}
                 />
-                <div className="w-full max-w-7xl bg-[#1a1f47]/95 rounded-2xl backdrop-blur-sm shadow-2xl">
-                    <div className="sticky top-0 z-10 bg-[#1a1f47]/95 backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
+                <div className="w-full max-w-7xl bg-[#2A2F6E] rounded-2xl backdrop-blur-sm shadow-2xl">
+                    <div className="sticky top-0 z-10 bg-[#2A2F6E] backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
                         onClick={() => setIsHideHeros(!isHideHeros)}>
                         <button
-                            className="absolute p-2 transition-colors duration-300 rounded-full top-4 right-4 bg-white/10 hover:bg-white/20"
+                            className="absolute p-1 transition-colors duration-300 rounded-full top-2 right-2"
                         >
                             <X className="w-6 h-6 text-white" />
                         </button>
 
-                        <div className="pt-8 pb-8 space-y-4 text-center">
+                        <div className="pt-8 pb-8 space-y-1 text-center">
                             <h1 className="text-4xl font-bold text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse font-display">
                                 Birthday Adventures
                             </h1>
@@ -113,12 +113,12 @@ function Heros() {
                         </div>
                     </div>
 
-                    <div className="h-[calc(100vh-16rem)] overflow-y-auto px-4 py-8 custom-scrollbar">
+                    <div className="h-[calc(100vh-13rem)] md:h-[calc(100vh-16rem)] overflow-y-auto px-4 py-8 custom-scrollbar">
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                             {partyCharacters.map((character, index) => (
                                 <div
                                     key={index}
-                                    className="relative overflow-hidden transition-all duration-500 transform group bg-white/5 rounded-2xl backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                                    className="relative overflow-hidden transition-all duration-500 transform group bg-[#353B8C] rounded-2xl backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
                                     style={{
                                         animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
                                     }}
