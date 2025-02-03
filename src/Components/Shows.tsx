@@ -85,7 +85,7 @@ function Shows() {
                         </div>
                     </div>
 
-                    <div className="overflow-y-auto max-h-[calc(90vh-5rem)]">
+                    <div className="overflow-y-auto max-h-[calc(90vh-5rem)] custom-scrollbar">
                         <div className="p-6">
                             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                                 {shows.map((show) => (

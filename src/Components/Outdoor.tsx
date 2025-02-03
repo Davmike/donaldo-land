@@ -76,7 +76,7 @@ export default function Outdoor() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+                    <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)] custom-scrollbar">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {partyPrograms.map((program) => (
                                 <div

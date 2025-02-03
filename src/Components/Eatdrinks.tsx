@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { MyContext } from './Context';
-import { Rocket, Merge as Coffee, Sparkles, Star, UtensilsCrossed, IceCream } from 'lucide-react';
+import { Rocket, Merge as Coffee, Sparkles, UtensilsCrossed, IceCream, X } from 'lucide-react';
 
 function Eatdrinks() {
     const context = useContext(MyContext);
@@ -11,7 +11,7 @@ function Eatdrinks() {
             <div className="fixed inset-0 z-10 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm" onClick={() => setIsHideEat(!isHideEat)}></div>
 
-                <div className="bg-[#2a2f6e] text-white rounded-2xl shadow-[0_0_20px_rgba(123,97,255,0.3)] w-[800px] max-w-[95%] px-8 pb-8 relative z-10 max-h-[90vh] overflow-y-auto">
+                <div className="bg-[#2a2f6e] text-white rounded-2xl shadow-[0_0_20px_rgba(123,97,255,0.3)] w-[800px] max-w-[95%] px-8 pb-8 relative z-10 max-h-[90vh] overflow-y-auto custom-scrollbar">
 
                     <div className='sticky top-0 z-20 bg-[#2a2f6e] border-b border-gray-700 h-[50px] flex justify-center items-center flex-row'>
                         <div className="flex items-center justify-start gap-2 md:justify-center">
@@ -24,7 +24,7 @@ function Eatdrinks() {
                             className="absolute text-[#b4a5ff] top-4 right-4 hover:text-white transition-colors"
                             onClick={() => setIsHideEat(!isHideEat)}
                         >
-                            <Star className="w-6 h-6" />
+                            <X className="w-6 h-6" />
                         </button>
                     </div>
                     {/* Food Section */}
