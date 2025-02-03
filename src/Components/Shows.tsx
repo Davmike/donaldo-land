@@ -67,7 +67,7 @@ function Shows() {
                     onClick={() => setIsHideShows(!isHideShows)}
                 />
 
-                <div className="relative z-10 w-full max-w-6xl mx-4 max-h-[90vh] bg-gradient-to-br bg-[#2a2f6e] rounded-2xl shadow-2xl overflow-hidden">
+                <div className="relative z-10 w-full max-w-6xl mx-4 max-h-[90vh] bg-gradient-to-br bg-[#2a2f6e] rounded-2xl shadow-2xl overflow-hidden group">
                     <div className="sticky top-0 z-20 p-6 border-b bg-gradient-to-br bg-[#2a2f6e] border-white/10">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">

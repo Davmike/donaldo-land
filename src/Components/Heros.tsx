@@ -105,10 +105,10 @@ function Heros() {
 
                         <div className="pt-8 pb-8 space-y-4 text-center">
                             <h1 className="text-4xl font-bold text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse font-display">
-                                Magical Birthday Adventures
+                                Birthday Adventures
                             </h1>
                             <p className="max-w-2xl mx-auto text-lg text-gray-300 md:text-xl">
-                                Choose your child's favorite character for an unforgettable celebration filled with wonder and excitement!
+                                Choose your child's favorite character for an unforgettable celebration.
                             </p>
                         </div>
                     </div>
