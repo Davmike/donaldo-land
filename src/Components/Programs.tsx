@@ -47,7 +47,25 @@ const partyPackages = [
             "Galactic Snack Station",
             "Star Gazing Activity"
         ]
+
+    },
+    {
+        title: "Space Explorer",
+        description: "Out-of-this-world cosmic adventure with stellar activities",
+        duration: 3,
+        maxParticipants: 20,
+        price: 249,
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
+        activities: [
+            "Rocket Launch Simulation",
+            "Astronaut Training Games",
+            "Space Costume Contest",
+            "Galactic Snack Station",
+            "Star Gazing Activity"
+        ]
+
     }
+
 ];
 
 function Programs() {
@@ -62,8 +80,10 @@ function Programs() {
                     onClick={() => setIsHideprograms(!isHidePrograms)}
                 />
                 <div className="w-full max-w-7xl bg-[#1a1f47]/95 rounded-2xl backdrop-blur-sm shadow-2xl">
-                    <div className="sticky top-0 z-10 bg-[#1a1f47]/95 backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
-                        onClick={() => setIsHideprograms(!isHidePrograms)}>
+                    <div
+                        className="sticky top-0 z-10 bg-[#1a1f47]/95 backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
+                        onClick={() => setIsHideprograms(!isHidePrograms)}
+                    >
                         <button
                             className="absolute p-2 transition-colors duration-300 rounded-full top-4 right-4 bg-white/10 hover:bg-white/20"
                         >
@@ -79,7 +99,8 @@ function Programs() {
                             </p>
                         </div>
                     </div>
-                    <div className="mx-auto max-w-7xl p-[20px]">
+                    {/* პაკეტების ჩამონათვალის კონტეინერი, რომელსაც მინიშნებულია მაქსიმალური სიმაღლე და ვერტიკალური სქროლი */}
+                    <div className="mx-auto max-w-7xl p-[20px] overflow-y-auto max-h-[70vh] custom-scrollbar">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {partyPackages.map((pkg, index) => (
                                 <div
