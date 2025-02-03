@@ -82,13 +82,55 @@ function Main() {
                     >
                         <div className="before:content-[''] after:content-[''] before:absolute after:absolute before:block after:block before:w-[45px] after:w-[45px] before:h-[6px] after:h-[6px] before:top-1/2 after:top-1/2 before:bg-white after:bg-white before:rounded-[2px] after:rounded-[2px] before:-translate-y-1/2 after:-translate-y-1/2 before:rotate-45 after:-rotate-45" />
                     </div>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideprograms(!isHidePrograms)}>Programs</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideHeros(!isHideHeros)}>Heros</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideDesign(!isHideDesign)}>Design</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideOutdoor(!isHideOutdoor)}>Outdoor</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideEat(!isHideEat)}>Drinks</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideShows(!isHideShows)}>Shows</span>
-                    <span className="block mb-[25px] no-underline text-white/70 cursor-pointer" onClick={() => setIsHideContact(!isHideContact)}>Contact</span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideContact(!isHideContact)}
+                    >
+                        About
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideprograms(!isHidePrograms)}
+                    >
+                        Programs
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideHeros(!isHideHeros)}
+                    >
+                        Heros
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideDesign(!isHideDesign)}
+                    >
+                        Design
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideOutdoor(!isHideOutdoor)}
+                    >
+                        Outdoor
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideEat(!isHideEat)}
+                    >
+                        Drinks
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideShows(!isHideShows)}
+                    >
+                        Shows
+                    </span>
+                    <span
+                        className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
+                        onClick={() => setIsHideContact(!isHideContact)}
+                    >
+                        Contact
+                    </span>
+
                 </nav>
             </div>
 

@@ -25,6 +25,11 @@ interface ComponentsProps {
     // shows
     isHideShows: boolean;
     setIsHideShows: (isHideShows: boolean) => void;
+    // language
+    isOpen: boolean;
+    setIsOpen: (isOpen: boolean) => void;
+    language: string;
+    setLanguage: (language: string) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

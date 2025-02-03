@@ -2,9 +2,36 @@ import starss from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png";
 import rocket from "../../public/assets/rocket.png";
 import arrow from "../../public/assets/arrow.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { MyContext } from "./Context";
+
+const translations = {
+    en: {
+        welcome: "Welcome to DonaldoLand",
+        comingSoon: "COMING SOON...",
+        clickMore: "Click here for more",
+        order: "Order"
+    },
+    ka: {
+        welcome: "კეთილი იყოს თქვენი მობრძანება DonaldoLand-ში",
+        comingSoon: "მალე...",
+        clickMore: "დააჭირეთ მეტი ინფორმაციისთვის",
+        order: "ჯავშანი"
+    },
+    ru: {
+        welcome: "Добро пожаловать в DonaldoLand",
+        comingSoon: "СКОРО...",
+        clickMore: "Нажмите здесь для подробностей",
+        order: "Заказать"
+    }
+};
 
 function Home() {
+
+    const context = useContext(MyContext);
+    const { language, setLanguage }: any = context;
+
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -70,25 +97,28 @@ function Home() {
                 `}
             </style>
             <section className="bg-gradient-to-b from-[#20095F] to-[#130538] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px] overflow-hidden">
+                {/* Language Switcher */}
+                <LanguageSwitcher onLanguageChange={setLanguage} />
+
                 {/* Arrow section with animation */}
                 <div className="w-[100px] fixed top-[0%] left-[20%] sm:left-[14%] md:left-[8%] xl:left-[6%] xxl:left-[5%]">
                     <img src={arrow} alt="" />
-                    <p className="fixed left-[12%] text-[20px] xl:left-[8%] transform" style={{ transform: "rotate(-12deg)" }}>Click here for more</p>
+                    <p className="fixed left-[12%] text-[20px] xl:left-[8%] transform" style={{ transform: "rotate(-12deg)" }}> {translations[language as keyof typeof translations].clickMore}</p>
                 </div>
 
                 {/* Main text section with animation */}
                 <div className={`z-[10] ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '0.8s' }}>
                     <h1 className="text-[30px] md:text-[45px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FE5C37] mb-4">
-                        Welcome to DonaldoLand
+                        {translations[language as keyof typeof translations].welcome}
                     </h1>
                     <p className="text-[18px] md:text-[25px] text-[#a8a8ff]">
-                        COMING SOON...
+                        {translations[language as keyof typeof translations].comingSoon}
                     </p>
                 </div>
 
                 {/* Order button with animation */}
                 <button className={`bg-gradient-to-r from-[#FE5C37] to-[#FF8666] w-[150px] h-[50px] rounded-[50px] transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FE5C37]/30 ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '1.1s' }}>
-                    ჯავშანი
+                    {translations[language as keyof typeof translations].order}
                 </button>
 
                 {/* Stars with animation */}

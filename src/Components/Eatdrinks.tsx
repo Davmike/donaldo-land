@@ -11,7 +11,7 @@ function Eatdrinks() {
             <div className="fixed inset-0 z-10 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm" onClick={() => setIsHideEat(!isHideEat)}></div>
 
-                <div className="bg-[#2a2f6e] text-white rounded-2xl shadow-[0_0_20px_rgba(123,97,255,0.3)] w-[800px] max-w-[95%] px-8 pb-8 relative z-10 max-h-[90vh] overflow-y-auto custom-scrollbar">
+                <div className="bg-[#2a2f6e] text-white rounded-2xl shadow-[0_0_20px_rgba(123,97,255,0.3)] w-[800px] max-w-[95%] pb-8 relative z-10 max-h-[90vh] overflow-y-auto custom-scrollbar">
 
                     <div className='sticky top-0 z-20 bg-[#2a2f6e] border-b border-gray-700 h-[50px] flex justify-center items-center flex-row'>
                         <div className="flex items-center justify-start gap-2 md:justify-center">
@@ -21,14 +21,14 @@ function Eatdrinks() {
                             </h2>
                         </div>
                         <button
-                            className="absolute text-[#b4a5ff] top-4 right-4 hover:text-white transition-colors"
+                            className="absolute text-[#b4a5ff] top-2 right-2 p-2 transition-colors rounded-full hover:bg-white/10"
                             onClick={() => setIsHideEat(!isHideEat)}
                         >
                             <X className="w-6 h-6" />
                         </button>
                     </div>
                     {/* Food Section */}
-                    <div className="mb-8">
+                    <div className="mb-8 px-[2rem]">
                         <div className="flex items-center gap-2 mb-4">
                             <UtensilsCrossed className="w-5 h-5 text-[#7b61ff]" />
                             <h3 className="text-xl font-semibold text-[#b4a5ff]">Cosmic Foods</h3>
@@ -86,7 +86,7 @@ function Eatdrinks() {
                     </div>
 
                     {/* Drinks Section */}
-                    <div className="mb-8">
+                    <div className="mb-8 px-[2rem]">
                         <div className="flex items-center gap-2 mb-4">
                             <Coffee className="w-5 h-5 text-[#7b61ff]" />
                             <h3 className="text-xl font-semibold text-[#b4a5ff]">Space Drinks</h3>
@@ -144,7 +144,7 @@ function Eatdrinks() {
                     </div>
 
                     {/* Desserts Section */}
-                    <div className="mb-8">
+                    <div className="mb-8 px-[2rem]">
                         <div className="flex items-center gap-2 mb-4">
                             <IceCream className="w-5 h-5 text-[#7b61ff]" />
                             <h3 className="text-xl font-semibold text-[#b4a5ff]">Space Desserts</h3>

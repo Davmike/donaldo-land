@@ -95,10 +95,14 @@ function Heros() {
                     onClick={() => setIsHideHeros(!isHideHeros)}
                 />
                 <div className="w-full max-w-7xl bg-[#2A2F6E] rounded-2xl backdrop-blur-sm shadow-2xl">
+                    {/* Header */}
                     <div className="sticky top-0 z-10 bg-[#2A2F6E] backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
-                        onClick={() => setIsHideHeros(!isHideHeros)}>
+                        onClick={() => setIsHideHeros(!isHideHeros)}
+                        style={{
+                            animation: `fadeIn 0.5s ease-out backwards`
+                        }}>
                         <button
-                            className="absolute p-1 transition-colors duration-300 rounded-full top-2 right-2"
+                            className="absolute p-1 transition-colors duration-300 rounded-full top-2 right-2 hover:bg-white/10"
                         >
                             <X className="w-6 h-6 text-white" />
                         </button>

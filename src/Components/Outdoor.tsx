@@ -68,7 +68,7 @@ export default function Outdoor() {
                             </h2>
                         </div>
                         <button
-                            className="p-2 transition-colors rounded-full hover:bg-gray-700"
+                            className="p-2 transition-colors rounded-full hover:bg-gray-700 hover:bg-white/10"
                             onClick={() => setIsHideOutdoor(!isHideOutdoor)}
                         >
                             <X className="w-6 h-6" />

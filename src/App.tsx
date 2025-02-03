@@ -29,6 +29,9 @@ function App() {
   const [isHideContact, setIsHideContact] = useState<boolean>(false);
   // state for shows component
   const [isHideShows, setIsHideShows] = useState<boolean>(false);
+  // state for language
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [language, setLanguage] = useState<string>('en');
 
   return (
     <>
@@ -49,7 +52,11 @@ function App() {
           isHideContact,
           setIsHideContact,
           isHideShows,
-          setIsHideShows
+          setIsHideShows,
+          isOpen,
+          setIsOpen,
+          language,
+          setLanguage
         }}
       >
         <Main />

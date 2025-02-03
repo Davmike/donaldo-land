@@ -80,12 +80,16 @@ function Programs() {
                     onClick={() => setIsHideprograms(!isHidePrograms)}
                 />
                 <div className="w-full max-w-7xl bg-[#2A2F6E] rounded-2xl backdrop-blur-sm shadow-2xl">
+                    {/* header */}
                     <div
                         className="sticky top-0 z-10 bg-[#2A2F6E] backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
                         onClick={() => setIsHideprograms(!isHidePrograms)}
+                        style={{
+                            animation: `fadeIn 0.5s ease-out backwards`
+                        }}
                     >
                         <button
-                            className="absolute p-2 transition-colors duration-300 rounded-full top-2 right-2"
+                            className="absolute p-2 transition-colors duration-300 rounded-full top-2 right-2 hover:bg-white/10"
                         >
                             <X className="w-6 h-6 text-white" />
                         </button>
@@ -105,6 +109,9 @@ function Programs() {
                                 <div
                                     key={index}
                                     className="bg-[#353B8C] backdrop-blur-sm rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40"
+                                    style={{
+                                        animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
+                                    }}
                                 >
                                     <div className="relative h-48 overflow-hidden">
                                         <img
