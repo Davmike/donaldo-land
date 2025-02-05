@@ -11,6 +11,8 @@ body {
     font-family: "Architects Daughter", serif;
 }
 
+/* slider style */
+
 .slider-container {
     z-index: 10;
     width: 100%;
