@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Rocket, Sparkles, Calendar, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Rocket, Sparkles, Calendar, Users, X } from 'lucide-react';
 import { MyContext } from './Context';
 
 interface PartyTheme {
@@ -100,6 +100,7 @@ function Design() {
                         onClick={() => setIsHideDesign(!isHideDesign)}
                     />
                     <div className="relative z-10 w-full max-w-[1400px] rounded-2xl m-auto bg-[#2a2f6e] shadow-2xl overflow-hidden backdrop-blur-xl lg:min-h-0 lg:w-[95%] lg:rounded-2xl">
+                        {/* header */}
                         <div className="p-3 text-center sm:p-4 md:p-6 lg:p-8">
                             <h1 className="mb-1 text-xl font-bold text-transparent sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse sm:mb-2 md:mb-3">
                                 Magical Birthday Adventures
@@ -108,7 +109,13 @@ function Design() {
                                 Create unforgettable memories with our specially curated party themes
                             </p>
                         </div>
-
+                        <button
+                            className="absolute p-2 transition-colors rounded-full top-1 right-1 hover:bg-gray-700 hover:bg-white/10"
+                            onClick={() => setIsHideDesign(!isHideDesign)}
+                        >
+                            <X className="w-6 h-6 text-white" />
+                        </button>
+                        {/* content */}
                         <div className="relative overflow-hidden bg-[#2a2f6e]">
                             <div className="absolute z-10 top-[18%] lg:top-[42%] left-[0.9rem] sm:left-[1.2rem] md:left-4">
                                 <button
