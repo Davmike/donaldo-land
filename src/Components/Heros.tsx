@@ -94,30 +94,24 @@ function Heros() {
                     className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
                     onClick={() => setIsHideHeros(!isHideHeros)}
                 />
-                <div className="w-full max-w-7xl bg-[#2A2F6E] rounded-2xl backdrop-blur-sm shadow-2xl">
+                <div className="relative z-10 w-[90%] max-w-[1200px] max-h-[90vh] bg-[#2A2F6E] text-white rounded-2xl shadow-xl overflow-hidden">
                     {/* Header */}
-                    <div className="sticky top-0 z-10 bg-[#2A2F6E] backdrop-blur-sm rounded-t-2xl border-b border-white/10 cursor-pointer"
-                        onClick={() => setIsHideHeros(!isHideHeros)}
-                        style={{
-                            animation: `fadeIn 0.5s ease-out backwards`
-                        }}>
+                    <div className="sticky top-0 z-20 bg-[#2A2F6E] border-b border-gray-700 p-6 flex justify-between items-center">
+                        <div className="flex items-center gap-3">
+                            <Rocket className="w-8 h-8 text-purple-400" />
+                            <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
+                                Outdoor Party Programs
+                            </h2>
+                        </div>
                         <button
-                            className="absolute p-1 transition-colors duration-300 rounded-full top-2 right-2 hover:bg-white/10"
+                            className="p-2 transition-colors rounded-full hover:bg-gray-700 hover:bg-white/10"
+                            onClick={() => setIsHideHeros(!isHideHeros)}
                         >
                             <X className="w-6 h-6 text-white" />
                         </button>
-
-                        <div className="pt-8 pb-8 space-y-1 text-center">
-                            <h1 className="text-4xl font-bold text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse font-display">
-                                Birthday Adventures
-                            </h1>
-                            <p className="max-w-2xl mx-auto text-lg text-gray-300 md:text-xl">
-                                Choose your child's favorite character for an unforgettable celebration.
-                            </p>
-                        </div>
                     </div>
-
-                    <div className="h-[calc(100vh-13rem)] md:h-[calc(100vh-16rem)] overflow-y-auto px-4 py-8 custom-scrollbar">
+                    {/* content */}
+                    <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)] custom-scrollbar">
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                             {partyCharacters.map((character, index) => (
                                 <div
