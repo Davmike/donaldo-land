@@ -1,6 +1,4 @@
-import { Gift, Timer, Users, Star, X, Rocket } from 'lucide-react';
-import { useContext } from 'react';
-import { MyContext } from './Context';
+import { Gift, Timer, Users, Star } from 'lucide-react';
 
 const partyPackages = [
     {
