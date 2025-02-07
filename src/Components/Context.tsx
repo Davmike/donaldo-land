@@ -30,6 +30,9 @@ interface ComponentsProps {
     setIsOpen: (isOpen: boolean) => void;
     language: string;
     setLanguage: (language: string) => void;
+    // about
+    isHideAbout: boolean;
+    setIsHideAbout: (isHideAbout: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

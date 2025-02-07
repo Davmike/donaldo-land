@@ -5,6 +5,7 @@ import arrow from "../../public/assets/arrow.png";
 import { useState, useEffect, useContext } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { MyContext } from "./Context";
+// import { Rocket, Stars, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const translations = {
     en: {
@@ -28,6 +29,57 @@ const translations = {
 };
 
 function Home() {
+
+    // image slide logic
+    // const images = [
+    //     {
+    //         url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80",
+    //         caption: "Fun & Adventure"
+    //     },
+    //     {
+    //         url: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&q=80",
+    //         caption: "Learning Through Play"
+    //     },
+    //     {
+    //         url: "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?auto=format&fit=crop&q=80",
+    //         caption: "Creative Activities"
+    //     },
+    //     {
+    //         url: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80",
+    //         caption: "Safe Environment"
+    //     }
+    // ];
+
+    // const [currentIndex, setCurrentIndex] = useState(0);
+    // const [isTransitioning, setIsTransitioning] = useState(false);
+    // const [direction, setDirection] = useState('');
+
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         nextSlide();
+    //     }, 5000);
+
+    //     return () => clearInterval(timer);
+    // }, [currentIndex]);
+
+    // const nextSlide = () => {
+    //     if (!isTransitioning) {
+    //         setIsTransitioning(true);
+    //         setDirection('next');
+    //         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    //         setTimeout(() => setIsTransitioning(false), 500);
+    //     }
+    // };
+
+    // const prevSlide = () => {
+    //     if (!isTransitioning) {
+    //         setIsTransitioning(true);
+    //         setDirection('prev');
+    //         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    //         setTimeout(() => setIsTransitioning(false), 500);
+    //     }
+    // };
+
 
     const context = useContext(MyContext);
     const { language, setLanguage }: any = context;

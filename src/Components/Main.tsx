@@ -23,7 +23,9 @@ function Main() {
         isHideContact,
         setIsHideContact,
         isHideShows,
-        setIsHideShows
+        setIsHideShows,
+        isHideAbout,
+        setIsHideAbout
     }: any = context;
 
     const windowRef = useRef<HTMLDivElement>(null);
@@ -84,7 +86,7 @@ function Main() {
                     </div>
                     <span
                         className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
-                        onClick={() => setIsHideContact(!isHideContact)}
+                        onClick={() => setIsHideAbout(!isHideAbout)}
                     >
                         About
                     </span>
@@ -116,7 +118,7 @@ function Main() {
                         className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
                         onClick={() => setIsHideEat(!isHideEat)}
                     >
-                        Drinks
+                        Menu
                     </span>
                     <span
                         className="block mb-[25px] no-underline text-white/70 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-white"
