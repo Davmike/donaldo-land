@@ -65,22 +65,6 @@ const partyPackages = [
         ]
 
     },
-    {
-        title: "Space Explorer",
-        description: "Out-of-this-world cosmic adventure with stellar activities",
-        duration: 3,
-        maxParticipants: 20,
-        price: 249,
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-        activities: [
-            "Rocket Launch Simulation",
-            "Astronaut Training Games",
-            "Space Costume Contest",
-            "Galactic Snack Station",
-            "Star Gazing Activity"
-        ]
-
-    }
 
 ];
 
