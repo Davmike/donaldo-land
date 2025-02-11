@@ -9,8 +9,6 @@ import Eatdrinks from "./Components/Eatdrinks";
 import Contact from "./Components/Contact";
 import Shows from "./Components/Shows";
 import About from "./Components/About";
-// test
-import Programss from "./Components/Programss";
 
 
 
@@ -68,7 +66,6 @@ function App() {
       >
         <Main />
         <About />
-        <Programss />
         <Programs />
         <Heros />
         <Design />
