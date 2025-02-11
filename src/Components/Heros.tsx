@@ -1,6 +1,6 @@
-import { Rocket, X, Users, Clock, Star, PartyPopper, Sparkles } from 'lucide-react';
-import { useContext } from 'react';
-import { MyContext } from './Context';
+import { Rocket, Users, Clock, Star, PartyPopper, Sparkles } from 'lucide-react';
+// import { useContext } from 'react';
+// import { MyContext } from './Context';
 
 const partyCharacters = [
     {
@@ -84,102 +84,105 @@ const partyCharacters = [
 ];
 
 function Heros() {
-    const context = useContext(MyContext);
-    const { isHideHeros, setIsHideHeros }: any = context;
+    // const context = useContext(MyContext);
+    // const { isHideHeros, setIsHideHeros }: any = context;
 
     return (
-        isHideHeros && (
-            <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-8">
-                <div
-                    className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
-                    onClick={() => setIsHideHeros(!isHideHeros)}
-                />
-                <div className="relative z-10 w-[90%] max-w-[1200px] max-h-[90vh] bg-[#2A2F6E] text-white rounded-2xl shadow-xl overflow-hidden">
-                    {/* Header */}
-                    <div className="sticky top-0 z-20 bg-[#2A2F6E] border-b border-gray-700 p-6 flex justify-between items-center">
-                        <div className="flex items-center gap-3">
-                            <Rocket className="w-8 h-8 text-purple-400" />
-                            <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
-                                Outdoor Party Programs
-                            </h2>
-                        </div>
-                        <button
-                            className="p-2 transition-colors rounded-full hover:bg-gray-700 hover:bg-white/10"
-                            onClick={() => setIsHideHeros(!isHideHeros)}
+        // isHideHeros && (
+        //     <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-8">
+        //         <div
+        //             className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
+        //             onClick={() => setIsHideHeros(!isHideHeros)}
+        //         />
+        <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden">
+            {/* heros name */}
+            <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
+                <h3 className='text-xl font-bold text-white'>HEROS</h3>
+            </div>
+            {/* Header */}
+            {/* <div className="sticky top-0 z-20 bg-[#2A2F6E] border-b border-gray-700 p-6 flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                    <Rocket className="w-8 h-8 text-purple-400" />
+                    <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
+                        Outdoor Party Programs
+                    </h2>
+                </div>
+                <button
+                    className="p-2 transition-colors rounded-full hover:bg-gray-700 hover:bg-white/10"
+                onClick={() => setIsHideHeros(!isHideHeros)}
+                >
+                    <X className="w-6 h-6 text-white" />
+                </button>
+            </div> */}
+            {/* content */}
+            <div className="p-9">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {partyCharacters.map((character, index) => (
+                        <div
+                            key={index}
+                            className="relative overflow-hidden transition-all duration-500 transform group bg-[#353B8C] rounded-2xl backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                            style={{
+                                animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
+                            }}
                         >
-                            <X className="w-6 h-6 text-white" />
-                        </button>
-                    </div>
-                    {/* content */}
-                    <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)] custom-scrollbar">
-                        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                            {partyCharacters.map((character, index) => (
-                                <div
-                                    key={index}
-                                    className="relative overflow-hidden transition-all duration-500 transform group bg-[#353B8C] rounded-2xl backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
-                                    style={{
-                                        animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
-                                    }}
-                                >
-                                    <div className="relative h-48 overflow-hidden">
-                                        <img
-                                            src={character.image}
-                                            alt={character.name}
-                                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                        <div className={`absolute inset-0 bg-gradient-to-t ${character.color} mix-blend-overlay opacity-60`}></div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E222C] to-transparent opacity-60"></div>
+                            <div className="relative h-48 overflow-hidden">
+                                <img
+                                    src={character.image}
+                                    alt={character.name}
+                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className={`absolute inset-0 bg-gradient-to-t ${character.color} mix-blend-overlay opacity-60`}></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1E222C] to-transparent opacity-60"></div>
+                            </div>
+
+                            <div className="p-6 space-y-6">
+                                <h3 className="flex items-center gap-2 text-2xl font-bold text-white transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400">
+                                    <PartyPopper className="w-6 h-6 text-purple-400 animate-bounce" />
+                                    {character.name}
+                                </h3>
+
+                                <div className="space-y-4 text-gray-300">
+                                    <div className="flex items-center gap-3">
+                                        <Clock className="w-5 h-5 text-purple-400" />
+                                        <span>{character.duration}</span>
                                     </div>
-
-                                    <div className="p-6 space-y-6">
-                                        <h3 className="flex items-center gap-2 text-2xl font-bold text-white transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400">
-                                            <PartyPopper className="w-6 h-6 text-purple-400 animate-bounce" />
-                                            {character.name}
-                                        </h3>
-
-                                        <div className="space-y-4 text-gray-300">
-                                            <div className="flex items-center gap-3">
-                                                <Clock className="w-5 h-5 text-purple-400" />
-                                                <span>{character.duration}</span>
-                                            </div>
-                                            <div className="flex items-center gap-3">
-                                                <Users className="w-5 h-5 text-purple-400" />
-                                                <span>Max {character.maxParticipants} participants</span>
-                                            </div>
-                                            <div className="space-y-3">
-                                                <div className="flex items-center gap-3">
-                                                    <Star className="w-5 h-5 text-purple-400" />
-                                                    <span className="font-semibold">Magical Activities:</span>
-                                                </div>
-                                                <ul className="pl-8 space-y-2">
-                                                    {character.activities.map((activity, idx) => (
-                                                        <li key={idx} className="flex items-center gap-2">
-                                                            <Sparkles className="w-4 h-4 text-purple-400" />
-                                                            {activity}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
+                                    <div className="flex items-center gap-3">
+                                        <Users className="w-5 h-5 text-purple-400" />
+                                        <span>Max {character.maxParticipants} participants</span>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-3">
+                                            <Star className="w-5 h-5 text-purple-400" />
+                                            <span className="font-semibold">Magical Activities:</span>
                                         </div>
-
-                                        <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                                            <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                                                ${character.price}
-                                            </span>
-                                            <button className="flex items-center gap-2 px-6 py-3 text-white transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl hover:from-purple-600 hover:to-pink-600 hover:scale-105 hover:shadow-lg group">
-                                                <Rocket className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45" />
-                                                Book Now
-                                            </button>
-                                        </div>
+                                        <ul className="pl-8 space-y-2">
+                                            {character.activities.map((activity, idx) => (
+                                                <li key={idx} className="flex items-center gap-2">
+                                                    <Sparkles className="w-4 h-4 text-purple-400" />
+                                                    {activity}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
-                            ))}
+
+                                <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                                    <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                                        ${character.price}
+                                    </span>
+                                    <button className="flex items-center gap-2 px-6 py-3 text-white transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl hover:from-purple-600 hover:to-pink-600 hover:scale-105 hover:shadow-lg group">
+                                        <Rocket className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45" />
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
-        )
-    );
+        </div>
+        // </div>
+    )
 }
 
 export default Heros;
