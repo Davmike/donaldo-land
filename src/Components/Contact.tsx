@@ -3,7 +3,7 @@ import { MyContext } from './Context';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Rocket, Star, Calendar, MessageSquare, X, Clock, Phone } from 'lucide-react';
+import { Rocket, Star, Calendar, MessageSquare, Clock, Phone } from 'lucide-react';
 
 interface FormErrors {
     mobileNumber: string;
@@ -13,7 +13,7 @@ interface FormErrors {
 
 function Contact() {
     const context = useContext(MyContext);
-    const { isHideContact, setIsHideContact }: any = context;
+    const { setIsHideContact }: any = context;
     const [selectedDateTime, setSelectedDateTime] = useState<Date | null>(new Date());
     const [message, setMessage] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
