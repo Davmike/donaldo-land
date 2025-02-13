@@ -113,169 +113,169 @@ function Contact() {
 
     return (
         <AnimatePresence>
-            {isHideContact && (
-                <div className="fixed inset-0 z-10 flex items-center justify-center overflow-hidden">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="absolute inset-0 bg-[#1E1B4B]/80 backdrop-blur-sm"
-                        onClick={() => setIsHideContact(false)}
-                    />
+            {/* {isHideContact && ( */}
+            <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden flex justify-center items-center">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                // className="absolute inset-0 bg-[#1E1B4B]/80 backdrop-blur-sm"
+                // onClick={() => setIsHideContact(false)}
+                />
 
-                    {stars.map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute text-yellow-300"
-                            initial={{
-                                x: Math.random() * window.innerWidth,
-                                y: Math.random() * window.innerHeight
-                            }}
-                            animate={{
-                                y: [0, -20, 0],
-                                opacity: [1, 0.5, 1]
-                            }}
-                            transition={{
-                                duration: 2 + Math.random() * 2,
-                                repeat: Infinity,
-                                delay: Math.random() * 2
-                            }}
-                        >
-                            <Star size={12} fill="currentColor" />
-                        </motion.div>
-                    ))}
-
+                {stars.map((_, i) => (
                     <motion.div
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        exit={{ scale: 0, rotate: 180 }}
-                        transition={{ type: "spring", bounce: 0.4 }}
-                        className="bg-gradient-to-br from-[#2E2A5D] to-[#1E1B4B] text-white rounded-2xl shadow-xl w-[450px] max-w-[90%] p-8 relative z-20"
+                        key={i}
+                        className="absolute text-yellow-300"
+                        initial={{
+                            x: Math.random() * window.innerWidth,
+                            y: Math.random() * window.innerHeight
+                        }}
+                        animate={{
+                            y: [0, -20, 0],
+                            opacity: [1, 0.5, 1]
+                        }}
+                        transition={{
+                            duration: 2 + Math.random() * 2,
+                            repeat: Infinity,
+                            delay: Math.random() * 2
+                        }}
                     >
-                        <motion.button
-                            whileHover={{ rotate: 90 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="absolute text-gray-400 transition-colors top-4 right-4 hover:text-white"
-                            onClick={() => setIsHideContact(false)}
-                        >
-                            <X size={24} />
-                        </motion.button>
-
-                        <motion.div
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <h2 className="flex items-center gap-2 mb-2 text-2xl font-bold">
-                                <Rocket className="text-purple-400" />
-                                Contact Adventure!
-                            </h2>
-                            <p className="mb-6 text-sm text-purple-200">
-                                Ready for a space journey? Let's plan your visit! 🚀
-                            </p>
-
-                            <div className="space-y-6">
-                                <div>
-                                    <label className="flex items-center block gap-2 mb-2 text-sm text-purple-200">
-                                        <Phone className="text-purple-400" size={18} />
-                                        Mobile Number
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        value={mobileNumber}
-                                        onChange={(e) => setMobileNumber(e.target.value)}
-                                        placeholder="Enter your mobile number"
-                                        className={inputClassName(errors.mobileNumber)}
-                                    />
-                                    {errors.mobileNumber && (
-                                        <motion.p
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="mt-1 text-sm text-red-500"
-                                        >
-                                            {errors.mobileNumber}
-                                        </motion.p>
-                                    )}
-                                </div>
-
-                                <div>
-                                    <label className="flex items-center block gap-2 mb-2 text-sm text-purple-200">
-                                        <Calendar className="text-purple-400" size={18} />
-                                        Pick Your Adventure Date & Time
-                                    </label>
-                                    <div className="flex items-center gap-2">
-                                        <DatePicker
-                                            selected={selectedDateTime}
-                                            onChange={(date) => setSelectedDateTime(date)}
-                                            showTimeSelect
-                                            dateFormat="MMMM d, yyyy h:mm aa"
-                                            className={inputClassName(errors.dateTime)}
-                                        />
-                                        <Clock className="text-purple-400" size={20} />
-                                    </div>
-                                    {errors.dateTime && (
-                                        <motion.p
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="mt-1 text-sm text-red-500"
-                                        >
-                                            {errors.dateTime}
-                                        </motion.p>
-                                    )}
-                                </div>
-
-                                <div>
-                                    <label className="flex items-center block gap-2 mb-2 text-sm text-purple-200">
-                                        <MessageSquare className="text-purple-400" size={18} />
-                                        Your Space Message
-                                    </label>
-                                    <textarea
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        placeholder="Tell us about your dream adventure..."
-                                        className={`${inputClassName(errors.message)} h-32 resize-none`}
-                                    />
-                                    {errors.message && (
-                                        <motion.p
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="mt-1 text-sm text-red-500"
-                                        >
-                                            {errors.message}
-                                        </motion.p>
-                                    )}
-                                </div>
-
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    onClick={handleSendMessage}
-                                    disabled={isSending}
-                                    className={`w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-bold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-shadow ${isSending ? 'opacity-50 cursor-not-allowed' : ''}`}
-                                >
-                                    {sendStatus === 'sending' ? (
-                                        <span className="flex items-center justify-center gap-2">
-                                            <motion.div
-                                                animate={{ rotate: 360 }}
-                                                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                            >
-                                                {/* <Mail size={20} /> */}
-                                            </motion.div>
-                                            Sending...
-                                        </span>
-                                    ) : sendStatus === 'success' ? (
-                                        'Message Sent! 🎉'
-                                    ) : sendStatus === 'error' ? (
-                                        'Error Sending Message 😢'
-                                    ) : (
-                                        'Send Message 🚀'
-                                    )}
-                                </motion.button>
-                            </div>
-                        </motion.div>
+                        <Star size={12} fill="currentColor" />
                     </motion.div>
-                </div>
-            )}
+                ))}
+
+                <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    exit={{ scale: 0, rotate: 180 }}
+                    transition={{ type: "spring", bounce: 0.4 }}
+                    className="bg-gradient-to-br from-[#2E2A5D] to-[#1E1B4B] text-white rounded-2xl shadow-xl w-[450px] max-w-[90%] p-8 relative z-20"
+                >
+                    {/* <motion.button
+                        whileHover={{ rotate: 90 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="absolute text-gray-400 transition-colors top-4 right-4 hover:text-white"
+                        onClick={() => setIsHideContact(false)}
+                    >
+                        <X size={24} />
+                    </motion.button> */}
+
+                    <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <h2 className="flex items-center gap-2 mb-2 text-2xl font-bold">
+                            <Rocket className="text-purple-400" />
+                            Contact Adventure!
+                        </h2>
+                        <p className="mb-6 text-sm text-purple-200">
+                            Ready for a space journey? Let's plan your visit! 🚀
+                        </p>
+
+                        <div className="space-y-6">
+                            <div>
+                                <label className="flex items-center block gap-2 mb-2 text-sm text-purple-200">
+                                    <Phone className="text-purple-400" size={18} />
+                                    Mobile Number
+                                </label>
+                                <input
+                                    type="tel"
+                                    value={mobileNumber}
+                                    onChange={(e) => setMobileNumber(e.target.value)}
+                                    placeholder="Enter your mobile number"
+                                    className={inputClassName(errors.mobileNumber)}
+                                />
+                                {errors.mobileNumber && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="mt-1 text-sm text-red-500"
+                                    >
+                                        {errors.mobileNumber}
+                                    </motion.p>
+                                )}
+                            </div>
+
+                            <div>
+                                <label className="flex items-center block gap-2 mb-2 text-sm text-purple-200">
+                                    <Calendar className="text-purple-400" size={18} />
+                                    Pick Your Adventure Date & Time
+                                </label>
+                                <div className="flex items-center gap-2">
+                                    <DatePicker
+                                        selected={selectedDateTime}
+                                        onChange={(date) => setSelectedDateTime(date)}
+                                        showTimeSelect
+                                        dateFormat="MMMM d, yyyy h:mm aa"
+                                        className={inputClassName(errors.dateTime)}
+                                    />
+                                    <Clock className="text-purple-400" size={20} />
+                                </div>
+                                {errors.dateTime && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="mt-1 text-sm text-red-500"
+                                    >
+                                        {errors.dateTime}
+                                    </motion.p>
+                                )}
+                            </div>
+
+                            <div>
+                                <label className="flex items-center block gap-2 mb-2 text-sm text-purple-200">
+                                    <MessageSquare className="text-purple-400" size={18} />
+                                    Your Space Message
+                                </label>
+                                <textarea
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    placeholder="Tell us about your dream adventure..."
+                                    className={`${inputClassName(errors.message)} h-32 resize-none`}
+                                />
+                                {errors.message && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="mt-1 text-sm text-red-500"
+                                    >
+                                        {errors.message}
+                                    </motion.p>
+                                )}
+                            </div>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={handleSendMessage}
+                                disabled={isSending}
+                                className={`w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-bold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-shadow ${isSending ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            >
+                                {sendStatus === 'sending' ? (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <motion.div
+                                            animate={{ rotate: 360 }}
+                                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                                        >
+                                            {/* <Mail size={20} /> */}
+                                        </motion.div>
+                                        Sending...
+                                    </span>
+                                ) : sendStatus === 'success' ? (
+                                    'Message Sent! 🎉'
+                                ) : sendStatus === 'error' ? (
+                                    'Error Sending Message 😢'
+                                ) : (
+                                    'Send Message 🚀'
+                                )}
+                            </motion.button>
+                        </div>
+                    </motion.div>
+                </motion.div>
+            </div>
+            {/* )} */}
         </AnimatePresence>
     );
 }

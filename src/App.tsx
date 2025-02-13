@@ -71,8 +71,8 @@ function App() {
         <Design />
         <Outdoor />
         <Eatdrinks />
-        <Contact />
         <Shows />
+        <Contact />
       </MyContext.Provider>
     </>
   );
