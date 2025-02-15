@@ -114,7 +114,16 @@ function Contact() {
     return (
         <AnimatePresence>
             {/* {isHideContact && ( */}
-            <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden flex justify-center items-center">
+            <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden flex justify-center items-center flex-col gap-[10px] md:flex-row">
+                <div className="w-full">
+                    <iframe
+                        width="100%"
+                        height="350px"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Mikheil%20Zandukeli%2036&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    >
+                        <a href="https://www.gps.ie/">gps vehicle tracker</a>
+                    </iframe>
+                </div>
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
