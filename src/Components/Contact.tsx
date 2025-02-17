@@ -12,8 +12,11 @@ interface FormErrors {
 }
 
 function Contact() {
+    // context
     const context = useContext(MyContext);
     const { setIsHideContact }: any = context;
+
+    // states for only contact
     const [selectedDateTime, setSelectedDateTime] = useState<Date | null>(new Date());
     const [message, setMessage] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
@@ -109,7 +112,7 @@ function Contact() {
         ${error ? 'focus:ring-red-500' : 'focus:ring-purple-400'} 
         focus:border-transparent outline-none
         transition-colors duration-200
-    `;
+    `
 
     return (
         <AnimatePresence>
