@@ -59,7 +59,7 @@ function Home() {
 
 
     const context = useContext(MyContext);
-    const { language, setLanguage, mousePosition, setMousePosition }: any = context;
+    const { language, setLanguage, mousePosition }: any = context;
 
 
     const [isLoaded, setIsLoaded] = useState(false);
@@ -173,7 +173,7 @@ function Home() {
                 <img
                     src={earth}
                     alt="Earth"
-                    className="float-animation"
+                    className="z-10 float-animation"
                     style={{
                         position: "fixed",
                         top: `calc(70% + ${mousePosition.y * 0.05}px)`,
@@ -188,7 +188,7 @@ function Home() {
                 <img
                     src={rocket}
                     alt="Rocket"
-                    className="float-animation"
+                    className="z-10 float-animation"
                     style={{
                         position: "fixed",
                         bottom: `calc(10% + ${mousePosition.y * -0.03}px)`,
