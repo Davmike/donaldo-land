@@ -8,7 +8,7 @@ function Eatdrinks() {
 
     return (
         // isHideEat && (
-        <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden">
+        <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden">
             {/* menu name */}
             <div className='flex items-center justify-center pb-[50px]'>
                 <h3 className='text-xl font-bold text-white'>MENU</h3>

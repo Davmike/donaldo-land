@@ -9,6 +9,7 @@ import Eatdrinks from "./Components/Eatdrinks";
 import Contact from "./Components/Contact";
 import Shows from "./Components/Shows";
 import About from "./Components/About";
+import Gallery from "./Components/Gallery";
 
 
 
@@ -67,6 +68,7 @@ function App() {
         <Main />
         <About />
         <Programs />
+        <Gallery />
         <Heros />
         <Design />
         <Outdoor />

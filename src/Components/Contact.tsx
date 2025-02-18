@@ -117,7 +117,7 @@ function Contact() {
     return (
         <AnimatePresence>
             {/* {isHideContact && ( */}
-            <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden">
+            <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden pb-[50px]">
                 {/* contact name */}
                 <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
                     <h3 className='text-xl font-bold text-white'>CONTACT</h3>
@@ -131,7 +131,7 @@ function Contact() {
                     >
                         <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-purple-500/20 to-indigo-500/20"></div>
                         <iframe
-                            className="w-full h-[500px] lg:h-[600px] border-0 filter contrast-125"
+                            className="w-full h-[500px] lg:h-[570px] border-0 filter contrast-125"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.5610293169893!2d41.61716747605459!3d41.64361897126841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406787e0ed4f4529%3A0x921a36a7a504c487!2sDONALDOLAND!5e0!3m2!1sen!2sge!4v1739880907433!5m2!1sen!2sge"
                         >
                             <a href="https://www.gps.ie/">gps vehicle tracker</a>
