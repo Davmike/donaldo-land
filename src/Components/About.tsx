@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Rocket, Stars, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
-import starss from "../../public/assets/star.png";
+// import starss from "../../public/assets/star.png";
 // import { MyContext } from './Context';
 
 function About() {
@@ -57,38 +57,38 @@ function About() {
     };
 
     // stars logic
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
-        const { clientX, clientY } = e;
-        setMousePosition({ x: clientX, y: clientY });
-    };
+    // const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
+    //     const { clientX, clientY } = e;
+    //     setMousePosition({ x: clientX, y: clientY });
+    // };
 
-    const stars = [
-        { id: 1, top: "50%", left: "20%", size: "25px", delay: "0.1s" },
-        { id: 2, top: "30%", left: "50%", size: "20px", delay: "0.2s" },
-        { id: 3, top: "70%", left: "40%", size: "10px", delay: "0.3s" },
-        { id: 4, top: "50%", left: "80%", size: "25px", delay: "0.4s" },
-        { id: 5, top: "25%", left: "70%", size: "18px", delay: "0.5s" },
-        { id: 6, top: "10%", left: "10%", size: "15px", delay: "0.6s" },
-        { id: 7, top: "15%", left: "90%", size: "12px", delay: "0.7s" },
-        { id: 8, top: "80%", left: "5%", size: "22px", delay: "0.8s" },
-        { id: 9, top: "65%", left: "30%", size: "14px", delay: "0.9s" },
-        { id: 10, top: "35%", left: "75%", size: "20px", delay: "1s" },
-        { id: 11, top: "45%", left: "15%", size: "16px", delay: "1.1s" },
-        { id: 12, top: "20%", left: "60%", size: "18px", delay: "1.2s" },
-        { id: 13, top: "85%", left: "85%", size: "25px", delay: "1.3s" },
-        { id: 14, top: "5%", left: "50%", size: "10px", delay: "1.4s" },
-        { id: 15, top: "55%", left: "5%", size: "12px", delay: "1.5s" },
-        { id: 16, top: "75%", left: "90%", size: "22px", delay: "1.6s" },
-        { id: 17, top: "40%", left: "40%", size: "15px", delay: "1.7s" },
-        { id: 18, top: "60%", left: "25%", size: "18px", delay: "1.8s" },
-        { id: 19, top: "30%", left: "15%", size: "20px", delay: "1.9s" },
-        { id: 20, top: "70%", left: "65%", size: "16px", delay: "2s" },
-    ];
+    // const stars = [
+    //     { id: 1, top: "50%", left: "20%", size: "25px", delay: "0.1s" },
+    //     { id: 2, top: "30%", left: "50%", size: "20px", delay: "0.2s" },
+    //     { id: 3, top: "70%", left: "40%", size: "10px", delay: "0.3s" },
+    //     { id: 4, top: "50%", left: "80%", size: "25px", delay: "0.4s" },
+    //     { id: 5, top: "25%", left: "70%", size: "18px", delay: "0.5s" },
+    //     { id: 6, top: "10%", left: "10%", size: "15px", delay: "0.6s" },
+    //     { id: 7, top: "15%", left: "90%", size: "12px", delay: "0.7s" },
+    //     { id: 8, top: "80%", left: "5%", size: "22px", delay: "0.8s" },
+    //     { id: 9, top: "65%", left: "30%", size: "14px", delay: "0.9s" },
+    //     { id: 10, top: "35%", left: "75%", size: "20px", delay: "1s" },
+    //     { id: 11, top: "45%", left: "15%", size: "16px", delay: "1.1s" },
+    //     { id: 12, top: "20%", left: "60%", size: "18px", delay: "1.2s" },
+    //     { id: 13, top: "85%", left: "85%", size: "25px", delay: "1.3s" },
+    //     { id: 14, top: "5%", left: "50%", size: "10px", delay: "1.4s" },
+    //     { id: 15, top: "55%", left: "5%", size: "12px", delay: "1.5s" },
+    //     { id: 16, top: "75%", left: "90%", size: "22px", delay: "1.6s" },
+    //     { id: 17, top: "40%", left: "40%", size: "15px", delay: "1.7s" },
+    //     { id: 18, top: "60%", left: "25%", size: "18px", delay: "1.8s" },
+    //     { id: 19, top: "30%", left: "15%", size: "20px", delay: "1.9s" },
+    //     { id: 20, top: "70%", left: "65%", size: "16px", delay: "2s" },
+    // ];
 
     return (
-        <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen py-16 relative overflow-hidden" onMouseMove={handleMouseMove}>
+        <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen py-16 relative overflow-hidden" >
             <style>
                 {`
                     @keyframes twinkle {
@@ -212,7 +212,7 @@ function About() {
                 </div>
             </div>
             {/* Stars with animation */}
-            {stars.map((star) => (
+            {/* {stars.map((star) => (
                 <img
                     key={star.id}
                     src={starss}
@@ -227,7 +227,7 @@ function About() {
                         animationDelay: star.delay,
                     }}
                 />
-            ))}
+            ))} */}
         </div>
     );
 }

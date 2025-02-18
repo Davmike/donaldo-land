@@ -33,6 +33,9 @@ interface ComponentsProps {
     // about
     isHideAbout: boolean;
     setIsHideAbout: (isHideAbout: boolean) => void;
+    // stars postion
+    mousePosition: any;
+    setMousePosition: (mousePosition: any) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

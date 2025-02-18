@@ -2,6 +2,7 @@ import starss from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png";
 import rocket from "../../public/assets/rocket.png";
 import arrow from "../../public/assets/arrow.png";
+import logo from "../../public/assets/donaldo-logo.png";
 import { useState, useEffect, useContext } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { MyContext } from "./Context";
@@ -30,71 +31,43 @@ const translations = {
 
 function Home() {
 
-    // image slide logic
-    // const images = [
-    //     {
-    //         url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80",
-    //         caption: "Fun & Adventure"
-    //     },
-    //     {
-    //         url: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&q=80",
-    //         caption: "Learning Through Play"
-    //     },
-    //     {
-    //         url: "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?auto=format&fit=crop&q=80",
-    //         caption: "Creative Activities"
-    //     },
-    //     {
-    //         url: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80",
-    //         caption: "Safe Environment"
-    //     }
-    // ];
+    // const windowRef = useRef<HTMLDivElement>(null);
+    // const frontRef = useRef<HTMLDivElement>(null);
+    // const offset = 1800;
 
-    // const [currentIndex, setCurrentIndex] = useState(0);
-    // const [isTransitioning, setIsTransitioning] = useState(false);
-    // const [direction, setDirection] = useState('');
+    // const updateTransformOrigin = () => {
+    //     if (!windowRef.current || !frontRef.current) return;
+
+    //     const scrollTop = windowRef.current.scrollTop;
+    //     const pageHeight = frontRef.current.offsetHeight;
+    //     const equation = ((scrollTop + offset) / pageHeight) * 100;
+    //     frontRef.current.style.transformOrigin = `center ${equation}%`;
+    // };
 
     // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //         nextSlide();
-    //     }, 5000);
-
-    //     return () => clearInterval(timer);
-    // }, [currentIndex]);
-
-    // const nextSlide = () => {
-    //     if (!isTransitioning) {
-    //         setIsTransitioning(true);
-    //         setDirection('next');
-    //         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    //         setTimeout(() => setIsTransitioning(false), 500);
+    //     const currentWindowRef = windowRef.current;
+    //     if (currentWindowRef) {
+    //         currentWindowRef.addEventListener('scroll', updateTransformOrigin);
+    //         updateTransformOrigin();
     //     }
-    // };
-
-    // const prevSlide = () => {
-    //     if (!isTransitioning) {
-    //         setIsTransitioning(true);
-    //         setDirection('prev');
-    //         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    //         setTimeout(() => setIsTransitioning(false), 500);
-    //     }
-    // };
+    //     return () => {
+    //         if (currentWindowRef) {
+    //             currentWindowRef.removeEventListener('scroll', updateTransformOrigin);
+    //         }
+    //     };
+    // }, []);
 
 
     const context = useContext(MyContext);
-    const { language, setLanguage }: any = context;
+    const { language, setLanguage, mousePosition, setMousePosition }: any = context;
 
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         setIsLoaded(true);
     }, []);
 
-    const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
-        const { clientX, clientY } = e;
-        setMousePosition({ x: clientX, y: clientY });
-    };
 
     const stars = [
         { id: 1, top: "50%", left: "20%", size: "25px", delay: "0.1s" },
@@ -119,8 +92,10 @@ function Home() {
         { id: 20, top: "70%", left: "65%", size: "16px", delay: "2s" },
     ];
 
+
+
     return (
-        <div className='z-[10] text-[white] overflow-hidden' onMouseMove={handleMouseMove}>
+        <div className='text-[white] overflow-hidden'>
             <style>
                 {`
                     @keyframes twinkle {
@@ -151,7 +126,10 @@ function Home() {
             <section className="bg-gradient-to-b from-[#20095F] to-[#130538] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px] overflow-hidden">
                 {/* Language Switcher */}
                 <LanguageSwitcher onLanguageChange={setLanguage} />
-
+                {/* logo */}
+                <div className='w-[90px] h-[90px] fixed z-[4] top-[8px] right-[5px]'>
+                    <img src={logo} alt="" />
+                </div>
                 {/* Arrow section with animation */}
                 <div className="w-[100px] fixed top-[0%] left-[20%] sm:left-[14%] md:left-[8%] xl:left-[6%] xxl:left-[5%]">
                     <img src={arrow} alt="" />
@@ -179,11 +157,11 @@ function Home() {
                         key={star.id}
                         src={starss}
                         alt="star"
-                        className="star-animation"
+                        className="z-10 star-animation"
                         style={{
                             position: "fixed",
-                            top: `calc(${star.top} + ${mousePosition.y * 0.02}px)`,
-                            left: `calc(${star.left} + ${mousePosition.x * 0.02}px)`,
+                            top: `calc(${star.top} + ${mousePosition.y * 0.05}px)`,
+                            left: `calc(${star.left} + ${mousePosition.x * -0.05}px)`,
                             width: star.size,
                             height: star.size,
                             animationDelay: star.delay,

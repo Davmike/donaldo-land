@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Camera, Video, Camera as Camera2 } from 'lucide-react';
 
 function Gallery() {

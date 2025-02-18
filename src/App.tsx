@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MyContext } from "./Components/Context";
-import Main from "./Components/Main";
+import Home from "./Components/Home";
 import Programs from "./Components/Programs";
 import Heros from "./Components/Heros";
 import Design from "./Components/Design";
@@ -36,46 +36,58 @@ function App() {
   // state for language
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [language, setLanguage] = useState<string>('en');
+  // for stars position
+  const [mousePosition, setMousePosition] = useState<any>({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
+    const { clientX, clientY } = e;
+    setMousePosition({ x: clientX, y: clientY });
+  };
 
   return (
     <>
-      <MyContext.Provider
-        value={{
-          isMenuOpen,
-          setIsMenuOpen,
-          isHidePrograms,
-          setIsHideprograms,
-          isHideHeros,
-          setIsHideHeros,
-          isHideDesign,
-          setIsHideDesign,
-          isHideOutdoor,
-          setIsHideOutdoor,
-          isHideEat,
-          setIsHideEat,
-          isHideContact,
-          setIsHideContact,
-          isHideShows,
-          setIsHideShows,
-          isOpen,
-          setIsOpen,
-          language,
-          setLanguage,
-          isHideAbout,
-          setIsHideAbout
-        }}
-      >
-        <Main />
-        <About />
-        <Programs />
-        <Gallery />
-        <Heros />
-        <Design />
-        <Outdoor />
-        <Eatdrinks />
-        <Shows />
-        <Contact />
-      </MyContext.Provider>
+      <div onMouseMove={handleMouseMove}>
+        <MyContext.Provider
+          value={{
+            isMenuOpen,
+            setIsMenuOpen,
+            isHidePrograms,
+            setIsHideprograms,
+            isHideHeros,
+            setIsHideHeros,
+            isHideDesign,
+            setIsHideDesign,
+            isHideOutdoor,
+            setIsHideOutdoor,
+            isHideEat,
+            setIsHideEat,
+            isHideContact,
+            setIsHideContact,
+            isHideShows,
+            setIsHideShows,
+            isOpen,
+            setIsOpen,
+            language,
+            setLanguage,
+            isHideAbout,
+            setIsHideAbout,
+            mousePosition,
+            setMousePosition
+
+          }}
+        >
+          <Home />
+          <About />
+          <Programs />
+          <Gallery />
+          <Heros />
+          <Design />
+          <Outdoor />
+          <Eatdrinks />
+          <Shows />
+          <Contact />
+        </MyContext.Provider>
+      </div>
     </>
   );
 }

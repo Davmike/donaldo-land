@@ -1,5 +1,5 @@
 import { useEffect, useRef, useContext } from 'react';
-import Home from './Home';
+// import Home from './Home';
 import { MyContext } from './Context';
 import logo from "../../public/assets/donaldo-logo.png";
 // import facebook from "../../public/assets/facebook.png";
@@ -182,7 +182,7 @@ function Main() {
                     </div>
 
                     {/* Content */}
-                    <Home />
+                    {/* <Home /> */}
                     {/* <div>
                         <section className="h-[600px] text-center pt-[10vh] md:pt-[10vh]">
                             <h1 className="text-[30px] md:text-[45px]">მოგესალმებათ Donaldo</h1>
