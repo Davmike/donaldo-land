@@ -39,7 +39,7 @@ export default function LanguageSwitcher({ onLanguageChange }: { onLanguageChang
     const { isOpen, setIsOpen }: any = context;
 
     return (
-        <div className="fixed z-50 top-6 right-[5rem]">
+        <div className="z-50 ">
             <div className="relative">
                 <button
                     onClick={() => setIsOpen(!isOpen)}

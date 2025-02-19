@@ -38,7 +38,11 @@ function App() {
   const [language, setLanguage] = useState<string>('en');
   // for stars position
   const [mousePosition, setMousePosition] = useState<any>({ x: 0, y: 0 });
+  // states for responsive header
+  const [isHeaderOpen, setIsHeaderOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
+  // cursor follower
   const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
     const { clientX, clientY } = e;
     setMousePosition({ x: clientX, y: clientY });
@@ -72,8 +76,11 @@ function App() {
             isHideAbout,
             setIsHideAbout,
             mousePosition,
-            setMousePosition
-
+            setMousePosition,
+            isHeaderOpen,
+            setIsHeaderOpen,
+            isMobile,
+            setIsMobile
           }}
         >
           <Home />

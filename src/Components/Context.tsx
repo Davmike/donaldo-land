@@ -36,6 +36,12 @@ interface ComponentsProps {
     // stars postion
     mousePosition: any;
     setMousePosition: (mousePosition: any) => void;
+    // header
+    isHeaderOpen: boolean;
+    setIsHeaderOpen: (isHeaderOpen: boolean) => void;
+    // header mobile
+    isMobile: boolean;
+    setIsMobile: (isMobile: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

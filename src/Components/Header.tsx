@@ -1,9 +1,35 @@
 import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { MyContext } from './Context';
+import arrow from "../../public/assets/arrow.png";
+import logo from "../../public/assets/donaldo-logo.png";
+import LanguageSwitcher from "./LanguageSwitcher";
+
+// const translations = {
+//     en: {
+//         welcome: "Welcome to DonaldoLand",
+//         comingSoon: "COMING SOON...",
+//         clickMore: "Click here for more",
+//         order: "Order"
+//     },
+//     ka: {
+//         welcome: "კეთილი იყოს თქვენი მობრძანება DonaldoLand-ში",
+//         comingSoon: "მალე...",
+//         clickMore: "დააჭირეთ მეტი ინფორმაციისთვის",
+//         order: "ჯავშანი"
+//     },
+//     ru: {
+//         welcome: "Добро пожаловать в DonaldoLand",
+//         comingSoon: "СКОРО...",
+//         clickMore: "Нажмите здесь для подробностей",
+//         order: "Заказать"
+//     }
+// };
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+
+    const context = useContext(MyContext);
+    const { language, setLanguage, isHeaderOpen, setIsHeaderOpen, isMobile, setIsMobile }: any = context;
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -29,14 +55,25 @@ function Header() {
     ];
 
     return (
-        <header className="fixed top-0 left-0 w-full bg-[#412E77] text-white z-50">
+        <header className="fixed top-0 left-0 w-full bg-[#20095F] text-white z-50 bg-opacity-50 backdrop-blur-xl">
+            {/* logo */}
+            {/* <div className='w-[90px] h-[90px] fixed z-[4] top-[8px] right-[5px]'>
+                <img src={logo} alt="" />
+            </div> */}
+            {/* Arrow section with animation */}
+            {/* <div className="w-[100px] fixed top-[0%] left-[20%] sm:left-[14%] md:left-[8%] xl:left-[6%] xxl:left-[5%]">
+                <img src={arrow} alt="" />
+                <p className="fixed left-[12%] text-[20px] xl:left-[8%] transform" style={{ transform: "rotate(-12deg)" }}> {translations[language as keyof typeof translations].clickMore}</p>
+            </div> */}
             <div className="container px-4 mx-auto">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <div className="flex-shrink-0">
-                        <img src="/assets/donaldo-logo.png" alt="Donaldo Logo" className="w-auto h-12" />
-                    </div>
+                    <div className='flex flex-row items-center justify-center'>
+                        {/* Logo */}
+                        <div className="flex-shrink-0">
+                            <img src="/assets/donaldo-logo.png" alt="Donaldo Logo" className="w-auto h-12" />
+                        </div>
 
+                    </div>
                     {/* Desktop Navigation */}
                     {!isMobile && (
                         <nav className="hidden space-x-8 md:flex">
@@ -53,18 +90,24 @@ function Header() {
                     )}
 
                     {/* Mobile Menu Button */}
-                    {isMobile && (
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="p-2 rounded-md md:hidden text-white/70 hover:text-white focus:outline-none"
-                        >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    )}
+                    <div className='flex flex-row items-center justify-center gap-2'>
+                        {/* Language Switcher */}
+                        <div className="flex-shrink-0">
+                            <LanguageSwitcher onLanguageChange={setLanguage} />
+                        </div>
+                        {isMobile && (
+                            <button
+                                onClick={() => setIsHeaderOpen(!isHeaderOpen)}
+                                className="p-2 rounded-md md:hidden text-white/70 hover:text-white focus:outline-none"
+                            >
+                                {isHeaderOpen ? <X size={24} /> : <Menu size={24} />}
+                            </button>
+                        )}
+                    </div>
                 </div>
 
                 {/* Mobile Navigation */}
-                {isMobile && isMenuOpen && (
+                {isMobile && isHeaderOpen && (
                     <nav className="py-4 md:hidden">
                         <div className="flex flex-col space-y-4">
                             {menuItems.map((item) => (
@@ -72,7 +115,7 @@ function Header() {
                                     key={item}
                                     href={`#${item.toLowerCase()}`}
                                     className="px-2 py-1 transition-colors duration-200 text-white/70 hover:text-white"
-                                    onClick={() => setIsMenuOpen(false)}
+                                    onClick={() => setIsHeaderOpen(false)}
                                 >
                                     {item}
                                 </a>

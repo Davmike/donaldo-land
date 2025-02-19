@@ -1,11 +1,9 @@
 import starss from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png";
 import rocket from "../../public/assets/rocket.png";
-import arrow from "../../public/assets/arrow.png";
-import logo from "../../public/assets/donaldo-logo.png";
 import { useState, useEffect, useContext } from "react";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { MyContext } from "./Context";
+import Header from "./Header";
 // import { Rocket, Stars, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const translations = {
@@ -124,18 +122,7 @@ function Home() {
                 `}
             </style>
             <section className="bg-gradient-to-b from-[#20095F] to-[#130538] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px] overflow-hidden">
-                {/* Language Switcher */}
-                <LanguageSwitcher onLanguageChange={setLanguage} />
-                {/* logo */}
-                <div className='w-[90px] h-[90px] fixed z-[4] top-[8px] right-[5px]'>
-                    <img src={logo} alt="" />
-                </div>
-                {/* Arrow section with animation */}
-                <div className="w-[100px] fixed top-[0%] left-[20%] sm:left-[14%] md:left-[8%] xl:left-[6%] xxl:left-[5%]">
-                    <img src={arrow} alt="" />
-                    <p className="fixed left-[12%] text-[20px] xl:left-[8%] transform" style={{ transform: "rotate(-12deg)" }}> {translations[language as keyof typeof translations].clickMore}</p>
-                </div>
-
+                <Header />
                 {/* Main text section with animation */}
                 <div className={`z-[10] ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '0.8s' }}>
                     <h1 className="text-[30px] md:text-[45px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FE5C37] mb-4">
