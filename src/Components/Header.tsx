@@ -1,9 +1,10 @@
 import { Menu, X } from 'lucide-react';
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { MyContext } from './Context';
-import arrow from "../../public/assets/arrow.png";
-import logo from "../../public/assets/donaldo-logo.png";
+// import arrow from "../../public/assets/arrow.png";
+// import logo from "../../public/assets/donaldo-logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "react-scroll";
 
 // const translations = {
 //     en: {
@@ -43,15 +44,15 @@ function Header() {
     }, []);
 
     const menuItems = [
-        'About',
-        'Programs',
-        'PhotoStudio',
-        'Heros',
-        'Design',
-        'Outdoor',
-        'Menu',
-        'Shows',
-        'Contact'
+        { id: "about", name: 'About' },
+        { id: "programs", name: 'Programs' },
+        { id: "gallery", name: 'PhotoStudio' },
+        { id: "heros", name: 'Heros' },
+        { id: "design", name: 'Design' },
+        { id: "outdoor", name: 'Outdoor' },
+        { id: "menu", name: 'Menu' },
+        { id: "shows", name: 'Shows' },
+        { id: "contact", name: 'Contact' }
     ];
 
     return (
@@ -78,13 +79,18 @@ function Header() {
                     {!isMobile && (
                         <nav className="hidden space-x-8 md:flex">
                             {menuItems.map((item) => (
-                                <a
-                                    key={item}
-                                    href={`#${item.toLowerCase()}`}
+                                <Link
+                                    to={item.id}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={0}
+                                    duration={500}
+                                    href={`#${item.name.toLowerCase()}`}
                                     className="transition-colors duration-200 text-white/70 hover:text-white"
+                                    onClick={() => setIsHeaderOpen(false)}
                                 >
-                                    {item}
-                                </a>
+                                    {item.name}
+                                </Link>
                             ))}
                         </nav>
                     )}
@@ -111,20 +117,24 @@ function Header() {
                     <nav className="py-4 md:hidden">
                         <div className="flex flex-col space-y-4">
                             {menuItems.map((item) => (
-                                <a
-                                    key={item}
-                                    href={`#${item.toLowerCase()}`}
-                                    className="px-2 py-1 transition-colors duration-200 text-white/70 hover:text-white"
+                                <Link
+                                    to={item.id}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={0}
+                                    duration={500}
+                                    href={`#${item.name.toLowerCase()}`}
+                                    className="transition-colors duration-200 text-white/70 hover:text-white"
                                     onClick={() => setIsHeaderOpen(false)}
                                 >
-                                    {item}
-                                </a>
+                                    {item.name}
+                                </Link>
                             ))}
                         </div>
                     </nav>
                 )}
             </div>
-        </header>
+        </header >
     );
 }
 
