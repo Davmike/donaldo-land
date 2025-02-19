@@ -97,7 +97,7 @@ function Shows() {
                     {shows.map((show) => (
                         <div
                             key={show.id}
-                            className="group bg-[#353B8C] rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-[1.02]"
+                            className="group z-20 bg-[#353B8C] rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-[1.02]"
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <img

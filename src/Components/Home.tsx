@@ -124,7 +124,7 @@ function Home() {
             <section className="bg-gradient-to-b from-[#20095F] to-[#130538] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px] overflow-hidden">
                 <Header />
                 {/* Main text section with animation */}
-                <div className={`z-[10] ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '0.8s' }}>
+                <div className={`z-20 ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '0.8s' }}>
                     <h1 className="text-[30px] md:text-[45px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FE5C37] mb-4">
                         {translations[language as keyof typeof translations].welcome}
                     </h1>
@@ -134,7 +134,7 @@ function Home() {
                 </div>
 
                 {/* Order button with animation */}
-                <button className={`bg-gradient-to-r from-[#FE5C37] to-[#FF8666] w-[150px] h-[50px] rounded-[50px] transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FE5C37]/30 ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '1.1s' }}>
+                <button className={`bg-gradient-to-r z-20 from-[#FE5C37] to-[#FF8666] w-[150px] h-[50px] rounded-[50px] transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FE5C37]/30 ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '1.1s' }}>
                     {translations[language as keyof typeof translations].order}
                 </button>
 

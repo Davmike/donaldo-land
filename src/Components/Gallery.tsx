@@ -55,7 +55,7 @@ function Gallery() {
     return (
         <div className="px-4 py-8 md:px-8 lg:px-16 bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden pb-[50px]">
             {/* contact name */}
-            <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
+            <div className='flex items-center justify-center pb-[50px] mt-[150px] z-20'>
                 <h3 className='text-xl font-bold text-white'>CONTACT</h3>
             </div>
 
@@ -63,7 +63,7 @@ function Gallery() {
             <div className="flex justify-center mb-8 space-x-4">
                 <button
                     onClick={() => setActiveTab('photos')}
-                    className={`flex items-center px-6 py-3 rounded-lg transition-all ${activeTab === 'photos'
+                    className={`flex items-center px-6 py-3 rounded-lg transition-all z-20 ${activeTab === 'photos'
                         ? 'bg-purple-600 text-white'
                         : 'bg-white text-gray-600 hover:bg-purple-50'
                         }`}
@@ -73,7 +73,7 @@ function Gallery() {
                 </button>
                 <button
                     onClick={() => setActiveTab('videos')}
-                    className={`flex items-center px-6 py-3 rounded-lg transition-all ${activeTab === 'videos'
+                    className={`flex items-center px-6 py-3 rounded-lg transition-all z-20 ${activeTab === 'videos'
                         ? 'bg-purple-600 text-white'
                         : 'bg-white text-gray-600 hover:bg-purple-50'
                         }`}
@@ -83,7 +83,7 @@ function Gallery() {
                 </button>
                 <button
                     onClick={() => setActiveTab('studio')}
-                    className={`flex items-center px-6 py-3 rounded-lg transition-all ${activeTab === 'studio'
+                    className={`flex items-center px-6 py-3 rounded-lg transition-all z-20 ${activeTab === 'studio'
                         ? 'bg-purple-600 text-white'
                         : 'bg-white text-gray-600 hover:bg-purple-50'
                         }`}
@@ -99,7 +99,7 @@ function Gallery() {
                     photos.map((photo) => (
                         <div
                             key={photo.id}
-                            className={`group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all ${photo.vertical ? 'row-span-2' : 'col-span-1'
+                            className={`group z-20 relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all ${photo.vertical ? 'row-span-2' : 'col-span-1'
                                 }`}
                             style={{ aspectRatio: photo.vertical ? '2/3' : '4/3' }}
                         >

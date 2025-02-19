@@ -96,7 +96,7 @@ function Heros() {
         //         />
         <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden">
             {/* heros name */}
-            <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
+            <div className='flex items-center justify-center pb-[50px] mt-[150px] z-20'>
                 <h3 className='text-xl font-bold text-white'>HEROS</h3>
             </div>
             {/* Header */}
@@ -120,7 +120,7 @@ function Heros() {
                     {partyCharacters.map((character, index) => (
                         <div
                             key={index}
-                            className="relative overflow-hidden transition-all duration-500 transform group bg-[#353B8C] rounded-2xl backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                            className="relative z-20 overflow-hidden transition-all duration-500 transform group bg-[#353B8C] rounded-2xl backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
                             style={{
                                 animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
                             }}

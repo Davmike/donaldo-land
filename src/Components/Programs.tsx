@@ -80,7 +80,7 @@ function Programs() {
                     {partyPackages.map((pkg, index) => (
                         <div
                             key={index}
-                            className="bg-[#353B8C] backdrop-blur-sm rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40"
+                            className="bg-[#353B8C] z-20 backdrop-blur-sm rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40"
                             style={{
                                 animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
                             }}

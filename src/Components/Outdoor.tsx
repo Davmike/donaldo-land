@@ -64,7 +64,7 @@ export default function Outdoor() {
         // isHideOutdoor && (
         <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden">
             {/* outdoor name */}
-            <div className='flex items-center justify-center pb-[50px]'>
+            <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
                 <h3 className='text-xl font-bold text-white'>OUTDOOR</h3>
             </div>
             {/* <div
@@ -95,7 +95,7 @@ export default function Outdoor() {
                     {partyPrograms.map((program) => (
                         <div
                             key={program.id}
-                            className="bg-[#353B8C] rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
+                            className="bg-[#353B8C] z-20 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <img

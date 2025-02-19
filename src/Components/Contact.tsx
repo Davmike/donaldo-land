@@ -127,9 +127,9 @@ function Contact() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(123,67,251,0.3)] relative"
+                        className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(123,67,251,0.3)] relative z-20"
                     >
-                        <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-purple-500/20 to-indigo-500/20"></div>
+                        <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-purple-500/20 to-indigo-500/20"></div>
                         <iframe
                             className="w-full h-[500px] lg:h-[570px] border-0 filter contrast-125"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.5610293169893!2d41.61716747605459!3d41.64361897126841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406787e0ed4f4529%3A0x921a36a7a504c487!2sDONALDOLAND!5e0!3m2!1sen!2sge!4v1739880907433!5m2!1sen!2sge"

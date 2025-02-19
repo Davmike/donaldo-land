@@ -117,7 +117,7 @@ function About() {
                 `}
             </style>
             {/* about name */}
-            <div className='flex items-center justify-center pb-[50px] relative z-50'>
+            <div className='flex items-center justify-center pb-[50px] relative'>
                 <h3 className='text-xl font-bold text-white'>ABOUT</h3>
             </div>
             {/* Decorative elements */}
@@ -132,7 +132,7 @@ function About() {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid items-center gap-12 md:grid-cols-2">
                         {/* Image Slider Section */}
-                        <div className="relative overflow-hidden shadow-xl rounded-2xl group">
+                        <div className="relative z-20 overflow-hidden shadow-xl rounded-2xl group">
                             {/* Main Image */}
                             <div className={`relative w-full h-[400px] transition-transform duration-500 ease-in-out ${isTransitioning
                                 ? direction === 'next'
@@ -183,7 +183,7 @@ function About() {
                         </div>
 
                         {/* Content Section */}
-                        <div className="space-y-6 text-white">
+                        <div className="z-20 space-y-6 text-white">
                             <h2 className="text-4xl font-bold mb-6 text-[#F47B5D]">
                                 Welcome to DonaldoLand
                             </h2>

@@ -55,7 +55,7 @@ function Header() {
     ];
 
     return (
-        <header className="fixed top-0 left-0 w-full bg-[#20095F] text-white z-50 bg-opacity-50 backdrop-blur-xl">
+        <header className="fixed top-0 left-0 w-full bg-[#20095F] z-[30] text-white bg-opacity-50 backdrop-blur-xl">
             {/* logo */}
             {/* <div className='w-[90px] h-[90px] fixed z-[4] top-[8px] right-[5px]'>
                 <img src={logo} alt="" />
