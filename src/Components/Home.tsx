@@ -93,7 +93,7 @@ function Home() {
 
 
     return (
-        <div className='text-[white] overflow-hidden'>
+        <div className='text-[white] overflow-hidden' id="home">
             <style>
                 {`
                     @keyframes twinkle {

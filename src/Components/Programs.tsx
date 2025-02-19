@@ -69,7 +69,7 @@ const partyPackages = [
 function Programs() {
 
     return (
-        <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden">
+        <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden" id='programs'>
             {/* programs name */}
             <div className='flex items-center justify-center pb-[50px]'>
                 <h3 className='text-xl font-bold text-white'>PROGRAMS</h3>

@@ -88,7 +88,7 @@ function About() {
     // ];
 
     return (
-        <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen py-16 relative overflow-hidden" >
+        <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen py-16 relative overflow-hidden" id='about'>
             <style>
                 {`
                     @keyframes twinkle {

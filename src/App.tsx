@@ -10,6 +10,7 @@ import Contact from "./Components/Contact";
 import Shows from "./Components/Shows";
 import About from "./Components/About";
 import Gallery from "./Components/Gallery";
+import Studio from "./Components/Studio";
 
 
 
@@ -87,6 +88,7 @@ function App() {
           <About />
           <Programs />
           <Gallery />
+          <Studio />
           <Heros />
           <Design />
           <Outdoor />

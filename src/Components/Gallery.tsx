@@ -53,10 +53,10 @@ function Gallery() {
     ];
 
     return (
-        <div className="px-4 py-8 md:px-8 lg:px-16 bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden pb-[50px]">
+        <div className="px-4 py-8 md:px-8 lg:px-16 bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden pb-[50px]" id='gallery'>
             {/* contact name */}
             <div className='flex items-center justify-center pb-[50px] mt-[150px] z-20'>
-                <h3 className='text-xl font-bold text-white'>CONTACT</h3>
+                <h3 className='text-xl font-bold text-white'>GALLERY</h3>
             </div>
 
             {/* Navigation Tabs */}

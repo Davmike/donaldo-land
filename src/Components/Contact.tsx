@@ -117,7 +117,7 @@ function Contact() {
     return (
         <AnimatePresence>
             {/* {isHideContact && ( */}
-            <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden pb-[50px]">
+            <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden pb-[50px]" id='contact'>
                 {/* contact name */}
                 <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
                     <h3 className='text-xl font-bold text-white'>CONTACT</h3>
