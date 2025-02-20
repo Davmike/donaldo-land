@@ -1,8 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useContext } from 'react';
 import { MyContext } from './Context';
-// import arrow from "../../public/assets/arrow.png";
-// import logo from "../../public/assets/donaldo-logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Link } from "react-scroll";
 
@@ -57,15 +55,6 @@ function Header() {
 
     return (
         <header className="fixed top-0 left-0 w-full bg-[#20095F] z-[30] text-white bg-opacity-50 backdrop-blur-xl">
-            {/* logo */}
-            {/* <div className='w-[90px] h-[90px] fixed z-[4] top-[8px] right-[5px]'>
-                <img src={logo} alt="" />
-            </div> */}
-            {/* Arrow section with animation */}
-            {/* <div className="w-[100px] fixed top-[0%] left-[20%] sm:left-[14%] md:left-[8%] xl:left-[6%] xxl:left-[5%]">
-                <img src={arrow} alt="" />
-                <p className="fixed left-[12%] text-[20px] xl:left-[8%] transform" style={{ transform: "rotate(-12deg)" }}> {translations[language as keyof typeof translations].clickMore}</p>
-            </div> */}
             <div className="container px-4 mx-auto">
                 <div className="flex items-center justify-between h-16">
                     <div className='flex flex-row items-center justify-center'>
