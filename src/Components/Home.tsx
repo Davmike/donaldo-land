@@ -57,7 +57,7 @@ function Home() {
 
 
     const context = useContext(MyContext);
-    const { language, setLanguage, mousePosition }: any = context;
+    const { language, mousePosition }: any = context;
 
 
     const [isLoaded, setIsLoaded] = useState(false);

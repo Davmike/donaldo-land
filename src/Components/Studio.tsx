@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Camera, Clock, DollarSign, Send, Sparkles, Image, Plus, Minus } from 'lucide-react';
+import { Camera, Clock, DollarSign, Send, Sparkles, Plus, Minus } from 'lucide-react';
 
 const Studio = () => {
     const [selectedPackage, setSelectedPackage] = useState('');

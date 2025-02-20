@@ -28,7 +28,7 @@ import { Link } from "react-scroll";
 function Header() {
 
     const context = useContext(MyContext);
-    const { language, setLanguage, isHeaderOpen, setIsHeaderOpen, isMobile, setIsMobile }: any = context;
+    const { setLanguage, isHeaderOpen, setIsHeaderOpen, isMobile, setIsMobile }: any = context;
 
     useEffect(() => {
         const checkScreenSize = () => {
