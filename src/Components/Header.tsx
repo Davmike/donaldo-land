@@ -59,8 +59,17 @@ function Header() {
                 <div className="flex items-center justify-between h-16">
                     <div className='flex flex-row items-center justify-center'>
                         {/* Logo */}
-                        <div className="flex-shrink-0">
-                            <img src="/assets/donaldo-logo.png" alt="Donaldo Logo" className="w-auto h-12" />
+                        <div className="flex-shrink-0 cursor-pointer">
+                            <Link
+                                to={"home"}
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={500}
+                                className="transition-colors duration-200 text-white/70 hover:text-white"
+                            >
+                                <img src="/assets/donaldo-logo.png" alt="Donaldo Logo" className="w-auto h-12" />
+                            </Link>
                         </div>
 
                     </div>
