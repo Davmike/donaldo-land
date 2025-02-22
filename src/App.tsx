@@ -11,6 +11,7 @@ import Shows from "./Components/Shows";
 import About from "./Components/About";
 import Gallery from "./Components/Gallery";
 import Studio from "./Components/Studio";
+import Footer from "./Components/Footer";
 
 
 
@@ -95,6 +96,7 @@ function App() {
           <Eatdrinks />
           <Shows />
           <Contact />
+          <Footer />
         </MyContext.Provider>
       </div>
     </>
