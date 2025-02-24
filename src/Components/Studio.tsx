@@ -292,11 +292,13 @@ const Studio = () => {
                             </div>
 
                             <div>
-                                <label className="block mb-1 text-sm text-gray-400">Email</label>
+                                <label className="block mb-1 text-sm text-gray-400">Mobile</label>
                                 <input
-                                    type="email"
+                                    type="tel"
+                                    // value={mobileNumber}
+                                    // onChange={(e) => setMobileNumber(e.target.value)}
+                                    placeholder="Enter your mobile number"
                                     className="w-full px-4 py-3 text-sm border rounded-xl bg-white/5 border-white/10 focus:border-violet-500/50 focus:outline-none"
-                                    placeholder="your@email.com"
                                 />
                             </div>
 
