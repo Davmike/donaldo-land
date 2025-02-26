@@ -4,26 +4,26 @@ import { MyContext } from './Context';
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Link } from "react-scroll";
 
-// const translations = {
-//     en: {
-//         welcome: "Welcome to DonaldoLand",
-//         comingSoon: "COMING SOON...",
-//         clickMore: "Click here for more",
-//         order: "Order"
-//     },
-//     ka: {
-//         welcome: "კეთილი იყოს თქვენი მობრძანება DonaldoLand-ში",
-//         comingSoon: "მალე...",
-//         clickMore: "დააჭირეთ მეტი ინფორმაციისთვის",
-//         order: "ჯავშანი"
-//     },
-//     ru: {
-//         welcome: "Добро пожаловать в DonaldoLand",
-//         comingSoon: "СКОРО...",
-//         clickMore: "Нажмите здесь для подробностей",
-//         order: "Заказать"
-//     }
-// };
+const translations = {
+    en: {
+        welcome: "Welcome to DonaldoLand",
+        comingSoon: "COMING SOON...",
+        clickMore: "Click here for more",
+        order: "Order"
+    },
+    ka: {
+        welcome: "კეთილი იყოს თქვენი მობრძანება DonaldoLand-ში",
+        comingSoon: "მალე...",
+        clickMore: "დააჭირეთ მეტი ინფორმაციისთვის",
+        order: "ჯავშანი"
+    },
+    ru: {
+        welcome: "Добро пожаловать в DonaldoLand",
+        comingSoon: "СКОРО...",
+        clickMore: "Нажмите здесь для подробностей",
+        order: "Заказать"
+    }
+};
 
 function Header() {
 
