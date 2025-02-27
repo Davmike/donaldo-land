@@ -1,9 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Camera, Clock, DollarSign, Send, Sparkles, Plus, Minus } from 'lucide-react';
 
+interface FormErrors {
+    name: string;
+    mobileNumber: string;
+    bookingDate: string;
+}
+
 const Studio = () => {
     const [selectedPackage, setSelectedPackage] = useState('');
     const [bookingDate, setBookingDate] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
+    const [name, setName] = useState('');
+    const [specialRequests, setSpecialRequests] = useState('');
     const [customPackage, setCustomPackage] = useState({
         photoCount: 10,
         duration: 1,
@@ -11,15 +20,21 @@ const Studio = () => {
         outfitChanges: 2
     });
     const [customPrice, setCustomPrice] = useState(0);
+    const [isSending, setIsSending] = useState(false);
+    const [sendStatus, setSendStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [errors, setErrors] = useState<FormErrors>({
+        name: '',
+        mobileNumber: '',
+        bookingDate: ''
+    });
 
     // Calculate custom package price
     useEffect(() => {
-        const basePrice = 150; // Base session price
-        const photoPrice = customPackage.photoCount * 8; // $8 per photo
-        const durationPrice = (customPackage.duration - 1) * 100; // $100 per additional hour
+        const basePrice = 150;
+        const photoPrice = customPackage.photoCount * 8;
+        const durationPrice = (customPackage.duration - 1) * 100;
         const retouchingPrice = customPackage.retouching === 'premium' ? customPackage.photoCount * 5 : 0;
-        const outfitPrice = customPackage.outfitChanges * 15; // $15 per outfit change
-
+        const outfitPrice = customPackage.outfitChanges * 15;
         setCustomPrice(basePrice + photoPrice + durationPrice + retouchingPrice + outfitPrice);
     }, [customPackage]);
 
@@ -55,6 +70,100 @@ const Studio = () => {
         setCustomPackage(prev => ({ ...prev, [field]: value }));
         setSelectedPackage('custom');
     };
+
+    const validateForm = () => {
+        const newErrors: FormErrors = {
+            name: '',
+            mobileNumber: '',
+            bookingDate: ''
+        };
+        let isValid = true;
+
+        if (!name.trim()) {
+            newErrors.name = "Name can't be empty";
+            isValid = false;
+        }
+
+        if (!mobileNumber.trim()) {
+            newErrors.mobileNumber = "Mobile number can't be empty";
+            isValid = false;
+        } else if (!/^\+?[\d\s-]{10,}$/.test(mobileNumber.trim())) {
+            newErrors.mobileNumber = "Please enter a valid mobile number (e.g., +995123456789)";
+            isValid = false;
+        }
+
+        if (!bookingDate) {
+            newErrors.bookingDate = "Please select a booking date";
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
+
+    const handleBookingSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+
+        if (!validateForm()) {
+            return;
+        }
+
+        setIsSending(true);
+        setSendStatus('sending');
+
+        const formattedMessage = `
+            Photography Studio Booking:
+            Name: ${name}
+            Date: ${new Date(bookingDate).toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })}
+            Mobile Number: ${mobileNumber}
+            ${selectedPackage === 'custom' ? `
+                Package: Custom
+                - Price: $${customPrice}
+                - Photos: ${customPackage.photoCount}
+                - Duration: ${customPackage.duration} hour(s)
+                - Retouching: ${customPackage.retouching}
+                - Outfit Changes: ${customPackage.outfitChanges}
+            ` : selectedPackage ? `
+                Package: ${selectedPackage}
+                - Price: $${packages.find(p => p.name === selectedPackage)?.price}
+                - Duration: ${packages.find(p => p.name === selectedPackage)?.duration}
+                - Includes: ${packages.find(p => p.name === selectedPackage)?.includes.join(', ')}
+            ` : 'No package selected'}
+            ${specialRequests ? `Special Requests: ${specialRequests}` : ''}
+            Looking forward to capturing your moments! 📸
+        `;
+
+        // const cleanNumber = mobileNumber.replace(/\D/g, '');
+        // WhatsApp link to send message
+        const whatsappLink = `https://wa.me/${+995555925444}?text=${encodeURIComponent(formattedMessage)}`;
+
+        // Open WhatsApp in a new window or tab
+        window.open(whatsappLink, '_blank');
+
+        setSendStatus('success');
+        setTimeout(() => {
+            setSendStatus('idle');
+            setName('');
+            setMobileNumber('');
+            setBookingDate('');
+            setSpecialRequests('');
+            setSelectedPackage('');
+        }, 2000);
+
+        setIsSending(false);
+    };
+
+    const inputClassName = (error: string) => `
+        w-full px-4 py-3 text-sm rounded-xl bg-white/5 
+        border ${error ? 'border-red-500' : 'border-white/10'} 
+        focus:ring-2 ${error ? 'focus:ring-red-500' : 'focus:ring-violet-500/50'} 
+        focus:outline-none transition-colors duration-200
+    `;
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#20095F] to-[#130538] text-white" id='studio'>
@@ -132,14 +241,14 @@ const Studio = () => {
                         <div className="space-y-4">
                             {/* Custom Package Builder */}
                             <div className={`
-                relative overflow-hidden
-                bg-white/5 backdrop-blur-sm
-                rounded-3xl p-6 border
-                transition-all duration-300 z-20
-                ${selectedPackage === 'custom'
+                                relative overflow-hidden
+                                bg-white/5 backdrop-blur-sm
+                                rounded-3xl p-6 border
+                                transition-all duration-300 z-20
+                                ${selectedPackage === 'custom'
                                     ? 'border-fuchsia-500/50 bg-white/10'
                                     : 'border-white/10 hover:border-white/20'}
-              `}>
+                            `}>
                                 <h3 className="mb-2 text-lg font-medium">Custom Package</h3>
                                 <p className="mb-3 text-2xl font-bold">
                                     ${customPrice}
@@ -221,12 +330,12 @@ const Studio = () => {
                                 <button
                                     onClick={() => setSelectedPackage('custom')}
                                     className={`
-                    w-full py-2.5 rounded-xl text-sm font-medium
-                    transition-colors duration-300
-                    ${selectedPackage === 'custom'
+                                        w-full py-2.5 rounded-xl text-sm font-medium
+                                        transition-colors duration-300
+                                        ${selectedPackage === 'custom'
                                             ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white'
                                             : 'bg-white/10 hover:bg-white/20 text-white'}
-                  `}
+                                    `}
                                 >
                                     Select Custom Package
                                 </button>
@@ -237,14 +346,14 @@ const Studio = () => {
                                 <div
                                     key={pkg.name}
                                     className={`
-                    relative overflow-hidden
-                    bg-white/5 backdrop-blur-sm
-                    rounded-3xl p-6 border
-                    transition-all duration-300 z-20
-                    ${selectedPackage === pkg.name
+                                        relative overflow-hidden
+                                        bg-white/5 backdrop-blur-sm
+                                        rounded-3xl p-6 border
+                                        transition-all duration-300 z-20
+                                        ${selectedPackage === pkg.name
                                             ? 'border-fuchsia-500/50 bg-white/10'
                                             : 'border-white/10 hover:border-white/20'}
-                  `}
+                                    `}
                                 >
                                     <h3 className="mb-2 text-lg font-medium">{pkg.name}</h3>
                                     <p className="mb-3 text-2xl font-bold">
@@ -263,12 +372,12 @@ const Studio = () => {
                                     <button
                                         onClick={() => setSelectedPackage(pkg.name)}
                                         className={`
-                      w-full py-2.5 rounded-xl text-sm font-medium
-                      transition-colors duration-300
-                      ${selectedPackage === pkg.name
+                                            w-full py-2.5 rounded-xl text-sm font-medium
+                                            transition-colors duration-300
+                                            ${selectedPackage === pkg.name
                                                 ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white'
                                                 : 'bg-white/10 hover:bg-white/20 text-white'}
-                    `}
+                                        `}
                                     >
                                         Select Package
                                     </button>
@@ -279,27 +388,38 @@ const Studio = () => {
 
                     {/* Right Column - Booking Form */}
                     <div className="md:col-span-4">
-                        <form className="sticky z-20 p-6 space-y-4 border bg-white/5 backdrop-blur-sm rounded-3xl border-white/10 top-4">
+                        <form
+                            onSubmit={handleBookingSubmit}
+                            className="sticky z-20 p-6 space-y-4 border bg-white/5 backdrop-blur-sm rounded-3xl border-white/10 top-4"
+                        >
                             <h2 className="mb-6 text-xl font-semibold">Book Your Session</h2>
 
                             <div>
                                 <label className="block mb-1 text-sm text-gray-400">Name</label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-3 text-sm border rounded-xl bg-white/5 border-white/10 focus:border-violet-500/50 focus:outline-none"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    className={inputClassName(errors.name)}
                                     placeholder="Your full name"
                                 />
+                                {errors.name && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                                )}
                             </div>
 
                             <div>
                                 <label className="block mb-1 text-sm text-gray-400">Mobile</label>
                                 <input
                                     type="tel"
-                                    // value={mobileNumber}
-                                    // onChange={(e) => setMobileNumber(e.target.value)}
-                                    placeholder="Enter your mobile number"
-                                    className="w-full px-4 py-3 text-sm border rounded-xl bg-white/5 border-white/10 focus:border-violet-500/50 focus:outline-none"
+                                    value={mobileNumber}
+                                    onChange={(e) => setMobileNumber(e.target.value)}
+                                    className={inputClassName(errors.mobileNumber)}
+                                    placeholder="Enter your mobile number (e.g., +995123456789)"
                                 />
+                                {errors.mobileNumber && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.mobileNumber}</p>
+                                )}
                             </div>
 
                             <div>
@@ -308,8 +428,11 @@ const Studio = () => {
                                     type="date"
                                     value={bookingDate}
                                     onChange={(e) => setBookingDate(e.target.value)}
-                                    className="w-full px-4 py-3 text-sm border rounded-xl bg-white/5 border-white/10 focus:border-violet-500/50 focus:outline-none"
+                                    className={inputClassName(errors.bookingDate)}
                                 />
+                                {errors.bookingDate && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.bookingDate}</p>
+                                )}
                             </div>
 
                             <div>
@@ -340,7 +463,9 @@ const Studio = () => {
                             <div>
                                 <label className="block mb-1 text-sm text-gray-400">Special Requests</label>
                                 <textarea
-                                    className="w-full px-4 py-3 text-sm border rounded-xl bg-white/5 border-white/10 focus:border-violet-500/50 focus:outline-none"
+                                    value={specialRequests}
+                                    onChange={(e) => setSpecialRequests(e.target.value)}
+                                    className={inputClassName('')}
                                     rows={3}
                                     placeholder="Any special requirements..."
                                 />
@@ -348,10 +473,21 @@ const Studio = () => {
 
                             <button
                                 type="submit"
-                                className="flex items-center justify-center w-full py-3 space-x-2 text-sm font-medium transition-all duration-300 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl hover:from-violet-700 hover:to-fuchsia-700"
+                                disabled={isSending}
+                                className={`flex items-center justify-center w-full py-3 space-x-2 text-sm font-medium transition-all duration-300 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl hover:from-violet-700 hover:to-fuchsia-700 ${isSending ? 'opacity-50 cursor-not-allowed' : ''}`}
                             >
-                                <Send className="w-4 h-4" />
-                                <span>Book Now</span>
+                                {sendStatus === 'sending' ? (
+                                    <span>Sending...</span>
+                                ) : sendStatus === 'success' ? (
+                                    <span>Booking Sent! 🎉</span>
+                                ) : sendStatus === 'error' ? (
+                                    <span>Error Sending 😢</span>
+                                ) : (
+                                    <>
+                                        <Send className="w-4 h-4" />
+                                        <span>Book Now</span>
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
