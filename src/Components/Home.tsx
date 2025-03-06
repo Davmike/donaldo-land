@@ -1,10 +1,10 @@
 import starss from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png";
 import rocket from "../../public/assets/rocket.png";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { MyContext } from "./Context";
 import Header from "./Header";
-// import { Rocket, Stars, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import gsap from "gsap";
 
 const translations = {
     en: {
@@ -28,44 +28,77 @@ const translations = {
 };
 
 function Home() {
-
-    // const windowRef = useRef<HTMLDivElement>(null);
-    // const frontRef = useRef<HTMLDivElement>(null);
-    // const offset = 1800;
-
-    // const updateTransformOrigin = () => {
-    //     if (!windowRef.current || !frontRef.current) return;
-
-    //     const scrollTop = windowRef.current.scrollTop;
-    //     const pageHeight = frontRef.current.offsetHeight;
-    //     const equation = ((scrollTop + offset) / pageHeight) * 100;
-    //     frontRef.current.style.transformOrigin = `center ${equation}%`;
-    // };
-
-    // useEffect(() => {
-    //     const currentWindowRef = windowRef.current;
-    //     if (currentWindowRef) {
-    //         currentWindowRef.addEventListener('scroll', updateTransformOrigin);
-    //         updateTransformOrigin();
-    //     }
-    //     return () => {
-    //         if (currentWindowRef) {
-    //             currentWindowRef.removeEventListener('scroll', updateTransformOrigin);
-    //         }
-    //     };
-    // }, []);
-
-
     const context = useContext(MyContext);
     const { language, mousePosition }: any = context;
-
-
     const [isLoaded, setIsLoaded] = useState(false);
+
+    // Refs for GSAP animations
+    const titleRef = useRef(null);
+    const subtitleRef = useRef(null);
+    const buttonRef = useRef(null);
+    const starsRef = useRef<(HTMLImageElement | null)[]>([]);
+    const earthRef = useRef(null);
+    const rocketRef = useRef(null);
 
     useEffect(() => {
         setIsLoaded(true);
-    }, []);
 
+        // Initial animations
+        gsap.fromTo(titleRef.current,
+            { opacity: 0, y: -50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+        );
+
+        gsap.fromTo(subtitleRef.current,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: "power3.out" }
+        );
+
+        gsap.fromTo(buttonRef.current,
+            { opacity: 0, scale: 0.5 },
+            { opacity: 1, scale: 1, duration: 0.8, delay: 0.6, ease: "back.out(1.7)" }
+        );
+
+        // Animate stars
+        starsRef.current.forEach((star, index) => {
+            gsap.fromTo(star,
+                { opacity: 0, scale: 0 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.5,
+                    delay: 0.1 * index,
+                    ease: "power2.out"
+                }
+            );
+        });
+
+        // Animate earth
+        gsap.fromTo(earthRef.current,
+            { opacity: 0, scale: 0.5, rotation: -180 },
+            {
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                duration: 1.5,
+                delay: 0.8,
+                ease: "elastic.out(1, 0.3)"
+            }
+        );
+
+        // Animate rocket
+        gsap.fromTo(rocketRef.current,
+            { opacity: 0, x: -100, y: 100 },
+            {
+                opacity: 1,
+                x: 0,
+                y: 0,
+                duration: 1.2,
+                delay: 1,
+                ease: "power2.out"
+            }
+        );
+    }, []);
 
     const stars = [
         { id: 1, top: "50%", left: "20%", size: "25px", delay: "0.1s" },
@@ -89,8 +122,6 @@ function Home() {
         { id: 19, top: "30%", left: "15%", size: "20px", delay: "1.9s" },
         { id: 20, top: "70%", left: "65%", size: "16px", delay: "2s" },
     ];
-
-
 
     return (
         <div className='text-[white] overflow-hidden' id="home">
@@ -123,25 +154,35 @@ function Home() {
             </style>
             <section className="bg-gradient-to-b from-[#20095F] to-[#130538] h-[100vh] text-center pt-[10vh] md:pt-[10vh] relative flex justify-center items-center flex-col gap-[30px] overflow-hidden">
                 <Header />
-                {/* Main text section with animation */}
-                <div className={`z-20 ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '0.8s' }}>
-                    <h1 className="text-[30px] md:text-[45px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FE5C37] mb-4">
+                {/* Main text section with GSAP animation */}
+                <div className="z-20">
+                    <h1
+                        ref={titleRef}
+                        className="text-[30px] md:text-[45px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FE5C37] mb-4"
+                    >
                         {translations[language as keyof typeof translations].welcome}
                     </h1>
-                    <p className="text-[18px] md:text-[25px] text-[#a8a8ff]">
+                    <p
+                        ref={subtitleRef}
+                        className="text-[18px] md:text-[25px] text-[#a8a8ff]"
+                    >
                         {translations[language as keyof typeof translations].comingSoon}
                     </p>
                 </div>
 
-                {/* Order button with animation */}
-                <button className={`bg-gradient-to-r z-20 from-[#FE5C37] to-[#FF8666] w-[150px] h-[50px] rounded-[50px] transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FE5C37]/30 ${isLoaded ? 'fade-in' : ''}`} style={{ animationDelay: '1.1s' }}>
+                {/* Order button with GSAP animation */}
+                <button
+                    ref={buttonRef}
+                    className="bg-gradient-to-r z-20 from-[#FE5C37] to-[#FF8666] w-[150px] h-[50px] rounded-[50px] transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FE5C37]/30"
+                >
                     {translations[language as keyof typeof translations].order}
                 </button>
 
-                {/* Stars with animation */}
-                {stars.map((star) => (
+                {/* Stars with GSAP animation */}
+                {stars.map((star, index) => (
                     <img
                         key={star.id}
+                        ref={el => starsRef.current[index] = el}
                         src={starss}
                         alt="star"
                         className="z-10 star-animation"
@@ -156,8 +197,9 @@ function Home() {
                     />
                 ))}
 
-                {/* Earth with animation */}
+                {/* Earth with GSAP animation */}
                 <img
+                    ref={earthRef}
                     src={earth}
                     alt="Earth"
                     className="z-10 float-animation"
@@ -171,8 +213,9 @@ function Home() {
                     }}
                 />
 
-                {/* Rocket with animation */}
+                {/* Rocket with GSAP animation */}
                 <img
+                    ref={rocketRef}
                     src={rocket}
                     alt="Rocket"
                     className="z-10 float-animation"
