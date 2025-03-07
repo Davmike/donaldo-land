@@ -1,4 +1,9 @@
 import { Gift, Timer, Users, Star } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const partyPackages = [
     {
@@ -45,7 +50,6 @@ const partyPackages = [
             "Galactic Snack Station",
             "Star Gazing Activity"
         ]
-
     },
     {
         title: "Space Explorer",
@@ -61,17 +65,74 @@ const partyPackages = [
             "Galactic Snack Station",
             "Star Gazing Activity"
         ]
-
     },
-
 ];
 
 function Programs() {
+    const sectionRef = useRef(null);
+    const titleRef = useRef(null);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        // Section background animation
+        gsap.fromTo(sectionRef.current,
+            { backgroundColor: 'transparent' },
+            {
+                backgroundColor: '#20095F',
+                duration: 1,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top center',
+                    end: 'top top',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Title animation
+        gsap.fromTo(titleRef.current,
+            { y: -50, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: titleRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Cards stagger animation
+        cardsRef.current.forEach((card, index) => {
+            gsap.fromTo(card,
+                {
+                    y: 100,
+                    opacity: 0,
+                    scale: 0.8
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    ease: 'back.out(1.2)',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+    }, []);
 
     return (
-        <div className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden" id='programs'>
+        <div ref={sectionRef} className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden" id='programs'>
             {/* programs name */}
-            <div className='flex items-center justify-center pb-[50px]'>
+            <div ref={titleRef} className='flex items-center justify-center pb-[50px]'>
                 <h3 className='text-xl font-bold text-white'>PROGRAMS</h3>
             </div>
             {/* content */}
@@ -80,10 +141,8 @@ function Programs() {
                     {partyPackages.map((pkg, index) => (
                         <div
                             key={index}
+                            ref={el => cardsRef.current[index] = el}
                             className="bg-[#353B8C] z-20 backdrop-blur-sm rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40"
-                            style={{
-                                animation: `fadeIn 0.5s ease-out ${index * 0.1}s backwards`
-                            }}
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <img
@@ -134,6 +193,7 @@ function Programs() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
 export default Programs;
