@@ -104,6 +104,8 @@ body {
     }
 }
 
+/* font styles */
+
 @font-face {
     font-family: 'Comic Neue';
     src: url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
