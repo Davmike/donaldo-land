@@ -115,6 +115,8 @@ body {
     font-family: 'Comic Neue', cursive;
 }
 
+/* custom scrollbarr styles */
+
 .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: rgba(139, 92, 246, 0.5) rgba(255, 255, 255, 0.1);
