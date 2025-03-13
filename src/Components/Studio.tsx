@@ -347,7 +347,7 @@ const Studio = () => {
                                     key={pkg.name}
                                     className={`
                                         relative overflow-hidden
-                                        bg-white/5 backdrop-blur-sm
+                                        bg-[#2A1560] backdrop-blur-sm
                                         rounded-3xl p-6 border
                                         transition-all duration-300 z-20
                                         ${selectedPackage === pkg.name
@@ -390,7 +390,7 @@ const Studio = () => {
                     <div className="md:col-span-4">
                         <form
                             onSubmit={handleBookingSubmit}
-                            className="sticky z-20 p-6 space-y-4 border bg-white/5 backdrop-blur-sm rounded-3xl border-white/10 top-4"
+                            className="sticky z-20 p-6 space-y-4 border bg-[#2A1560] backdrop-blur-sm rounded-3xl border-white/10 top-4"
                         >
                             <h2 className="mb-6 text-xl font-semibold">Book Your Session</h2>
 
