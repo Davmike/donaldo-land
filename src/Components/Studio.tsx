@@ -188,7 +188,7 @@ const Studio = () => {
                     {/* Left Column - Studio Info & Gallery */}
                     <div className="z-20 space-y-8 md:col-span-4">
                         {/* Studio Info */}
-                        <div className="p-6 border bg-white/5 backdrop-blur-sm rounded-3xl border-white/10">
+                        <div className="p-6 border bg-[#2A1560] backdrop-blur-sm rounded-3xl border-white/10">
                             <h2 className="flex items-center gap-2 mb-4 text-xl font-semibold">
                                 <Sparkles className="w-5 h-5 text-fuchsia-400" />
                                 Studio Features
@@ -242,7 +242,7 @@ const Studio = () => {
                             {/* Custom Package Builder */}
                             <div className={`
                                 relative overflow-hidden
-                                bg-white/5 backdrop-blur-sm
+                                bg-[#2A1560] backdrop-blur-sm
                                 rounded-3xl p-6 border
                                 transition-all duration-300 z-20
                                 ${selectedPackage === 'custom'
