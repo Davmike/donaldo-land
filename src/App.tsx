@@ -18,6 +18,7 @@ import Footer from "./Components/Footer";
 
 
 function App() {
+  // state fot menu open and close tap
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   // state for programs component
   const [isHidePrograms, setIsHideprograms] = useState<boolean>(false);
