@@ -229,6 +229,9 @@ function Home() {
                         transform: "rotate(15deg)",
                     }}
                 />
+
+                {/*scroll from down to up */}
+                <div className="z-10 w-[50px] h-[50px] rounded-xl bg-[black] fixed bottom-[40px] right-[40px]"></div>
             </section>
         </div>
     );
