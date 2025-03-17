@@ -5,6 +5,7 @@ import { useState, useEffect, useContext, useRef } from "react";
 import { MyContext } from "./Context";
 import Header from "./Header";
 import gsap from "gsap";
+import { Link } from "react-scroll";
 
 const translations = {
     en: {
@@ -231,7 +232,16 @@ function Home() {
                 />
 
                 {/*scroll from down to up */}
-                <div className="z-10 w-[50px] h-[50px] rounded-xl bg-[black] fixed bottom-[40px] right-[40px]"></div>
+                <Link
+                    to={"home"}
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    className="transition-colors duration-200 text-white/70 hover:text-white"
+                >
+                    <div className="z-50 w-[50px] h-[50px] rounded-xl bg-[#20095E] fixed bottom-[40px] right-[40px]"></div>
+                </Link>
             </section>
         </div>
     );
