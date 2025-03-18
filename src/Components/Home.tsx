@@ -1,6 +1,7 @@
 import starss from "../../public/assets/star.png";
 import earth from "../../public/assets/earth.png";
 import rocket from "../../public/assets/rocket.png";
+import arrowUp from "../../public/assets/arrow-up.png"
 import { useState, useEffect, useContext, useRef } from "react";
 import { MyContext } from "./Context";
 import Header from "./Header";
@@ -240,7 +241,9 @@ function Home() {
                     duration={500}
                     className="transition-colors duration-200 text-white/70 hover:text-white"
                 >
-                    <div className="z-50 w-[50px] h-[50px] rounded-xl bg-[#20095E] fixed bottom-[40px] right-[40px]"></div>
+                    <div className="z-50 w-[50px] h-[50px] rounded-xl bg-[#20095E] fixed bottom-[40px] right-[40px]">
+                        <img src={arrowUp} alt="" />
+                    </div>
                 </Link>
             </section>
         </div>
