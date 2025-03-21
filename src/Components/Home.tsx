@@ -241,7 +241,7 @@ function Home() {
                     duration={500}
                     className="transition-colors duration-200 text-white/70 hover:text-white"
                 >
-                    <div className="z-50 w-[50px] h-[50px] rounded-xl bg-[#20095E] fixed bottom-[40px] right-[40px]">
+                    <div className="z-50 w-[60px] h-[60px] rounded-xl bg-[#20095E] fixed bottom-[40px] right-[40px]">
                         <img src={arrowUp} alt="" />
                     </div>
                 </Link>
