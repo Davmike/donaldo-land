@@ -1,15 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { Rocket, Stars, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MyContext } from './Context';
 
 gsap.registerPlugin(ScrollTrigger);
-
 
 const translationsAbout = {
     en: {
         about: "About",
-        info: "Welcome to DonaldoLand",
         text: "At DonaldoLand, we believe in creating magical moments that last a lifetime. Our state-of-the-art entertainment center is designed to spark imagination, encourage learning, and most importantly - make fun memories!",
         p1: "Safe and supervised play areas for children of all ages",
         p2: " Educational activities that make learning fun",
@@ -17,7 +16,6 @@ const translationsAbout = {
     },
     ka: {
         about: "ჩვენს შესახებ",
-        info: "Welcome to DonaldoLand",
         text: "DonaldoLand-ში ჩვენ გვჯერა, რომ შევქმნათ ჯადოსნური მომენტები, რომლებიც მთელი სიცოცხლე გრძელდება. ჩვენი უახლესი გასართობი ცენტრი შექმნილია ფანტაზიის გასაღვივებლად, სწავლის წახალისებისთვის და რაც მთავარია - სახალისო მოგონებების შესაქმნელად!",
         p1: "უსაფრთხო და კონტროლირებადი სათამაშო ადგილები ყველა ასაკის ბავშვებისთვის",
         p2: "საგანმანათლებლო აქტივობები, რომლებიც სწავლას სახალისოს ხდის",
@@ -25,7 +23,6 @@ const translationsAbout = {
     },
     ru: {
         about: "О нас",
-        info: "Welcome to DonaldoLand",
         text: "В DonaldoLand мы верим в создание волшебных моментов, которые длятся всю жизнь. Наш современный развлекательный центр создан для того, чтобы пробуждать воображение, поощрять обучение и, что самое важное, создавать веселые воспоминания!",
         p1: "Безопасные и контролируемые игровые площадки для детей всех возрастов",
         p2: "Образовательные мероприятия, которые делают обучение увлекательным",
@@ -34,6 +31,9 @@ const translationsAbout = {
 };
 
 function About() {
+    const context = useContext(MyContext);
+    const { language }: any = context;
+
     const images = [
         {
             url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80",
@@ -233,7 +233,7 @@ function About() {
             </style>
             {/* about name */}
             <div ref={titleRef} className='flex items-center justify-center pb-[50px] relative'>
-                <h3 className='text-xl font-bold text-white'>ABOUT</h3>
+                <h3 className='text-xl font-bold text-white'>{translationsAbout[language as keyof typeof translationsAbout].about}</h3>
             </div>
             {/* Decorative elements */}
             <div className="absolute inset-0">
@@ -311,20 +311,20 @@ function About() {
                                 Welcome to DonaldoLand
                             </h2>
                             <p className="mb-4 text-lg leading-relaxed">
-                                At DonaldoLand, we believe in creating magical moments that last a lifetime. Our state-of-the-art entertainment center is designed to spark imagination, encourage learning, and most importantly - make fun memories!
+                                {translationsAbout[language as keyof typeof translationsAbout].text}
                             </p>
                             <div className="space-y-4">
                                 <div ref={el => featureRefs.current[0] = el} className="flex items-start space-x-3">
                                     <Stars className="text-[#F47B5D] w-6 h-6 mt-1" />
-                                    <p>Safe and supervised play areas for children of all ages</p>
+                                    <p>{translationsAbout[language as keyof typeof translationsAbout].p1}</p>
                                 </div>
                                 <div ref={el => featureRefs.current[1] = el} className="flex items-start space-x-3">
                                     <Sparkles className="text-[#F47B5D] w-6 h-6 mt-1" />
-                                    <p>Educational activities that make learning fun</p>
+                                    <p>{translationsAbout[language as keyof typeof translationsAbout].p2}</p>
                                 </div>
                                 <div ref={el => featureRefs.current[2] = el} className="flex items-start space-x-3">
                                     <Rocket className="text-[#F47B5D] w-6 h-6 mt-1" />
-                                    <p>Adventure zones that encourage physical activity and imagination</p>
+                                    <p>{translationsAbout[language as keyof typeof translationsAbout].p3}</p>
                                 </div>
                             </div>
                             <button ref={buttonRef} className="mt-8 bg-[#F47B5D] text-white px-8 py-3 rounded-full hover:bg-[#E36A4C] transition-colors duration-300">
