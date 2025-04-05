@@ -43,7 +43,7 @@ function Home() {
     const rocketRef = useRef(null);
 
     useEffect(() => {
-        setIsLoaded(true);
+        setIsLoaded(!isLoaded);
 
         // Initial animations
         gsap.fromTo(titleRef.current,
