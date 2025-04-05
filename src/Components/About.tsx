@@ -5,6 +5,34 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+const translationsAbout = {
+    en: {
+        about: "About",
+        info: "Welcome to DonaldoLand",
+        text: "At DonaldoLand, we believe in creating magical moments that last a lifetime. Our state-of-the-art entertainment center is designed to spark imagination, encourage learning, and most importantly - make fun memories!",
+        p1: "Safe and supervised play areas for children of all ages",
+        p2: " Educational activities that make learning fun",
+        p3: "  Adventure zones that encourage physical activity and imagination"
+    },
+    ka: {
+        about: "ჩვენს შესახებ",
+        info: "Welcome to DonaldoLand",
+        text: "DonaldoLand-ში ჩვენ გვჯერა, რომ შევქმნათ ჯადოსნური მომენტები, რომლებიც მთელი სიცოცხლე გრძელდება. ჩვენი უახლესი გასართობი ცენტრი შექმნილია ფანტაზიის გასაღვივებლად, სწავლის წახალისებისთვის და რაც მთავარია - სახალისო მოგონებების შესაქმნელად!",
+        p1: "უსაფრთხო და კონტროლირებადი სათამაშო ადგილები ყველა ასაკის ბავშვებისთვის",
+        p2: "საგანმანათლებლო აქტივობები, რომლებიც სწავლას სახალისოს ხდის",
+        p3: "სათავგადასავლო ზონები, რომლებიც ხელს უწყობს ფიზიკურ აქტივობას და წარმოსახვას"
+    },
+    ru: {
+        about: "О нас",
+        info: "Welcome to DonaldoLand",
+        text: "В DonaldoLand мы верим в создание волшебных моментов, которые длятся всю жизнь. Наш современный развлекательный центр создан для того, чтобы пробуждать воображение, поощрять обучение и, что самое важное, создавать веселые воспоминания!",
+        p1: "Безопасные и контролируемые игровые площадки для детей всех возрастов",
+        p2: "Образовательные мероприятия, которые делают обучение увлекательным",
+        p3: "Зоны приключений, стимулирующие физическую активность и воображение"
+    }
+};
+
 function About() {
     const images = [
         {
