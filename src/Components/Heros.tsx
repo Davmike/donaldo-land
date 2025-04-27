@@ -1,6 +1,30 @@
 import { Rocket, Users, Clock, Star, PartyPopper, Sparkles } from 'lucide-react';
-// import { useContext } from 'react';
-// import { MyContext } from './Context';
+import { useContext } from 'react';
+import { MyContext } from './Context';
+
+const translationsCharacters = {
+    en: {
+        herosTitle: "HEROS",
+        duration: "Duration",
+        maxParticipants: "Max Participants",
+        magicalActivities: "Magical Activities",
+        bookNow: "Book Now",
+    },
+    ka: {
+        herosTitle: "გმირები",
+        duration: "ხანგრძლივობა",
+        maxParticipants: "მაქსიმალური მონაწილეები",
+        magicalActivities: "ჯადოსნური აქტივობები",
+        bookNow: "დაჯავშნა",
+    },
+    ru: {
+        herosTitle: "Герои",
+        duration: "Продолжительность",
+        maxParticipants: "Макс. участников",
+        magicalActivities: "Волшебные активности",
+        bookNow: "Забронировать",
+    }
+};
 
 const partyCharacters = [
     {
@@ -84,36 +108,18 @@ const partyCharacters = [
 ];
 
 function Heros() {
-    // const context = useContext(MyContext);
-    // const { isHideHeros, setIsHideHeros }: any = context;
+    const context = useContext(MyContext);
+    const { language }: any = context;
+
+    const t = translationsCharacters[language as keyof typeof translationsCharacters];
 
     return (
-        // isHideHeros && (
-        //     <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-8">
-        //         <div
-        //             className="absolute inset-0 bg-[#1a1f47]/90 backdrop-blur-sm"
-        //             onClick={() => setIsHideHeros(!isHideHeros)}
-        //         />
         <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden" id='heros'>
             {/* heros name */}
             <div className='flex items-center justify-center pb-[50px] mt-[150px] z-20'>
-                <h3 className='text-xl font-bold text-white'>HEROS</h3>
+                <h3 className='text-xl font-bold text-white'>{t.herosTitle}</h3>
             </div>
-            {/* Header */}
-            {/* <div className="sticky top-0 z-20 bg-[#2A2F6E] border-b border-gray-700 p-6 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <Rocket className="w-8 h-8 text-purple-400" />
-                    <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
-                        Outdoor Party Programs
-                    </h2>
-                </div>
-                <button
-                    className="p-2 transition-colors rounded-full hover:bg-gray-700 hover:bg-white/10"
-                onClick={() => setIsHideHeros(!isHideHeros)}
-                >
-                    <X className="w-6 h-6 text-white" />
-                </button>
-            </div> */}
+
             {/* content */}
             <div className="p-9">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -144,16 +150,16 @@ function Heros() {
                                 <div className="space-y-4 text-gray-300">
                                     <div className="flex items-center gap-3">
                                         <Clock className="w-5 h-5 text-purple-400" />
-                                        <span>{character.duration}</span>
+                                        <span>{t.duration}: {character.duration}</span>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <Users className="w-5 h-5 text-purple-400" />
-                                        <span>Max {character.maxParticipants} participants</span>
+                                        <span>{t.maxParticipants}: {character.maxParticipants}</span>
                                     </div>
                                     <div className="space-y-3">
                                         <div className="flex items-center gap-3">
                                             <Star className="w-5 h-5 text-purple-400" />
-                                            <span className="font-semibold">Magical Activities:</span>
+                                            <span className="font-semibold">{t.magicalActivities}:</span>
                                         </div>
                                         <ul className="pl-8 space-y-2">
                                             {character.activities.map((activity, idx) => (
@@ -172,7 +178,7 @@ function Heros() {
                                     </span>
                                     <button className="flex items-center gap-2 px-6 py-3 text-white transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl hover:from-purple-600 hover:to-pink-600 hover:scale-105 hover:shadow-lg group">
                                         <Rocket className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45" />
-                                        Book Now
+                                        {t.bookNow}
                                     </button>
                                 </div>
                             </div>
@@ -181,8 +187,7 @@ function Heros() {
                 </div>
             </div>
         </div>
-        // </div>
-    )
+    );
 }
 
 export default Heros;
