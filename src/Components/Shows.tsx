@@ -1,6 +1,201 @@
 // import { useContext } from "react";
 // import { MyContext } from "./Context";
 import { Sparkles, Droplets, SettingsIcon as Confetti, Wand2, IceCream } from "lucide-react";
+import { useContext } from "react";
+import { MyContext } from "./Context";
+
+const translationsShows = {
+    en: {
+        show: "Shows",
+        show1: {
+            name: "Magic Galaxy Show",
+            description: "Amazing magic tricks with space theme",
+            price: "$299",
+            duration: "1 hour",
+            features: [
+                "Professional magician",
+                "Space costume",
+                "Interactive tricks",
+                "Magic props for kids"
+            ]
+        },
+        show2: {
+            name: "Cosmic Bubble Show",
+            description: "Giant bubble performance with LED effects",
+            price: "$249",
+            duration: "45 minutes",
+            features: [
+                "Giant bubbles",
+                "LED lights",
+                "Smoke effects",
+                "Interactive games"
+            ]
+        },
+        show3: {
+            name: "Star Balloon Show",
+            description: "Amazing balloon art and decorations",
+            price: "$199",
+            duration: "30 minutes",
+            features: [
+                "Balloon sculptures",
+                "Party decorations",
+                "Take-home balloons",
+                "Interactive creation"
+            ]
+        },
+        show4: {
+            name: "Cosmic Ice Cream Party",
+            description: "Liquid nitrogen ice cream experience",
+            price: "$349",
+            duration: "1 hour",
+            features: [
+                "Live ice cream making",
+                "Multiple flavors",
+                "Smoke effects",
+                "Unlimited servings"
+            ]
+        },
+        show5: {
+            name: "Space Confetti Show",
+            description: "Spectacular paper and confetti show",
+            price: "$199",
+            duration: "30 minutes",
+            features: [
+                "Confetti cannons",
+                "Paper sculptures",
+                "Interactive games",
+                "Clean-up included"
+            ]
+        }
+    },
+    ka: {
+        show: "შოუ",
+        show1: {
+            name: "მאגიური გალაქტიკის შოუ",
+            description: "დახვეწილი მაგიური ხრიკები კოსმოსის თემატიკით",
+            price: "₾299",
+            duration: "1 საათი",
+            features: [
+                "პროფესიონალი ჯადოქარი",
+                "კოსმოსური კოსტიუმი",
+                "ინტერაქტიული ხრიკები",
+                "ჯადოსნური აქსესუარები ბავშვებისთვის"
+            ]
+        },
+        show2: {
+            name: "კოსმოსური ბუშტების შოუ",
+            description: "ბუშტების გრანდიოზული წარმოდგენა LED ეფექტებით",
+            price: "₾249",
+            duration: "45 წუთი",
+            features: [
+                "გიგანტური ბუშტები",
+                "LED განათებები",
+                "ბოლოსწინა ეფექტები",
+                "ინტერაქტიული თამაშები"
+            ]
+        },
+        show3: {
+            name: "ვარსკვლავური ბალონის შოუ",
+            description: "დახვეწილი ბალონების ხელოვნება და დეკორაციები",
+            price: "₾199",
+            duration: "30 წუთი",
+            features: [
+                "ბალონების სკულპტურები",
+                "파티 დეკორაციები",
+                "მეორე ბალონები",
+                "ინტერაქტიული შექმნა"
+            ]
+        },
+        show4: {
+            name: "კოსმოსური ნაყინის პარტი",
+            description: "ლიკვიდურ აზოტზე დაფუძნებული ნაყინის გამოცდილება",
+            price: "₾349",
+            duration: "1 საათი",
+            features: [
+                "სიცოცხლოვანი ნაყინის დამზადება",
+                "მრავალი გემო",
+                "ბოლოსწინა ეფექტები",
+                "უკანასკნელი ნაწილი"
+            ]
+        },
+        show5: {
+            name: "კოსმოსური კონფეტი შოუ",
+            description: "შესანიშნავი ქაღალდის კონფეტი შოუ",
+            price: "₾199",
+            duration: "30 წუთი",
+            features: [
+                "კონფეტი კორნები",
+                "ქაღალდის სკულპტურები",
+                "ინტერაქტიული თამაშები",
+                "წარმოუდგენელი საქმიანობანი"
+            ]
+        }
+    },
+    ru: {
+        show: "Показывать",
+        show1: {
+            name: "Магическое шоу Галактики",
+            description: "Потрясающие магические фокусы с космической темой",
+            price: "₽299",
+            duration: "1 час",
+            features: [
+                "Профессиональный маг",
+                "Космический костюм",
+                "Интерактивные фокусы",
+                "Магические аксессуары для детей"
+            ]
+        },
+        show2: {
+            name: "Космическое шоу с пузырями",
+            description: "Выступление с гигантскими пузырями и LED-эффектами",
+            price: "₽249",
+            duration: "45 минут",
+            features: [
+                "Гигантские пузыри",
+                "LED-освещение",
+                "Дымовые эффекты",
+                "Интерактивные игры"
+            ]
+        },
+        show3: {
+            name: "Шариковое шоу Звезды",
+            description: "Потрясающее искусство из воздушных шаров и украшения",
+            price: "₽199",
+            duration: "30 минут",
+            features: [
+                "Скульптуры из шаров",
+                "Декорации для вечеринок",
+                "Шары на память",
+                "Интерактивное создание"
+            ]
+        },
+        show4: {
+            name: "Космическая вечеринка с мороженым",
+            description: "Опыт с жидким азотом для создания мороженого",
+            price: "₽349",
+            duration: "1 час",
+            features: [
+                "Живое приготовление мороженого",
+                "Несколько вкусов",
+                "Дымовые эффекты",
+                "Неограниченные порции"
+            ]
+        },
+        show5: {
+            name: "Конфетти шоу Космоса",
+            description: "Великолепное шоу с бумагой и конфетти",
+            price: "₽199",
+            duration: "30 минут",
+            features: [
+                "Пушки с конфетти",
+                "Скульптуры из бумаги",
+                "Интерактивные игры",
+                "Уборка включена"
+            ]
+        }
+    }
+};
+
 
 const shows = [
     {
@@ -56,15 +251,15 @@ const shows = [
 ];
 
 function Shows() {
-    // const context = useContext(MyContext);
-    // const { isHideShows, setIsHideShows }: any = context;
+    const context = useContext(MyContext);
+    const { language }: any = context;
 
     return (
         // isHideShows && (
         <div className="bg-gradient-to-b from-[#130538] to-[#20095F] min-h-screen relative overflow-hidden" id="shows">
             {/* shows name */}
             <div className='flex items-center justify-center pb-[50px] mt-[150px]'>
-                <h3 className='text-xl font-bold text-white'>SHOWS</h3>
+                <h3 className='text-xl font-bold text-white'>{translationsShows[language as keyof typeof translationsShows].show}</h3>
             </div>
             {/* <div
                     className="absolute inset-0 bg-gradient-to-br bg-[#1a1f47]/90  backdrop-blur-sm"
