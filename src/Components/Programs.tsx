@@ -1,77 +1,171 @@
 import { Gift, Timer, Users, Star } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MyContext } from './Context';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const partyPackages = [
-    {
-        title: "Superhero Adventure",
-        description: "Epic superhero-themed party with costume activities and games",
-        duration: 3,
-        maxParticipants: 15,
-        price: 299,
-        image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80",
-        activities: [
-            "Spider-Man Meet & Greet",
-            "Superhero Training Camp",
-            "Face Painting",
-            "McDonald's Happy Meals",
-            "Karaoke Heroes Session"
+const translationsPrograms = {
+    en: {
+        programs: "Programs",
+        partyPackages: [
+            {
+                title: "Superhero Adventure",
+                description: "Epic superhero-themed party with costume activities and games",
+                duration: 3,
+                maxParticipants: 15,
+                price: 299,
+                image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80",
+                activities: [
+                    "Spider-Man Meet & Greet",
+                    "Superhero Training Camp",
+                    "Face Painting",
+                    "McDonald's Happy Meals",
+                    "Karaoke Heroes Session"
+                ]
+            },
+            {
+                title: "Magical Wonderland",
+                description: "Enchanting party experience with magic shows and fantasy activities",
+                duration: 4,
+                maxParticipants: 12,
+                price: 349,
+                image: "https://images.unsplash.com/photo-1520808663317-647b476a81b9?auto=format&fit=crop&q=80",
+                activities: [
+                    "Professional Magic Show",
+                    "Balloon Art Workshop",
+                    "Princess/Wizard Makeover",
+                    "Themed Snack Buffet",
+                    "Interactive Story Time"
+                ]
+            },
+            {
+                title: "Space Explorer",
+                description: "Out-of-this-world cosmic adventure with stellar activities",
+                duration: 3,
+                maxParticipants: 20,
+                price: 249,
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
+                activities: [
+                    "Rocket Launch Simulation",
+                    "Astronaut Training Games",
+                    "Space Costume Contest",
+                    "Galactic Snack Station",
+                    "Star Gazing Activity"
+                ]
+            }
         ]
     },
-    {
-        title: "Magical Wonderland",
-        description: "Enchanting party experience with magic shows and fantasy activities",
-        duration: 4,
-        maxParticipants: 12,
-        price: 349,
-        image: "https://images.unsplash.com/photo-1520808663317-647b476a81b9?auto=format&fit=crop&q=80",
-        activities: [
-            "Professional Magic Show",
-            "Balloon Art Workshop",
-            "Princess/Wizard Makeover",
-            "Themed Snack Buffet",
-            "Interactive Story Time"
+    ka: {
+        programs: "პროგრამები",
+        partyPackages: [
+            {
+                title: "სუპერგმირების თავგადასავალი",
+                description: "ეპიკური სუპერგმირების თემა წვეულება კოსტუმირებული თამაშებითა და აქტივობებით",
+                duration: 3,
+                maxParticipants: 15,
+                price: 299,
+                image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80",
+                activities: [
+                    "Spider-Man-ის შეხვედრა",
+                    "სუპერგმირების მომზადების ბანაკი",
+                    "სახის მოხატვა",
+                    "McDonald's Happy Meals",
+                    "კარაოკეს გმირების სესია"
+                ]
+            },
+            {
+                title: "ჯადოსნური საოცრებათა ქვეყანა",
+                description: "მიმზიდველი წვეულება მაგიური შოუებით და ფანტაზიის აქტივობებით",
+                duration: 4,
+                maxParticipants: 12,
+                price: 349,
+                image: "https://images.unsplash.com/photo-1520808663317-647b476a81b9?auto=format&fit=crop&q=80",
+                activities: [
+                    "პროფესიონალური მაგიის შოუ",
+                    "ბუშტების ხელოვნების ვორქშოფი",
+                    "პრინცესას/ჯადოქრის გარდაქმნა",
+                    "თემატური საკვების ბუფეტი",
+                    "ინტერაქტიული ზღაპრების დრო"
+                ]
+            },
+            {
+                title: "კოსმოსური მკვლევარი",
+                description: "დაუვიწყარი კოსმოსური თავგადასავალი ვარსკვლავური აქტივობებით",
+                duration: 3,
+                maxParticipants: 20,
+                price: 249,
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
+                activities: [
+                    "რაკეტის გაშვების სიმულაცია",
+                    "ასტრონავტების მომზადების თამაშები",
+                    "კოსმოსური კოსტუმების კონკურსი",
+                    "გალაქტიკური საჭმლის სადგური",
+                    "ვარსკვლავების დათვალიერება"
+                ]
+            }
         ]
     },
-    {
-        title: "Space Explorer",
-        description: "Out-of-this-world cosmic adventure with stellar activities",
-        duration: 3,
-        maxParticipants: 20,
-        price: 249,
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-        activities: [
-            "Rocket Launch Simulation",
-            "Astronaut Training Games",
-            "Space Costume Contest",
-            "Galactic Snack Station",
-            "Star Gazing Activity"
+    ru: {
+        programs: "Программы",
+        partyPackages: [
+            {
+                title: "Приключение супергероев",
+                description: "Эпическая вечеринка в стиле супергероев с костюмированными активностями и играми",
+                duration: 3,
+                maxParticipants: 15,
+                price: 299,
+                image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80",
+                activities: [
+                    "Встреча со Спайдерменом",
+                    "Лагерь тренировок супергероев",
+                    "Аквагрим",
+                    "Happy Meals от McDonald's",
+                    "Сессия караоке героев"
+                ]
+            },
+            {
+                title: "Волшебная страна чудес",
+                description: "Очаровательная вечеринка с магическими шоу и фантазийными активностями",
+                duration: 4,
+                maxParticipants: 12,
+                price: 349,
+                image: "https://images.unsplash.com/photo-1520808663317-647b476a81b9?auto=format&fit=crop&q=80",
+                activities: [
+                    "Профессиональное магическое шоу",
+                    "Мастер-класс по созданию фигур из шаров",
+                    "Преображение в принцессу/волшебника",
+                    "Буфет с тематическими закусками",
+                    "Интерактивное чтение сказок"
+                ]
+            },
+            {
+                title: "Космический исследователь",
+                description: "Невероятное космическое приключение со звездными активностями",
+                duration: 3,
+                maxParticipants: 20,
+                price: 249,
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
+                activities: [
+                    "Симуляция запуска ракеты",
+                    "Игры по подготовке астронавтов",
+                    "Конкурс космических костюмов",
+                    "Галактический закусочный уголок",
+                    "Наблюдение за звездами"
+                ]
+            }
         ]
-    },
-    {
-        title: "Space Explorer",
-        description: "Out-of-this-world cosmic adventure with stellar activities",
-        duration: 3,
-        maxParticipants: 20,
-        price: 249,
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-        activities: [
-            "Rocket Launch Simulation",
-            "Astronaut Training Games",
-            "Space Costume Contest",
-            "Galactic Snack Station",
-            "Star Gazing Activity"
-        ]
-    },
-];
+    }
+};
+
 
 function Programs() {
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const context = useContext(MyContext);
+    const { language }: any = context;
 
     useEffect(() => {
         // Section background animation
@@ -129,16 +223,18 @@ function Programs() {
         });
     }, []);
 
+    const currentPackages = translationsPrograms[language as keyof typeof translationsPrograms].partyPackages;
+
     return (
         <div ref={sectionRef} className="bg-gradient-to-b from-[#20095F] to-[#130538] min-h-screen relative overflow-hidden" id='programs'>
             {/* programs name */}
             <div ref={titleRef} className='flex items-center justify-center pb-[50px]'>
-                <h3 className='text-xl font-bold text-white'>PROGRAMS</h3>
+                <h3 className='text-xl font-bold text-white'>{translationsPrograms[language as keyof typeof translationsPrograms].programs}</h3>
             </div>
             {/* content */}
             <div className="p-9">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {partyPackages.map((pkg, index) => (
+                    {currentPackages.map((pkg, index) => (
                         <div
                             key={index}
                             ref={el => cardsRef.current[index] = el}
