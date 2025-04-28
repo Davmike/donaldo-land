@@ -2,6 +2,13 @@ import { useContext } from 'react';
 import { Merge as Coffee, UtensilsCrossed, IceCream } from 'lucide-react';
 import { MyContext } from './Context';
 
+interface MenuItem {
+    name: string;
+    price: string;
+    img?: string;  // ეს მნიშვნელობა არის optional
+    ingredients: string;
+}
+
 const translationsMenu = {
     en: {
         menu: "MENU",
@@ -14,7 +21,7 @@ const translationsMenu = {
                     { name: 'Galaxy Burger', price: '$10', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd', ingredients: 'Nebula beef patty, constellation lettuce, cosmic sauce, star-shaped bun' },
                     { name: 'Cosmic Sandwich', price: '$8', img: 'https://images.unsplash.com/photo-1619860860774-1e2e17343432', ingredients: 'Star-dusted bread, meteor cheese, aurora ham, galaxy vegetables' },
                     { name: 'Asteroid Nuggets', price: '$7', img: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc', ingredients: 'Space chicken, cosmic breadcrumbs, meteor spices, stardust seasoning' }
-                ]
+                ] as MenuItem[]
             },
             {
                 title: 'Space Drinks',
@@ -24,14 +31,14 @@ const translationsMenu = {
                     { name: 'Alien Punch', price: '$5', img: 'https://images.unsplash.com/photo-1621263764928-df1444c5e859', ingredients: 'Blue raspberry juice, sprite, galaxy glitter syrup, floating stars' },
                     { name: 'Cosmic Cola Float', price: '$5', img: 'https://images.unsplash.com/photo-1606938527955-23803a727b3c', ingredients: 'Space cola, asteroid ice cream, nebula foam, shooting star sprinkles' },
                     { name: 'Galaxy Smoothie', price: '$6', img: 'https://images.unsplash.com/photo-1606168094336-48f205276929', ingredients: 'Mixed space berries, cosmic yogurt, stardust protein, meteor mango' }
-                ]
+                ] as MenuItem[]
             },
             {
                 title: 'Space Desserts',
                 icon: <IceCream className="w-5 h-5 text-[#7b61ff]" />,
                 items: [
                     { name: 'Constellation Cookies', price: '$4', img: 'https://images.unsplash.com/photo-1587314168485-3236d6710814', ingredients: 'Star-shaped cookies, cosmic frosting, edible glitter, space sprinkles' }
-                ]
+                ] as MenuItem[]
             }
         ]
     },
@@ -45,7 +52,7 @@ const translationsMenu = {
                     { name: 'გალაქტიკური ბურგერი', price: '$10', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591', ingredients: 'ნიბულას ხორცი, კოსმოსური სალათა, კოსმოსური სოუსი, ვარსკვლავური კეკი' },
                     { name: 'კოსმოსური სენდვიჩი', price: '$8', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591', ingredients: 'ვარსკვლავური პური, მეტეორიტის ყველი, ავორა ham, გალაქტიური ბოსტნეული' },
                     { name: 'ასტეროიდის ნუგეტები', price: '$7', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591', ingredients: 'კოსმოსური ქათამი, კოსმოსური პურები, მეტეორიტის სანელებლები, სტარდასტ სუნელი' }
-                ]
+                ] as MenuItem[]
             },
             {
                 title: 'კოსმოსური სასმელები',
