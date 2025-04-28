@@ -77,7 +77,11 @@ const partyThemes: PartyTheme[] = [
 
 function Design() {
     const context = useContext(MyContext);
-    const { language }: { language: keyof typeof translationsDesign } = context; // Correctly define the language type
+    if (!context) {
+        return null;
+    }
+
+    const language = context.language as 'en' | 'ka' | 'ru'; // Correctly define the language type
 
     const [currentTheme, setCurrentTheme] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
