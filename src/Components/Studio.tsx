@@ -140,7 +140,7 @@ const Studio = () => {
 
         // const cleanNumber = mobileNumber.replace(/\D/g, '');
         // WhatsApp link to send message
-        const whatsappLink = `https://wa.me/${+995555925444}?text=${encodeURIComponent(formattedMessage)}`;
+        const whatsappLink = `https://wa.me/${+995555934074}?text=${encodeURIComponent(formattedMessage)}`;
 
         // Open WhatsApp in a new window or tab
         window.open(whatsappLink, '_blank');
