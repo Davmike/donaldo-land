@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { Camera, Video, Camera as Camera2 } from 'lucide-react';
 
+
+
 function Gallery() {
     const [activeTab, setActiveTab] = useState('photos');
 
     const photos = [
-        { id: 1, url: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32', title: 'Family Portrait', vertical: false },
-        { id: 2, url: 'https://images.unsplash.com/photo-1519741497674-611481863552', title: 'Wedding Photography', vertical: true },
-        { id: 3, url: 'https://images.unsplash.com/photo-1524117074681-31bd4de22ad3', title: 'Nature Photography', vertical: false },
-        { id: 4, url: 'https://images.unsplash.com/photo-1524117074681-31bd4de22ad3', title: 'Event Coverage', vertical: true },
-        { id: 5, url: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e', title: 'Portrait Photography', vertical: true },
-        { id: 6, url: 'https://images.unsplash.com/photo-1551216223-37c8d1dbec5c', title: 'Street Photography', vertical: false },
+        { id: 1, img: "/assets/joze.jpg", title: 'Family Portrait', vertical: false },
+        { id: 2, img: "/assets/sonic.jpg", title: 'Wedding Photography', vertical: true },
+        { id: 3, img: "/assets/minecraft.jpg", title: 'Nature Photography', vertical: false },
+        { id: 4, img: "/assets/whitebear.jpg", title: 'Event Coverage', vertical: true },
     ];
+
 
     const videos = [
         {
@@ -104,7 +105,7 @@ function Gallery() {
                             style={{ aspectRatio: photo.vertical ? '2/3' : '4/3' }}
                         >
                             <img
-                                src={photo.url}
+                                src={photo.img}
                                 alt={photo.title}
                                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                             />

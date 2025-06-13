@@ -36,19 +36,19 @@ function About() {
 
     const images = [
         {
-            url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80",
-            caption: "Fun & Adventure"
-        },
-        {
-            url: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&q=80",
+            img: "/assets/minecraft.jpg",
             caption: "Learning Through Play"
         },
         {
-            url: "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?auto=format&fit=crop&q=80",
+            img: "/assets/joze.jpg",
+            caption: "Fun & Adventure"
+        },
+        {
+            img: "/assets/sonic.jpg",
             caption: "Creative Activities"
         },
         {
-            url: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80",
+            img: "/assets/whitebear.jpg",
             caption: "Safe Environment"
         }
     ];
@@ -264,7 +264,7 @@ function About() {
                                 : 'translate-x-0'
                                 }`}>
                                 <img
-                                    src={images[currentIndex].url}
+                                    src={images[currentIndex].img}
                                     alt={images[currentIndex].caption}
                                     className="object-cover w-full h-full"
                                 />

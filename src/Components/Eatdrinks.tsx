@@ -1,6 +1,19 @@
 import { useContext } from 'react';
 import { Merge as Coffee, UtensilsCrossed, IceCream } from 'lucide-react';
 import { MyContext } from './Context';
+import cezari from "../../public/assets/cezari.jpg"
+import child1 from "../../public/assets/childrenmenu.jpg"
+import child2 from "../../public/assets/childrenmenu1.jpg"
+import child3 from "../../public/assets/childrenmenu3.jpg"
+import child4 from "../../public/assets/childrenmenu4.jpg"
+import child5 from "../../public/assets/childrenmenu5.jpg"
+import menu1 from "../../public/assets/menu1.jpg"
+import menu2 from "../../public/assets/menu2.jpg"
+import menu3 from "../../public/assets/menu3.jpg"
+import menu6 from "../../public/assets/menu6.jpg"
+import menu7 from "../../public/assets/menu7.jpg"
+import pizza from "../../public/assets/pizza.jpg"
+import pizza2 from "../../public/assets/pizaa2.jpg"
 
 interface MenuItem {
     name: string;
@@ -17,27 +30,31 @@ const translationsMenu = {
                 title: 'Cosmic Foods',
                 icon: <UtensilsCrossed className="w-5 h-5 text-[#7b61ff]" />,
                 items: [
-                    { name: 'Meteor Pizza', price: '$12', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591', ingredients: 'Space-crafted dough, cosmic cheese blend, stardust pepperoni, asteroid olives' },
-                    { name: 'Galaxy Burger', price: '$10', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd', ingredients: 'Nebula beef patty, constellation lettuce, cosmic sauce, star-shaped bun' },
-                    { name: 'Cosmic Sandwich', price: '$8', img: 'https://images.unsplash.com/photo-1619860860774-1e2e17343432', ingredients: 'Star-dusted bread, meteor cheese, aurora ham, galaxy vegetables' },
-                    { name: 'Asteroid Nuggets', price: '$7', img: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc', ingredients: 'Space chicken, cosmic breadcrumbs, meteor spices, stardust seasoning' }
+                    { name: 'Meteor Pizza', price: '$12', img: pizza, ingredients: 'Space-crafted dough, cosmic cheese blend, stardust pepperoni, asteroid olives' },
+                    { name: 'Meteor Pizza', price: '$12', img: child2, ingredients: 'Space-crafted dough, cosmic cheese blend, stardust pepperoni, asteroid olives' },
+                    { name: 'Meteor Pizza', price: '$12', img: child3, ingredients: 'Space-crafted dough, cosmic cheese blend, stardust pepperoni, asteroid olives' },
+                    { name: 'Meteor Pizza', price: '$12', img: child4, ingredients: 'Space-crafted dough, cosmic cheese blend, stardust pepperoni, asteroid olives' },
+                    { name: 'Meteor Pizza', price: '$12', img: child5, ingredients: 'Space-crafted dough, cosmic cheese blend, stardust pepperoni, asteroid olives' },
+                    { name: 'Galaxy Burger', price: '$10', img: pizza2, ingredients: 'Nebula beef patty, constellation lettuce, cosmic sauce, star-shaped bun' },
+                    { name: 'Cosmic Sandwich', price: '$8', img: cezari, ingredients: 'Star-dusted bread, meteor cheese, aurora ham, galaxy vegetables' },
+                    { name: 'Asteroid Nuggets', price: '$7', img: menu1, ingredients: 'Space chicken, cosmic breadcrumbs, meteor spices, stardust seasoning' }
                 ] as MenuItem[]
             },
             {
                 title: 'Space Drinks',
                 icon: <Coffee className="w-5 h-5 text-[#7b61ff]" />,
                 items: [
-                    { name: 'Milky Way Shake', price: '$6', img: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699', ingredients: 'Vanilla ice cream, cosmic sparkles, stardust syrup, whipped cream' },
-                    { name: 'Alien Punch', price: '$5', img: 'https://images.unsplash.com/photo-1621263764928-df1444c5e859', ingredients: 'Blue raspberry juice, sprite, galaxy glitter syrup, floating stars' },
-                    { name: 'Cosmic Cola Float', price: '$5', img: 'https://images.unsplash.com/photo-1606938527955-23803a727b3c', ingredients: 'Space cola, asteroid ice cream, nebula foam, shooting star sprinkles' },
-                    { name: 'Galaxy Smoothie', price: '$6', img: 'https://images.unsplash.com/photo-1606168094336-48f205276929', ingredients: 'Mixed space berries, cosmic yogurt, stardust protein, meteor mango' }
+                    { name: 'Milky Way Shake', price: '$6', img: menu2, ingredients: 'Vanilla ice cream, cosmic sparkles, stardust syrup, whipped cream' },
+                    { name: 'Alien Punch', price: '$5', img: menu3, ingredients: 'Blue raspberry juice, sprite, galaxy glitter syrup, floating stars' },
+                    { name: 'Cosmic Cola Float', price: '$5', img: menu6, ingredients: 'Space cola, asteroid ice cream, nebula foam, shooting star sprinkles' },
+                    { name: 'Galaxy Smoothie', price: '$6', img: menu7, ingredients: 'Mixed space berries, cosmic yogurt, stardust protein, meteor mango' }
                 ] as MenuItem[]
             },
             {
                 title: 'Space Desserts',
                 icon: <IceCream className="w-5 h-5 text-[#7b61ff]" />,
                 items: [
-                    { name: 'Constellation Cookies', price: '$4', img: 'https://images.unsplash.com/photo-1587314168485-3236d6710814', ingredients: 'Star-shaped cookies, cosmic frosting, edible glitter, space sprinkles' }
+                    { name: 'Constellation Cookies', price: '$4', img: child1, ingredients: 'Star-shaped cookies, cosmic frosting, edible glitter, space sprinkles' }
                 ] as MenuItem[]
             }
         ]
